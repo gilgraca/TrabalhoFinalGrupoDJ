@@ -194,7 +194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1868577135108429181}
   m_Layer: 0
-  m_Name: InimigoTerreste
+  m_Name: Talhante
   m_TagString: InimigoTerrestre
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

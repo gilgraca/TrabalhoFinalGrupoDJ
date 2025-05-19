@@ -49,12 +49,20 @@ public class Player : MonoBehaviour
     // PONTOS EXTRA PARA ATAQUE ESPECIAL
     [SerializeField] private Transform disparo1;
     [SerializeField] private Transform disparo2;
+    // Cooldown do ataque especial
+    [SerializeField] private float cooldownAtaqueEspecial = 1f;
+    // Se o ataque especial está disponível ou não
+    private bool ataqueEspecialDisponivel = true;
 
     // INVENCIBILIDADE
     [SerializeField] private float duracaoInvencivel = 2f; // duração em segundos
     private bool estaInvencivel = false;
     // Referência ao renderer (para efeito visual tipo piscar)
     private Renderer meuRenderer;
+    // Cooldown da invencibilidade
+    [SerializeField] private float cooldownInvencibilidade = 1f;
+    // Se a invencibilidade está disponível ou não
+    private bool invencibilidadeDisponivel = true;
 
     // VIDA
     [SerializeField] private int vidaMaxima = 3;
@@ -63,6 +71,10 @@ public class Player : MonoBehaviour
     // INVISIBILIDADE
     [SerializeField] private float duracaoInvisivel = 5f;
     private bool estaInvisivel = false;
+    // Cooldown do invisibilidade
+    [SerializeField] private float cooldownInvisibilidade = 1f;
+    // Se a invisibilidade está disponível ou não
+    private bool invisibilidadeDisponivel = true;
 
     // Referência ao material para ajustar transparência
     private Color corOriginal;
@@ -153,10 +165,12 @@ public class Player : MonoBehaviour
 
             Debug.Log("Pena disparada com botão esquerdo!");
         }
-        // Ataque especial (botão direito do rato)
-        // Ataque especial (botão direito)
-        if (Input.GetMouseButtonDown(1))
+        // Ataque especial (botão direito) com cooldown
+        if (Input.GetMouseButtonDown(1) && ataqueEspecialDisponivel)
         {
+            // Bloqueia o ataque especial até ao fim do cooldown
+            ataqueEspecialDisponivel = false;
+
             Vector3 direcao = transform.forward;
 
             // Dispara penas das 3 posições
@@ -165,6 +179,9 @@ public class Player : MonoBehaviour
             CriarPena(disparo2.position, direcao);
 
             Debug.Log("Ataque especial com 3 penas disparado!");
+
+            // Inicia o cooldown do ataque especial
+            StartCoroutine(ReporCooldownAtaqueEspecial());
         }
         // Pressiona G para ativar invencibilidade temporária
         if (Input.GetKeyDown(KeyCode.G))
@@ -228,6 +245,16 @@ public class Player : MonoBehaviour
 
         Debug.Log("Dash disponível");
     }
+    // Corrotina para gerir o cooldown do ataque especial
+    private IEnumerator ReporCooldownAtaqueEspecial()
+    {
+        // Espera o tempo definido no cooldown
+        yield return new WaitForSeconds(cooldownAtaqueEspecial);
+
+        // Ativa novamente o ataque especial
+        ataqueEspecialDisponivel = true;
+        Debug.Log("Ataque especial disponível novamente!");
+    }
 
     // Cria uma pena com direção específica// Cria uma pena a partir de uma posição e direção específicas
     private void CriarPena(Vector3 posicao, Vector3 direcao)
@@ -242,10 +269,18 @@ public class Player : MonoBehaviour
     }
     public void AtivarInvencibilidade()
     {
-        if (!estaInvencivel)
+        // Verifica se já está invencível ou se está em cooldown
+        if (estaInvencivel || !invencibilidadeDisponivel)
         {
-            StartCoroutine(InvencivelTemporariamente());
+            Debug.Log("Não é possível ativar invencibilidade agora.");
+            return;
         }
+
+        // Marca como indisponível
+        invencibilidadeDisponivel = false;
+
+        // Inicia o efeito
+        StartCoroutine(InvencivelTemporariamente());
     }
     private IEnumerator InvencivelTemporariamente()
     {
@@ -269,6 +304,12 @@ public class Player : MonoBehaviour
 
         estaInvencivel = false;
         Debug.Log("INVENCIBILIDADE TERMINOU");
+
+        // Espera o tempo de cooldown antes de permitir outro invencibilidade
+        yield return new WaitForSeconds(cooldownInvencibilidade);
+        invencibilidadeDisponivel = true;
+
+        Debug.Log("Invencibilidade disponível");
     }
     public bool EstaInvencivel()
     {
@@ -302,9 +343,20 @@ public class Player : MonoBehaviour
     }
     public void AtivarInvisibilidade()
     {
-        if (!estaInvisivel)
-            StartCoroutine(InvisivelTemporariamente());
+        // Verifica se já está invisível ou se está em cooldown
+        if (estaInvisivel || !invisibilidadeDisponivel)
+        {
+            Debug.Log("Não é possível ativar invisibilidade agora.");
+            return;
+        }
+
+        // Marca como indisponível
+        invisibilidadeDisponivel = false;
+
+        // Inicia o efeito
+        StartCoroutine(InvisivelTemporariamente());
     }
+
     private IEnumerator InvisivelTemporariamente()
     {
         estaInvisivel = true;
@@ -341,6 +393,11 @@ public class Player : MonoBehaviour
         mat.color = corOriginal;
         estaInvisivel = false;
         Debug.Log("Invisibilidade terminou");
+        // Espera o tempo de cooldown antes de permitir outro invisibilidade
+        yield return new WaitForSeconds(cooldownInvisibilidade);
+        invisibilidadeDisponivel = true;
+
+        Debug.Log("Invisibilidade disponível");
     }
 
     public bool EstaInvisivel()
