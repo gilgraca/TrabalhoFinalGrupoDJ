@@ -1,10 +1,16 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     // Rigidbody do player
     private Rigidbody rb;
+
+    //Elementos do HUD
+    [SerializeField] private GameObject[] hp_items;
+    [SerializeField] private TextMeshProUGUI txt_corns;
+
 
     // MOVIMENTAÇÃO
     // Velocidade
@@ -28,6 +34,8 @@ public class Player : MonoBehaviour
     public Transform pontoChao;
     // Distância do Raycast para detetar o chão
     [SerializeField] public float distanciaRaycast;
+
+
 
     // DASH
     // Força do dash
@@ -65,7 +73,7 @@ public class Player : MonoBehaviour
     private bool invencibilidadeDisponivel = true;
 
     // VIDA
-    [SerializeField] private int vidaMaxima = 3;
+    [SerializeField] private int vidaMaxima = 5;
     private int vidaAtual;
 
     // INVISIBILIDADE
@@ -325,6 +333,8 @@ public class Player : MonoBehaviour
 
         // Reduz vida
         vidaAtual -= dano;
+        // Tira a barra de vida
+        hp_items[vidaAtual].SetActive(false);
         Debug.Log("Jogador levou " + dano + " de dano. Vida atual: " + vidaAtual);
 
         // Ativa invencibilidade temporária para não levar dano em loop
