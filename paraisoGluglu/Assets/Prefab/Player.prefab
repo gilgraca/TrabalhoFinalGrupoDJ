@@ -172,6 +172,7 @@ GameObject:
   - component: {fileID: 2503685667089322176}
   - component: {fileID: 8258035947180688233}
   - component: {fileID: 3742789649237219189}
+  - component: {fileID: 1144719828416744432}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -203,7 +204,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8434010047928090759}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -2432090755550338912, guid: b947c813e00058149841f62b8e30876b, type: 3}
 --- !u!23 &5011067468359344186
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -227,7 +228,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1891b698b36ca444b9f8b0f50b5a2026, type: 2}
+  - {fileID: 2100000, guid: 575973a6172090a4e946ae00b0111a83, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -309,6 +310,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b64e8a33b12a9d4bb2f577af75df02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp_items: []
+  txt_corns: {fileID: 0}
   velocidade: 5
   forcaSalto: 7
   saltosMaximos: 2
@@ -321,6 +324,31 @@ MonoBehaviour:
   pontoDisparo: {fileID: 4026749351597486030}
   disparo1: {fileID: 1506943456754610341}
   disparo2: {fileID: 7623326501431495688}
+  cooldownAtaqueEspecial: 1
   duracaoInvencivel: 2
+  cooldownInvencibilidade: 1
   vidaMaxima: 3
   duracaoInvisivel: 5
+  cooldownInvisibilidade: 1
+--- !u!95 &1144719828416744432
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8434010047928090759}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c3d13425fa596cf449d68d86b4c07883, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
