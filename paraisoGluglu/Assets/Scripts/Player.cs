@@ -214,7 +214,7 @@ public class Player : MonoBehaviour
         if (pontoChao != null)
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawRay(pontoChao.position, Vector3.down * distanciaRaycast);
+            Gizmos.DrawRay(pontoChao.position, Vector3.down /* * distanciaRaycast */);
         }
     }
 
