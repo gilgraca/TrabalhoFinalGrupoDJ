@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: casota
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0c0ea65391ab3194f847358fc5f6f7a7, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 8164078558771037576, guid: 0c0ea65391ab3194f847358fc5f6f7a7, type: 3}
       propertyPath: m_Name
       value: mesh
