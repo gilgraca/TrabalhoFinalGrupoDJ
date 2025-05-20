@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
     private Renderer meuRenderer;
     // Cooldown da invencibilidade
     [SerializeField] private float cooldownInvencibilidade = 1f;
-    // Se a invencibilidade está disponível ou não
+    // Se a invencibilidade está dispontoponível ou não
     private bool invencibilidadeDisponivel = true;
 
     // VIDA
@@ -112,7 +112,7 @@ public class Player : MonoBehaviour
                 // Verifica se o objeto tocado tem a Tag "Ground" e mete na consola
                 estaNoChao = hit.collider.CompareTag("Ground");
 
-                // Debug.Log("Player bateu no: " + hit.collider.name);
+                //Debug.Log("Player bateu no: " + hit.collider.name);
 
             }
             else

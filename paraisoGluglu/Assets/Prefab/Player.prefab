@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 3931395718967379424}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.49, z: 0}
+  m_LocalPosition: {x: 0, y: -2.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -172,7 +172,6 @@ GameObject:
   - component: {fileID: 2503685667089322176}
   - component: {fileID: 8258035947180688233}
   - component: {fileID: 3742789649237219189}
-  - component: {fileID: 1144719828416744432}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -269,8 +268,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.096243, y: 3.6911085, z: 2.8792267}
+  m_Center: {x: 0.020301819, y: -0.28185403, z: 0.04809761}
 --- !u!54 &8258035947180688233
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -316,7 +315,7 @@ MonoBehaviour:
   forcaSalto: 7
   saltosMaximos: 2
   pontoChao: {fileID: 1097347779229209040}
-  distanciaRaycast: 0.01
+  distanciaRaycast: 8.27
   forcaDash: 15
   tempoDash: 0.5
   cooldownDash: 1
@@ -330,25 +329,3 @@ MonoBehaviour:
   vidaMaxima: 3
   duracaoInvisivel: 5
   cooldownInvisibilidade: 1
---- !u!95 &1144719828416744432
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8434010047928090759}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c3d13425fa596cf449d68d86b4c07883, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
