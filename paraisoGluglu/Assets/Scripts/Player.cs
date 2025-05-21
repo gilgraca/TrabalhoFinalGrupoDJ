@@ -87,12 +87,16 @@ public class Player : MonoBehaviour
     // Referência ao material para ajustar transparência
     private Color corOriginal;
 
+    //Animator
+    private Animator animatorLito;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         saltosDisponiveis = saltosMaximos;
-        meuRenderer = GetComponentInChildren<Renderer>();
+        meuRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
         vidaAtual = vidaMaxima;
+        animatorLito = GetComponent<Animator>();
+
     }
 
     void Update()
@@ -170,7 +174,7 @@ public class Player : MonoBehaviour
 
             // Atribui a direção à pena
             novaPena.GetComponent<Pena>().DefinirDirecao(direcaoDisparo);
-
+            animatorLito.SetTrigger("attack");
             Debug.Log("Pena disparada com botão esquerdo!");
         }
         // Ataque especial (botão direito) com cooldown
@@ -187,6 +191,7 @@ public class Player : MonoBehaviour
             CriarPena(disparo2.position, direcao);
 
             Debug.Log("Ataque especial com 3 penas disparado!");
+            animatorLito.SetTrigger("spAttack");
 
             // Inicia o cooldown do ataque especial
             StartCoroutine(ReporCooldownAtaqueEspecial());
