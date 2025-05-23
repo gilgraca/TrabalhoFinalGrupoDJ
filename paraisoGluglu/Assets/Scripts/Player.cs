@@ -87,6 +87,9 @@ public class Player : MonoBehaviour
     // Referência ao material para ajustar transparência
     private Color corOriginal;
 
+    [SerializeField]
+    private Animator animator;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -170,6 +173,8 @@ public class Player : MonoBehaviour
 
             // Atribui a direção à pena
             novaPena.GetComponent<Pena>().DefinirDirecao(direcaoDisparo);
+            animator.SetTrigger("attack");
+
 
             Debug.Log("Pena disparada com botão esquerdo!");
         }
@@ -185,6 +190,7 @@ public class Player : MonoBehaviour
             CriarPena(disparo1.position, direcao);
             CriarPena(pontoDisparo.position, direcao);
             CriarPena(disparo2.position, direcao);
+            animator.SetTrigger("spAttack");
 
             Debug.Log("Ataque especial com 3 penas disparado!");
 
@@ -200,6 +206,18 @@ public class Player : MonoBehaviour
         {
             AtivarInvisibilidade();
         }
+        
+        if (rb.linearVelocity.x > 0)
+        {
+            animator.SetFloat("speed", rb.linearVelocity.x);
+        }
+        else if (rb.linearVelocity.z > 0)
+        {
+            animator.SetFloat("speed", rb.linearVelocity.z);
+        }
+            animator.SetFloat("verticalspeed", rb.linearVelocity.y);
+
+
     }
 
     // Ativa a verificação do chão novamente após o atraso
