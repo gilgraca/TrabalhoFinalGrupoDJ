@@ -131,6 +131,32 @@ public class Player : MonoBehaviour
         if (estaNoChao && !jaSaltou)
         {
             saltosDisponiveis = saltosMaximos;
+
+            // Verifica se o jogador caiu com alguma força (opcional)
+            if (rb.linearVelocity.y < -1f) // velocidade negativa = caiu
+            {
+                RaycastHit hit;
+                if (Physics.Raycast(pontoChao.position, Vector3.down, out hit, distanciaRaycast))
+                {
+                    Debug.Log("Raycast atingiu: " + hit.collider.name);
+
+                    if (hit.collider.CompareTag("Caixa"))
+                    {
+                        Debug.Log("CAIXA DETETADA PELO RAYCAST!");
+
+                        Caixa caixaScript = hit.collider.GetComponent<Caixa>();
+                        if (caixaScript != null)
+                        {
+                            Debug.Log("Chamando QuebrarCaixa()");
+                            caixaScript.QuebrarCaixa();
+                        }
+                        else
+                        {
+                            Debug.LogWarning("Script Caixa não encontrado no objeto com Tag 'Caixa'.");
+                        }
+                    }
+                }
+            }
         }
         // Salto (se ainda houver saltos disponíveis)
         if (Input.GetKeyDown(KeyCode.Space) && saltosDisponiveis > 0)
@@ -206,7 +232,7 @@ public class Player : MonoBehaviour
         {
             AtivarInvisibilidade();
         }
-        
+
         if (rb.linearVelocity.x > 0)
         {
             animator.SetFloat("speed", rb.linearVelocity.x);
@@ -215,7 +241,7 @@ public class Player : MonoBehaviour
         {
             animator.SetFloat("speed", rb.linearVelocity.z);
         }
-            animator.SetFloat("verticalspeed", rb.linearVelocity.y);
+        animator.SetFloat("verticalspeed", rb.linearVelocity.y);
 
 
     }

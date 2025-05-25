@@ -9,6 +9,7 @@ TagManager:
   - InimigoTerrestre
   - Inimigo
   - Corn
+  - Caixa
   layers:
   - Default
   - TransparentFX
