@@ -6,7 +6,7 @@ using UnityEngine.Video;
 
 public class LoadingScript : MonoBehaviour
 {
-    public GameObject LoadingScene;     // Contains the UI + RawImage with video
+    public GameObject LoadingScene;    
     public VideoPlayer videoPlayer;
     private AsyncOperation asyncLoad;
 
