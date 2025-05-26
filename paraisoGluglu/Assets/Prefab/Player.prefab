@@ -284,7 +284,7 @@ Transform:
   m_GameObject: {fileID: 2792086270622796518}
   serializedVersion: 2
   m_LocalRotation: {x: -4.5474735e-13, y: 1.273293e-11, z: 4.6406962e-10, w: 1}
-  m_LocalPosition: {x: 22.44924, y: -9.812112, z: -14.341933}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.8181818, y: 1.8181818, z: 1.8181818}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -446,7 +446,7 @@ Transform:
   m_GameObject: {fileID: 3931395718967379424}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.38, z: 0}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -477,7 +477,7 @@ Transform:
   m_GameObject: {fileID: 4286300865884509313}
   serializedVersion: 2
   m_LocalRotation: {x: -0.6740994, y: -0.004761248, z: 0.0043973285, w: 0.73861223}
-  m_LocalPosition: {x: 22.46343, y: -8.773296, z: -12.6129875}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 181.8182, y: 181.81819, z: 181.81819}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -939,7 +939,7 @@ MonoBehaviour:
   forcaSalto: 7
   saltosMaximos: 2
   pontoChao: {fileID: 1097347779229209040}
-  distanciaRaycast: 8.27
+  distanciaRaycast: 0.1
   forcaDash: 15
   tempoDash: 0.5
   cooldownDash: 1

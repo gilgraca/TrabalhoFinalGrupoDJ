@@ -12,7 +12,7 @@ public class NivelTracker : MonoBehaviour
     // Referência ao objeto UI (toast) que será mostrado ao apanhar todos os colecionáveis
     public GameObject toastFinal;
     // Som a tocar quando todas as pedras forem apanhadas
-    public AudioSource somToastFinal;
+    //public AudioSource somToastFinal;
 
     void Start()
     {
@@ -30,14 +30,14 @@ public class NivelTracker : MonoBehaviour
         // Soma 1 ao número de pedras apanhadas
         apanhados++;
         PlayerPrefs.SetInt("apanhados", apanhados);
-        //Debug.Log("Pedra apanhada! Total: " + apanhados + "/" + colecionaveisNoNivel);
+        Debug.Log("Pedra apanhada! Total: " + apanhados + "/" + colecionaveisNoNivel);
         // Se o jogador já apanhou todas as pedras, mostra o toast
         if (apanhados == colecionaveisNoNivel && toastFinal != null)
         {
             // Ativa a mensagem na tela
             toastFinal.SetActive(true);
-            if (somToastFinal != null)
-                somToastFinal.Play();
+            //if (somToastFinal != null)
+                //somToastFinal.Play();
 
             // Inicia a rotina para esconder após 3 segundos
             StartCoroutine(EsconderToastFinal());
@@ -46,6 +46,7 @@ public class NivelTracker : MonoBehaviour
     // Coroutine que esconde o toast após 3 segundos
     private IEnumerator EsconderToastFinal()
     {
+        Debug.Log("Toast Mostrado");
         // Espera 3 segundos
         yield return new WaitForSeconds(3f);
         // Esconde a mensagem
