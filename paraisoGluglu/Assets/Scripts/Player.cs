@@ -219,8 +219,37 @@ public class Player : MonoBehaviour
 
 
     }
+    // Este método é chamado sempre que o jogador colide fisicamente com algo
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Verifica se a colisão foi com um objeto com a Tag "Caixa"
+        if (collision.collider.CompareTag("Caixa"))
+        {
+            // Obtém a normal da colisão (direção do contacto)
+            Vector3 normal = collision.contacts[0].normal;
 
-    // Ativa a verificação do chão novamente após o atraso
+            // Verifica se a colisão foi de cima para baixo (jogador a cair sobre a caixa)
+            if (Vector3.Dot(normal, Vector3.up) > 0.5f)
+            {
+                // LOG
+                //Debug.Log("Colisão com o TOPO da caixa detectada!");
+
+                // Tenta obter o script Caixa
+                Caixa caixaScript = collision.collider.GetComponent<Caixa>();
+
+                // Se existir, chama a destruição
+                if (caixaScript != null)
+                {
+                    //Debug.Log("Caixa destruída com colisão física!");
+                    caixaScript.QuebrarCaixa();
+                }
+                else
+                {
+                    //Debug.LogWarning("Script Caixa não encontrado no objeto colidido.");
+                }
+            }
+        }
+    }    // Ativa a verificação do chão novamente após o atraso
     void AtivarDeteccaoChao()
     {
         podeVerificarChao = true;

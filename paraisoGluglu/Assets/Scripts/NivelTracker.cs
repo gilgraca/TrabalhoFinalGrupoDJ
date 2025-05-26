@@ -12,7 +12,9 @@ public class NivelTracker : MonoBehaviour
     // Referência ao objeto UI (toast) que será mostrado ao apanhar todos os colecionáveis
     public GameObject toastFinal;
     // Som a tocar quando todas as pedras forem apanhadas
-    public AudioSource somToastFinal;
+    //public AudioSource somToastFinal;
+    // Elemento visual (UI) a ser mostrado como "toast"
+    public GameObject toastUI;
 
     void Start()
     {
@@ -36,19 +38,63 @@ public class NivelTracker : MonoBehaviour
         {
             // Ativa a mensagem na tela
             toastFinal.SetActive(true);
-            if (somToastFinal != null)
-                somToastFinal.Play();
+            //if (somToastFinal != null)
+            //    somToastFinal.Play();
 
             // Inicia a rotina para esconder após 3 segundos
-            StartCoroutine(EsconderToastFinal());
+            StartCoroutine(MostrarToastAnimado());
         }
     }
-    // Coroutine que esconde o toast após 3 segundos
-    private IEnumerator EsconderToastFinal()
+    private IEnumerator MostrarToastAnimado()
     {
-        // Espera 3 segundos
+        // Guarda a posição inicial do toast
+        Vector3 startPosition = toastUI.transform.localPosition;
+
+        // Ativa o toast
+        toastUI.SetActive(true);
+        Debug.Log("Toast ativado!");
+
+        // Espera 1 segundo
+        yield return new WaitForSeconds(0.5f);
+        Debug.Log("Toast parado (0.5s).");
+
+        // Calcula a posição final
+        Vector3 targetPosition = startPosition + new Vector3(250f, 0, 0); // ou torna o 300f numa variável pública
+
+        float elapsed = 0f;
+        float duration = 2f;
+
+        // Move para o lado
+        Debug.Log("Toast a mover para o lado...");
+        while (elapsed < duration)
+        {
+            toastUI.transform.localPosition = Vector3.Lerp(startPosition, targetPosition, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        toastUI.transform.localPosition = targetPosition;
+
+        // Espera 3 segundos na nova posição
+        Debug.Log("Toast parado (3s).");
         yield return new WaitForSeconds(3f);
-        // Esconde a mensagem
-        toastFinal.SetActive(false);
+
+        // Volta à posição inicial
+        elapsed = 0f;
+        Debug.Log("Toast a regressar...");
+        while (elapsed < duration)
+        {
+            toastUI.transform.localPosition = Vector3.Lerp(targetPosition, startPosition, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        toastUI.transform.localPosition = startPosition;
+
+        // Espera 1 segundo antes de desaparecer
+        Debug.Log("Toast parado antes de desaparecer (0.5s).");
+        yield return new WaitForSeconds(0.5f);
+
+        // Desativa o toast
+        toastUI.SetActive(false);
+        Debug.Log("Toast desativado.");
     }
 }
