@@ -106,12 +106,32 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        // Movimentação X e Z do player
+        // === MOVIMENTO E ROTAÇÃO DO JOGADOR ===
+
+        // Captura o input horizontal (X) e vertical (Z)
         float inputX = Input.GetAxis("Horizontal");
         float inputZ = Input.GetAxis("Vertical");
-        // Aplica movimento
-        Vector3 movimento = new Vector3(inputX, 0f, inputZ) * velocidade;
+
+        // Cria um vetor de movimento com base no input
+        Vector3 movimento = new Vector3(inputX, 0f, inputZ).normalized * velocidade;
+
+        // Aplica o movimento à velocidade do rigidbody (mantém a velocidade vertical atual)
         rb.linearVelocity = new Vector3(movimento.x, rb.linearVelocity.y, movimento.z);
+        // Se houver movimento (input diferente de zero), roda o jogador suavemente nessa direção
+        if (movimento != Vector3.zero)
+        {
+            // Direção alvo para onde o jogador deve olhar
+            Vector3 direcaoAlvo = new Vector3(movimento.x, 0f, movimento.z);
+
+            // Calcula a rotação alvo com base na direção
+            Quaternion rotacaoAlvo = Quaternion.LookRotation(direcaoAlvo);
+
+            // Suaviza a rotação atual para a rotação alvo
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotacaoAlvo, Time.deltaTime * 10f); // 10f é a velocidade da rotação, ajusta se quiseres
+
+            // Log para ver a rotação a cada frame
+            Debug.Log("Rotação suavizada para: " + transform.rotation.eulerAngles);
+        }
         // Detecção de chão com Raycast
         if (podeVerificarChao)
         {
