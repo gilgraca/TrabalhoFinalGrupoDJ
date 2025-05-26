@@ -630,7 +630,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3242750395836560666, guid: a799ea09bb360e9449de66df4d809caf, type: 3}
   m_PrefabInstance: {fileID: 789891914}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1239650857}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -1013,7 +1013,7 @@ MonoBehaviour:
   colecionaveisNoNivel: 1
   toastFinal: {fileID: 1641694510}
   toastUI: {fileID: 1641694510}
-  toastText: {fileID: 1239650859}
+  toastText: {fileID: 886121446}
 --- !u!4 &1238205333
 Transform:
   m_ObjectHideFlags: 0
@@ -1034,17 +1034,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3494217458760205185, guid: a799ea09bb360e9449de66df4d809caf, type: 3}
   m_PrefabInstance: {fileID: 789891914}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1239650859 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3242750395836560666, guid: a799ea09bb360e9449de66df4d809caf, type: 3}
-  m_PrefabInstance: {fileID: 789891914}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1239650857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1457476784 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4549975832699160078, guid: a799ea09bb360e9449de66df4d809caf, type: 3}
@@ -1062,7 +1051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35ba20eaee7dd1d42a35e9376d6e0d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textoPontuacao: {fileID: 1239650859}
+  textoPontuacao: {fileID: 0}
 --- !u!4 &1550411755 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3149121661702705857, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
@@ -1154,7 +1143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35ba20eaee7dd1d42a35e9376d6e0d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textoPontuacao: {fileID: 1239650859}
+  textoPontuacao: {fileID: 886121446}
 --- !u!4 &1605530360
 Transform:
   m_ObjectHideFlags: 0
