@@ -19,7 +19,7 @@ public class Caixa : MonoBehaviour
     public void QuebrarCaixa()
     {
         // LOG
-        Debug.Log("Caixa destruída!");
+        //Debug.Log("Caixa destruída!");
 
         // Cria tábuas no mesmo local
         for (int i = 0; i < quantidadeTabuas; i++)
@@ -41,7 +41,7 @@ public class Caixa : MonoBehaviour
             Destroy(tabua, 3f);
 
             // LOG para verificar destruição futura
-            Debug.Log("Tábua criada e será destruída em 3 segundos.");
+            //Debug.Log("Tábua criada e será destruída em 3 segundos.");
         }
 
 

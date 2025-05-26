@@ -30,7 +30,7 @@ public class NivelTracker : MonoBehaviour
         // Soma 1 ao número de pedras apanhadas
         apanhados++;
         PlayerPrefs.SetInt("apanhados", apanhados);
-        Debug.Log("Pedra apanhada! Total: " + apanhados + "/" + colecionaveisNoNivel);
+        //Debug.Log("Pedra apanhada! Total: " + apanhados + "/" + colecionaveisNoNivel);
         // Se o jogador já apanhou todas as pedras, mostra o toast
         if (apanhados == colecionaveisNoNivel && toastFinal != null)
         {

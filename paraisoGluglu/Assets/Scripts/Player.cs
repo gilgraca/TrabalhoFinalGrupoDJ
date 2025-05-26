@@ -131,32 +131,6 @@ public class Player : MonoBehaviour
         if (estaNoChao && !jaSaltou)
         {
             saltosDisponiveis = saltosMaximos;
-
-            // Verifica se o jogador caiu com alguma força (opcional)
-            if (rb.linearVelocity.y < -1f) // velocidade negativa = caiu
-            {
-                RaycastHit hit;
-                if (Physics.Raycast(pontoChao.position, Vector3.down, out hit, distanciaRaycast))
-                {
-                    Debug.Log("Raycast atingiu: " + hit.collider.name);
-
-                    if (hit.collider.CompareTag("Caixa"))
-                    {
-                        Debug.Log("CAIXA DETETADA PELO RAYCAST!");
-
-                        Caixa caixaScript = hit.collider.GetComponent<Caixa>();
-                        if (caixaScript != null)
-                        {
-                            Debug.Log("Chamando QuebrarCaixa()");
-                            caixaScript.QuebrarCaixa();
-                        }
-                        else
-                        {
-                            Debug.LogWarning("Script Caixa não encontrado no objeto com Tag 'Caixa'.");
-                        }
-                    }
-                }
-            }
         }
         // Salto (se ainda houver saltos disponíveis)
         if (Input.GetKeyDown(KeyCode.Space) && saltosDisponiveis > 0)
@@ -202,7 +176,7 @@ public class Player : MonoBehaviour
             animator.SetTrigger("attack");
 
 
-            Debug.Log("Pena disparada com botão esquerdo!");
+            //Debug.Log("Pena disparada com botão esquerdo!");
         }
         // Ataque especial (botão direito) com cooldown
         if (Input.GetMouseButtonDown(1) && ataqueEspecialDisponivel)
@@ -218,7 +192,7 @@ public class Player : MonoBehaviour
             CriarPena(disparo2.position, direcao);
             animator.SetTrigger("spAttack");
 
-            Debug.Log("Ataque especial com 3 penas disparado!");
+            //Debug.Log("Ataque especial com 3 penas disparado!");
 
             // Inicia o cooldown do ataque especial
             StartCoroutine(ReporCooldownAtaqueEspecial());
@@ -245,7 +219,37 @@ public class Player : MonoBehaviour
 
 
     }
+    // Este método é chamado sempre que o jogador colide fisicamente com algo
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Verifica se a colisão foi com um objeto com a Tag "Caixa"
+        if (collision.collider.CompareTag("Caixa"))
+        {
+            // Obtém a normal da colisão (direção do contacto)
+            Vector3 normal = collision.contacts[0].normal;
 
+            // Verifica se a colisão foi de cima para baixo (jogador a cair sobre a caixa)
+            if (Vector3.Dot(normal, Vector3.up) > 0.5f)
+            {
+                // LOG
+                //Debug.Log("Colisão com o TOPO da caixa detectada!");
+
+                // Tenta obter o script Caixa
+                Caixa caixaScript = collision.collider.GetComponent<Caixa>();
+
+                // Se existir, chama a destruição
+                if (caixaScript != null)
+                {
+                    //Debug.Log("Caixa destruída com colisão física!");
+                    caixaScript.QuebrarCaixa();
+                }
+                else
+                {
+                    //Debug.LogWarning("Script Caixa não encontrado no objeto colidido.");
+                }
+            }
+        }
+    }
     // Ativa a verificação do chão novamente após o atraso
     void AtivarDeteccaoChao()
     {
@@ -269,7 +273,7 @@ public class Player : MonoBehaviour
         estaADashar = true;
         dashDisponivel = false;
 
-        Debug.Log("Dash dado");
+        //Debug.Log("Dash dado");
 
         // Determina a direção do dash com base no input atual (Horizontal/Vertical)
         Vector3 direcao = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
@@ -295,7 +299,7 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(cooldownDash);
         dashDisponivel = true;
 
-        Debug.Log("Dash disponível");
+        //Debug.Log("Dash disponível");
     }
     // Corrotina para gerir o cooldown do ataque especial
     private IEnumerator ReporCooldownAtaqueEspecial()
@@ -305,7 +309,7 @@ public class Player : MonoBehaviour
 
         // Ativa novamente o ataque especial
         ataqueEspecialDisponivel = true;
-        Debug.Log("Ataque especial disponível novamente!");
+        //Debug.Log("Ataque especial disponível novamente!");
     }
 
     // Cria uma pena com direção específica// Cria uma pena a partir de uma posição e direção específicas
@@ -324,7 +328,7 @@ public class Player : MonoBehaviour
         // Verifica se já está invencível ou se está em cooldown
         if (estaInvencivel || !invencibilidadeDisponivel)
         {
-            Debug.Log("Não é possível ativar invencibilidade agora.");
+            //Debug.Log("Não é possível ativar invencibilidade agora.");
             return;
         }
 
@@ -337,7 +341,7 @@ public class Player : MonoBehaviour
     private IEnumerator InvencivelTemporariamente()
     {
         estaInvencivel = true;
-        Debug.Log("INVENCIBILIDADE ATIVADA");
+        //Debug.Log("INVENCIBILIDADE ATIVADA");
 
         // Piscar como efeito visual (opcional)
         float tempoPassado = 0f;
@@ -355,13 +359,13 @@ public class Player : MonoBehaviour
         }
 
         estaInvencivel = false;
-        Debug.Log("INVENCIBILIDADE TERMINOU");
+        //Debug.Log("INVENCIBILIDADE TERMINOU");
 
         // Espera o tempo de cooldown antes de permitir outro invencibilidade
         yield return new WaitForSeconds(cooldownInvencibilidade);
         invencibilidadeDisponivel = true;
 
-        Debug.Log("Invencibilidade disponível");
+        //Debug.Log("Invencibilidade disponível");
     }
     public bool EstaInvencivel()
     {
@@ -371,7 +375,7 @@ public class Player : MonoBehaviour
     {
         if (estaInvencivel)
         {
-            Debug.Log("Jogador é invencível. Dano ignorado.");
+            //Debug.Log("Jogador é invencível. Dano ignorado.");
             return;
         }
 
@@ -379,7 +383,7 @@ public class Player : MonoBehaviour
         vidaAtual -= dano;
         // Tira a barra de vida
         hp_items[vidaAtual].SetActive(false);
-        Debug.Log("Jogador levou " + dano + " de dano. Vida atual: " + vidaAtual);
+        //Debug.Log("Jogador levou " + dano + " de dano. Vida atual: " + vidaAtual);
 
         // Ativa invencibilidade temporária para não levar dano em loop
         AtivarInvencibilidade();
@@ -392,7 +396,7 @@ public class Player : MonoBehaviour
     }
     private void Morrer()
     {
-        Debug.Log("JOGADOR MORREU!");
+        //Debug.Log("JOGADOR MORREU!");
         gameObject.SetActive(false);
     }
     public void AtivarInvisibilidade()
@@ -400,7 +404,7 @@ public class Player : MonoBehaviour
         // Verifica se já está invisível ou se está em cooldown
         if (estaInvisivel || !invisibilidadeDisponivel)
         {
-            Debug.Log("Não é possível ativar invisibilidade agora.");
+            //Debug.Log("Não é possível ativar invisibilidade agora.");
             return;
         }
 
@@ -414,7 +418,7 @@ public class Player : MonoBehaviour
     private IEnumerator InvisivelTemporariamente()
     {
         estaInvisivel = true;
-        Debug.Log("INVISIBILIDADE ATIVADA");
+        //Debug.Log("INVISIBILIDADE ATIVADA");
         // Referência ao material do renderer
         Material mat = meuRenderer.material;
         // === MODO TRANSPARENTE ===
@@ -446,12 +450,12 @@ public class Player : MonoBehaviour
         corOriginal.a = 1f;
         mat.color = corOriginal;
         estaInvisivel = false;
-        Debug.Log("Invisibilidade terminou");
+        //Debug.Log("Invisibilidade terminou");
         // Espera o tempo de cooldown antes de permitir outro invisibilidade
         yield return new WaitForSeconds(cooldownInvisibilidade);
         invisibilidadeDisponivel = true;
 
-        Debug.Log("Invisibilidade disponível");
+        //Debug.Log("Invisibilidade disponível");
     }
 
     public bool EstaInvisivel()
