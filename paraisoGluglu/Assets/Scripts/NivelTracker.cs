@@ -15,6 +15,9 @@ public class NivelTracker : MonoBehaviour
     //public AudioSource somToastFinal;
     // Elemento visual (UI) a ser mostrado como "toast"
     public GameObject toastUI;
+    //Texto 
+    public TMPro.TMP_Text toastText;
+
 
     void Start()
     {
@@ -22,8 +25,9 @@ public class NivelTracker : MonoBehaviour
         // Inicializa o contador de colecionáveis apanhados
         apanhados = 0;
         // Garante que o toast começa invisível
-        if (toastFinal != null)
-            toastFinal.SetActive(false);
+        // Comentado por não aparecer o texto
+        // if (toastFinal != null)
+        //     toastFinal.SetActive(false);
     }
 
     // Função pública chamada sempre que o jogador apanha uma pedra
@@ -45,21 +49,27 @@ public class NivelTracker : MonoBehaviour
             StartCoroutine(MostrarToastAnimado());
         }
     }
-    private IEnumerator MostrarToastAnimado()
+    public IEnumerator MostrarToastAnimado()
     {
         // Guarda a posição inicial do toast
         Vector3 startPosition = toastUI.transform.localPosition;
 
         // Ativa o toast
         toastUI.SetActive(true);
+        Debug.Log(toastText);
+        // Ativa o texto (caso exista)
+        if (toastText != null)
+            toastText.gameObject.SetActive(true);
+
+
         Debug.Log("Toast ativado!");
 
-        // Espera 1 segundo
+        // Espera 0.5 segundos
         yield return new WaitForSeconds(0.5f);
         Debug.Log("Toast parado (0.5s).");
 
         // Calcula a posição final
-        Vector3 targetPosition = startPosition + new Vector3(250f, 0, 0); // ou torna o 300f numa variável pública
+        Vector3 targetPosition = startPosition + new Vector3(250f, 0, 0);
 
         float elapsed = 0f;
         float duration = 2f;
@@ -89,12 +99,22 @@ public class NivelTracker : MonoBehaviour
         }
         toastUI.transform.localPosition = startPosition;
 
-        // Espera 1 segundo antes de desaparecer
+        // Espera 0.5 segundos antes de desaparecer
         Debug.Log("Toast parado antes de desaparecer (0.5s).");
         yield return new WaitForSeconds(0.5f);
 
-        // Desativa o toast
+        // Desativa o toast e o texto
+        // if (toastText != null)
+        //     toastText.gameObject.SetActive(false);
+
+
         toastUI.SetActive(false);
         Debug.Log("Toast desativado.");
+    }
+
+    // Método público para ativar o toast manualmente
+    public void MostrarToastManual()
+    {
+        StartCoroutine(MostrarToastAnimado());
     }
 }

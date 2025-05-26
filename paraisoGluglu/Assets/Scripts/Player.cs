@@ -90,6 +90,12 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
+    // === VARIÁVEIS DE CONTROLO PARA O TOAST MANUAL ===
+    // Tempo de espera entre ativações do toast com tecla I
+    [SerializeField] private float cooldownToastManual = 10f;
+    // Se pode ou não ativar novamente
+    private bool podeAtivarToastManual = true;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -206,16 +212,34 @@ public class Player : MonoBehaviour
         {
             AtivarInvisibilidade();
         }
-        
+
         if (rb.linearVelocity.x > 0)
         {
             animator.SetFloat("speed", rb.linearVelocity.x);
         }
+        // === TOAST COM COOLDOWN AO PRESSIONAR I ===
+
+        // Controla se pode ativar o toast
+        if (Input.GetKeyDown(KeyCode.I) && podeAtivarToastManual)
+        {
+            // Log de teste para consola
+            Debug.Log("Tecla I pressionada — toast ativado manualmente.");
+
+            // Ativa o toast
+            FindFirstObjectByType<NivelTracker>()?.MostrarToastManual();
+
+            // Impede novo uso até passar o cooldown
+            podeAtivarToastManual = false;
+
+            // Inicia o cooldown
+            StartCoroutine(ReporCooldownToastManual());
+        }
+
         else if (rb.linearVelocity.z > 0)
         {
             animator.SetFloat("speed", rb.linearVelocity.z);
         }
-            animator.SetFloat("verticalspeed", rb.linearVelocity.y);
+        animator.SetFloat("verticalspeed", rb.linearVelocity.y);
 
 
     }
@@ -460,5 +484,17 @@ public class Player : MonoBehaviour
     public bool EstaInvisivel()
     {
         return estaInvisivel;
+    }
+
+    // Corrotina que espera X segundos antes de permitir nova ativação
+    private IEnumerator ReporCooldownToastManual()
+    {
+        // Espera o tempo definido
+        yield return new WaitForSeconds(cooldownToastManual);
+
+        // Ativa novamente
+        podeAtivarToastManual = true;
+
+        Debug.Log("Toast manual disponível novamente.");
     }
 }
