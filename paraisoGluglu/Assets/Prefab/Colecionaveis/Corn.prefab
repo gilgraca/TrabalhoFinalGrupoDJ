@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4189198572001282656}
   - component: {fileID: 5084760534878485416}
   m_Layer: 0
-  m_Name: Milho
+  m_Name: Corn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
