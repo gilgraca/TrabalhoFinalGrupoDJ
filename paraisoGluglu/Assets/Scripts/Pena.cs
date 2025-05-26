@@ -40,14 +40,14 @@ public class Pena : MonoBehaviour
         float distanciaPercorrida = Vector3.Distance(posicaoInicial, transform.position);
         if (distanciaPercorrida >= distanciaMaxima)
         {
-            //Debug.Log("Pena atingiu a distância máxima. Vai desaparecer.");
+            Debug.Log("Pena atingiu a distância máxima. Vai desaparecer.");
             Destroy(gameObject);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("Pena colidiu com: " + other.name);
+        Debug.Log("Pena colidiu com: " + other.name);
 
         if (other.CompareTag("Inimigo"))
         {
@@ -59,7 +59,7 @@ public class Pena : MonoBehaviour
             if (terrestre != null)
             {
                 terrestre.ReceberDano(dano);
-                //Debug.Log("Dano causado ao inimigo terrestre");
+                Debug.Log("Dano causado ao inimigo terrestre");
             }
 
             // Tenta inimigo aéreo
@@ -70,23 +70,11 @@ public class Pena : MonoBehaviour
             if (aereo != null)
             {
                 aereo.ReceberDano(dano);
-                //Debug.Log("Dano causado ao inimigo aéreo");
+                Debug.Log("Dano causado ao inimigo aéreo");
             }
 
             Destroy(gameObject);
         }
-        // Se atingir uma caixa
-        if (other.CompareTag("Caixa"))
-        {
-            // Verifica se tem o script Caixa
-            Caixa caixa = other.GetComponent<Caixa>();
-            if (caixa != null)
-            {
-                caixa.QuebrarCaixa();
-                //Debug.Log("Caixa destruída por pena!");
-            }
-
-            Destroy(gameObject); // destrói a pena
-        }
     }
+
 }
