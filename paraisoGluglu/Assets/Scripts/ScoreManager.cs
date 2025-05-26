@@ -20,7 +20,7 @@ public class ScoreManager : MonoBehaviour
         score = PlayerPrefs.GetInt("score");
         if (score < 0) { score = 0; }
         // Atualiza o texto da UI com a pontuação inicial
-        instance.textoPontuacao.text = score.ToString("D3");
+        instance.textoPontuacao.text = score.ToString("D2");
     }
     // Método público e estático para adicionar pontos
     public static void AddPoints(int points)
@@ -30,7 +30,7 @@ public class ScoreManager : MonoBehaviour
         PlayerPrefs.SetInt("score", score);
         // Atualiza a UI, se o ScoreManager e o texto estiverem ativos
         if (instance != null && instance.textoPontuacao != null)
-            instance.textoPontuacao.text = score.ToString("D3");
+            instance.textoPontuacao.text = score.ToString("D2");
     }
     // Devolve a pontuação atual
     public static int GetPoints()
@@ -44,6 +44,6 @@ public class ScoreManager : MonoBehaviour
         PlayerPrefs.SetInt("score", score);
         // Atualiza a UI, se o ScoreManager e o texto estiverem ativos
         if (instance != null && instance.textoPontuacao != null)
-            instance.textoPontuacao.text = score.ToString("D3");
+            instance.textoPontuacao.text = score.ToString("D2");
     }
 }

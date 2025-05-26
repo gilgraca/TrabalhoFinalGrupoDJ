@@ -90,6 +90,12 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
+    // === VARIÁVEIS DE CONTROLO PARA O TOAST MANUAL ===
+    // Tempo de espera entre ativações do toast com tecla I
+    [SerializeField] private float cooldownToastManual = 10f;
+    // Se pode ou não ativar novamente
+    private bool podeAtivarToastManual = true;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -206,21 +212,68 @@ public class Player : MonoBehaviour
         {
             AtivarInvisibilidade();
         }
-        
+
         if (rb.linearVelocity.x > 0)
         {
             animator.SetFloat("speed", rb.linearVelocity.x);
         }
+        // === TOAST COM COOLDOWN AO PRESSIONAR I ===
+
+        // Controla se pode ativar o toast
+        if (Input.GetKeyDown(KeyCode.I) && podeAtivarToastManual)
+        {
+            // Log de teste para consola
+            Debug.Log("Tecla I pressionada — toast ativado manualmente.");
+
+            // Ativa o toast
+            FindFirstObjectByType<NivelTracker>()?.MostrarToastManual();
+
+            // Impede novo uso até passar o cooldown
+            podeAtivarToastManual = false;
+
+            // Inicia o cooldown
+            StartCoroutine(ReporCooldownToastManual());
+        }
+
         else if (rb.linearVelocity.z > 0)
         {
             animator.SetFloat("speed", rb.linearVelocity.z);
         }
-            animator.SetFloat("verticalspeed", rb.linearVelocity.y);
+        animator.SetFloat("verticalspeed", rb.linearVelocity.y);
 
 
     }
+    // Este método é chamado sempre que o jogador colide fisicamente com algo
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Verifica se a colisão foi com um objeto com a Tag "Caixa"
+        if (collision.collider.CompareTag("Caixa"))
+        {
+            // Obtém a normal da colisão (direção do contacto)
+            Vector3 normal = collision.contacts[0].normal;
 
-    // Ativa a verificação do chão novamente após o atraso
+            // Verifica se a colisão foi de cima para baixo (jogador a cair sobre a caixa)
+            if (Vector3.Dot(normal, Vector3.up) > 0.5f)
+            {
+                // LOG
+                //Debug.Log("Colisão com o TOPO da caixa detectada!");
+
+                // Tenta obter o script Caixa
+                Caixa caixaScript = collision.collider.GetComponent<Caixa>();
+
+                // Se existir, chama a destruição
+                if (caixaScript != null)
+                {
+                    //Debug.Log("Caixa destruída com colisão física!");
+                    caixaScript.QuebrarCaixa();
+                }
+                else
+                {
+                    //Debug.LogWarning("Script Caixa não encontrado no objeto colidido.");
+                }
+            }
+        }
+    }    // Ativa a verificação do chão novamente após o atraso
     void AtivarDeteccaoChao()
     {
         podeVerificarChao = true;
@@ -431,5 +484,17 @@ public class Player : MonoBehaviour
     public bool EstaInvisivel()
     {
         return estaInvisivel;
+    }
+
+    // Corrotina que espera X segundos antes de permitir nova ativação
+    private IEnumerator ReporCooldownToastManual()
+    {
+        // Espera o tempo definido
+        yield return new WaitForSeconds(cooldownToastManual);
+
+        // Ativa novamente
+        podeAtivarToastManual = true;
+
+        Debug.Log("Toast manual disponível novamente.");
     }
 }

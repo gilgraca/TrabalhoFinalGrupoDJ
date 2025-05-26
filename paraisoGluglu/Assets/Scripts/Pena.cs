@@ -75,6 +75,20 @@ public class Pena : MonoBehaviour
 
             Destroy(gameObject);
         }
+        // Se atingir uma caixa
+        if (other.CompareTag("Caixa"))
+        {
+            // Verifica se tem o script Caixa
+            Caixa caixa = other.GetComponent<Caixa>();
+            if (caixa != null)
+            {
+                caixa.QuebrarCaixa();
+                //Debug.Log("Caixa destruída por pena!");
+            }
+
+            Destroy(gameObject); // destrói a pena
+        }
     }
 
 }
+
