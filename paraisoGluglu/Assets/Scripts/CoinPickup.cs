@@ -6,11 +6,21 @@ public class CoinPickup : MonoBehaviour
     public int pointToAdd;
     // Som a ser tocado ao apanhar a moeda
     //private AudioSource CoinPickupEffect;
+
+    public Vector3 rotationSpeed = new Vector3(0, 100, 0); // degrees per second
+
+
     void Start()
     {
         // Referência ao AudioSource ligado à moeda
         //CoinPickupEffect = GetComponent<AudioSource>();
     }
+    void Update()
+    {
+        // Rotate object around its local axes at rotationSpeed degrees/second
+        transform.Rotate(rotationSpeed * Time.deltaTime);
+    }
+
     void OnTriggerEnter(Collider other)
     {
         // Garante que só o jogador pode apanhar a moeda
