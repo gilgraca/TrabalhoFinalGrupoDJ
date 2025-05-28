@@ -32,6 +32,9 @@ public class PlayerAtaque : MonoBehaviour
 
     void Update()
     {
+        // Impede ataques se o jogo estiver pausado
+        if (MenuPausa.jogoPausado) return;
+
         // Disparo normal com botão esquerdo
         if (Input.GetMouseButtonDown(0))
         {

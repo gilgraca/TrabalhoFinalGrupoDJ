@@ -100,13 +100,20 @@ public class PlayerMovimento : MonoBehaviour
         PlayerPowerUp powerUp = GetComponent<PlayerPowerUp>();
         if (powerUp != null)
         {
-            powerUp.ResetarDoubleJump();
         }
-        // Se estiver no chão e ainda não saltou, reseta os saltos
+        // Se estiver no chão e não tiver saltado, define os saltos com base no power-up
         if (estaNoChao && !jaSaltou)
         {
-            saltosDisponiveis = saltosMaximos;
+            if (powerUp != null && powerUp.PodeDoubleJump())
+            {
+                saltosDisponiveis = 2; // 1 salto + 1 extra
+            }
+            else
+            {
+                saltosDisponiveis = 1; // Apenas salto base
+            }
         }
+
         // Salto (se ainda houver saltos disponíveis)
         if (Input.GetKeyDown(KeyCode.Space) && saltosDisponiveis > 0)
         {

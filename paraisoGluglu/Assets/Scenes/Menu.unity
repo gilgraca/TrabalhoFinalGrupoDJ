@@ -404,7 +404,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 407949408}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: MenuPowerUp
+        m_MethodName: NewGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -567,10 +567,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f6593fe668970428d26767135770af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nivelACarregar: 
-  menupowerup: MenuPowerUp
+  nivelACarregar: MenuPowerUp
   menuprincipal: 
-  cenaIntro: 
+  tutorial: 
 --- !u!1001 &542961550
 PrefabInstance:
   m_ObjectHideFlags: 0

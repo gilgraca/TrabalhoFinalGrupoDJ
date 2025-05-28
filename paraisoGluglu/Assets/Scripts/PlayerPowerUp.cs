@@ -287,4 +287,10 @@ public class PlayerPowerUp : MonoBehaviour
     {
         podeInvisibilidade = estado;
     }
+    // Devolve se o jogador pode usar o double jump
+    public bool PodeDoubleJump()
+    {
+        return podeDoubleJump;
+    }
+
 }
