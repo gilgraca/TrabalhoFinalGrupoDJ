@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RotadorObjeto : MonoBehaviour
+public class ItenRodar : MonoBehaviour
 {
     // Velocidade de rotação
     public Vector3 rotationSpeed = new Vector3(0, 100, 0);

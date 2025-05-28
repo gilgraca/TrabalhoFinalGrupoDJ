@@ -1,6 +1,6 @@
 // Script responsável por dar pontos ao jogador ao apanhar milhos e reproduzir som
 using UnityEngine;
-public class MilhoPickup : MonoBehaviour
+public class ItenMilho : MonoBehaviour
 {
     // Quantidade de pontos que esta moeda adiciona
     public int pointToAdd;
@@ -26,7 +26,7 @@ public class MilhoPickup : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         // Garante que só o jogador pode apanhar a moeda
-        if (other.GetComponent<Player>() == null)
+        if (other.GetComponent<PlayerToast>() == null)
             return;
 
         // Adiciona os pontos ao ScoreManager

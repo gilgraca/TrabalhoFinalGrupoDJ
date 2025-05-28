@@ -24,7 +24,7 @@ public class CheckpointToast : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             activated = true;
-            Player player = other.GetComponent<Player>();
+            PlayerToast player = other.GetComponent<PlayerToast>();
             if (player != null)
             {
                 // player.AtivarCheckpoint(transform);

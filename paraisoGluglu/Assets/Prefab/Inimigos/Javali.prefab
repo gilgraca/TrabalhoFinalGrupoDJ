@@ -245,8 +245,10 @@ GameObject:
   - component: {fileID: 5700375295871640773}
   - component: {fileID: 375435488666959867}
   - component: {fileID: 2115683065517320664}
-  - component: {fileID: 7778287604122560426}
   - component: {fileID: 5068622668196940217}
+  - component: {fileID: 7809501441180522616}
+  - component: {fileID: 7127517715670869498}
+  - component: {fileID: 7778287604122560426}
   m_Layer: 0
   m_Name: Inimigo
   m_TagString: Inimigo
@@ -373,23 +375,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &7778287604122560426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5499292038707502594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 303537d962916bd4ab5b213f22e5fb46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pontosPatrulha:
-  - {fileID: 1287513936100258209}
-  - {fileID: 190210709851945390}
-  velocidade: 3
-  alcanceVisao: 5
 --- !u!136 &5068622668196940217
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -413,3 +398,59 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!143 &7809501441180522616
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5499292038707502594}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7127517715670869498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5499292038707502594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d6f79c201ab46e48aeb17ce1ec6e227, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanciaDetecao: 5
+  velocidade: 3
+--- !u!114 &7778287604122560426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5499292038707502594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 303537d962916bd4ab5b213f22e5fb46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pontosPatrulha:
+  - {fileID: 1287513936100258209}
+  - {fileID: 190210709851945390}
+  tempoEspera: 2
+  velocidade: 3

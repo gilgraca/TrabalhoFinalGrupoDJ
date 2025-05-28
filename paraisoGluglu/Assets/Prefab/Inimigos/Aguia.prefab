@@ -180,9 +180,10 @@ GameObject:
   - component: {fileID: 3097574124525300474}
   - component: {fileID: 8895768414222528417}
   - component: {fileID: 7004750643158526782}
-  - component: {fileID: 4213474526036186760}
   - component: {fileID: 8005664212532273528}
   - component: {fileID: 5391679596273955664}
+  - component: {fileID: 2959458829147604820}
+  - component: {fileID: 4213474526036186760}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Inimigo
@@ -282,25 +283,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4213474526036186760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6693572652297075246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c5c57ef103dfd44d956ab1d3e24652c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  alturaPatrulha: 5
-  raioPatrulha: 3
-  velocidadeRotacao: 1
-  raioDetecao: 2
-  cooldownAtaque: 5
-  alturaAtaque: 1.2
-  velocidadeAtaque: 1
 --- !u!54 &8005664212532273528
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -351,3 +333,35 @@ CapsuleCollider:
   m_Height: 2.0000005
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2959458829147604820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6693572652297075246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b7cfd8f27e54674fb2817af5ad86733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raioDetecao: 2
+  cooldownAtaque: 5
+  alturaAtaque: 1.2
+  velocidadeAtaque: 1
+--- !u!114 &4213474526036186760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6693572652297075246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c5c57ef103dfd44d956ab1d3e24652c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alturaPatrulha: 5
+  raioPatrulha: 3
+  velocidadeRotacao: 1
+  aAtacar: 0

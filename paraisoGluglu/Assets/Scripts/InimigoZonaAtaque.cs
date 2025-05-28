@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ZonaDanoInimigo : MonoBehaviour
+public class InimigoZonaAtaque : MonoBehaviour
 {
     // Dano que causa ao tocar
     [SerializeField] private int dano = 1;
@@ -10,13 +10,13 @@ public class ZonaDanoInimigo : MonoBehaviour
         // Verifica se colidiu com o player
         if (other.CompareTag("Player"))
         {
-            // Tenta obter o script Player
-            Player player = other.GetComponent<Player>();
+            PlayerPowerUp powerUps = other.GetComponent<PlayerPowerUp>();
+            PlayerVida playerVida = other.GetComponent<PlayerVida>();
 
-            if (player != null && !player.EstaInvencivel())
+            if (powerUps != null && !powerUps.EstaInvencivel())
             {
-                // Aplica o dano
-                player.LevarDano(dano);
+                playerVida.LevarDano(dano);
+
                 Debug.Log("Jogador levou dano do focinho/pata!");
             }
             else

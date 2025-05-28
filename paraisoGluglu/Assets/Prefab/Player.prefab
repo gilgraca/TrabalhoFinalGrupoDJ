@@ -1006,8 +1006,12 @@ GameObject:
   - component: {fileID: 3149121661702705857}
   - component: {fileID: 2503685667089322176}
   - component: {fileID: 8258035947180688233}
-  - component: {fileID: 3742789649237219189}
   - component: {fileID: 6149666350675806620}
+  - component: {fileID: 3378804944662451099}
+  - component: {fileID: 1912494435207170601}
+  - component: {fileID: 7265634185341131841}
+  - component: {fileID: 2569704439073490124}
+  - component: {fileID: 3742789649237219189}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1083,45 +1087,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &3742789649237219189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8434010047928090759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b64e8a33b12a9d4bb2f577af75df02e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp_items:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  txt_corns: {fileID: 0}
-  velocidade: 5
-  forcaSalto: 7
-  saltosMaximos: 2
-  pontoChao: {fileID: 1097347779229209040}
-  distanciaRaycast: 0.1
-  forcaDash: 15
-  tempoDash: 0.5
-  cooldownDash: 1
-  prefabPena: {fileID: 4985790192003675863, guid: 902ea783e13074942b2fbc4e2f2eb807, type: 3}
-  pontoDisparo: {fileID: 4026749351597486030}
-  disparo1: {fileID: 1506943456754610341}
-  disparo2: {fileID: 7623326501431495688}
-  cooldownAtaqueEspecial: 1
-  duracaoInvencivel: 2
-  cooldownInvencibilidade: 1
-  vidaMaxima: 5
-  duracaoInvisivel: 5
-  cooldownInvisibilidade: 1
-  animator: {fileID: 6149666350675806620}
-  cooldownToastManual: 10
 --- !u!95 &6149666350675806620
 Animator:
   serializedVersion: 7
@@ -1144,6 +1109,94 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3378804944662451099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8434010047928090759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d159a4737f01624888fd39048aad65b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp_items:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  vidaMaxima: 5
+--- !u!114 &1912494435207170601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8434010047928090759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a4c548c42a0be84faee3a186b8aa6a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidade: 5
+  forcaSalto: 7
+  saltosMaximos: 1
+  pontoChao: {fileID: 1097347779229209040}
+  distanciaRaycast: 0.1
+  animator: {fileID: 6149666350675806620}
+--- !u!114 &7265634185341131841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8434010047928090759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fce6b706dc89954ba5b67572a216f43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forcaDash: 12
+  tempoDash: 0.2
+  cooldownDash: 1
+  duracaoInvencivel: 2
+  cooldownInvencibilidade: 1
+  duracaoInvisivel: 5
+  cooldownInvisibilidade: 1
+  animator: {fileID: 0}
+--- !u!114 &2569704439073490124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8434010047928090759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad7817eafc64454aa61dba458f0d752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabPena: {fileID: 4985790192003675863, guid: 902ea783e13074942b2fbc4e2f2eb807, type: 3}
+  pontoDisparo: {fileID: 4026749351597486030}
+  disparo1: {fileID: 1506943456754610341}
+  disparo2: {fileID: 7623326501431495688}
+  cooldownAtaqueEspecial: 1
+  animator: {fileID: 6149666350675806620}
+--- !u!114 &3742789649237219189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8434010047928090759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b64e8a33b12a9d4bb2f577af75df02e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldownToastManual: 10
 --- !u!1 &8474399264530868557
 GameObject:
   m_ObjectHideFlags: 0

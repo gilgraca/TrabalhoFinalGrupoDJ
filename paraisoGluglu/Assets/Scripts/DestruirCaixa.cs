@@ -1,7 +1,7 @@
 using UnityEngine;
 
 // Script para a destruição da caixa
-public class Caixa : MonoBehaviour
+public class DestruirCaixa : MonoBehaviour
 {
     // Prefab da tábua que vai saltar
     public GameObject tabuaPrefab;
