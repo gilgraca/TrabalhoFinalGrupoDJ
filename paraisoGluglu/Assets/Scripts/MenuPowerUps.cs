@@ -7,6 +7,8 @@ public class MenuPowerUps : MonoBehaviour
     // Referência ao objeto Player na cena de jogo (só é usada quando carrega a cena)
     [SerializeField] private GameObject playerPrefab;
 
+    [SerializeField] private GameObject backgroundImage;
+
     // Referências aos toggles da UI
     [Header("Toggles de PowerUps")]
     public Toggle toggleDoubleJump;
@@ -22,6 +24,14 @@ public class MenuPowerUps : MonoBehaviour
     public static bool usarInvisibilidade = false;
     public static bool usarAtaqueEspecial = false;
 
+    private void Update()
+    {
+        if (backgroundImage != null)
+        {
+            // Rotaciona 30 graus por segundo no eixo Z
+            backgroundImage.transform.Rotate(0f, 0f, 30f * Time.deltaTime);
+        }
+    }
     public void IniciarJogo(string nomeCena)
     {
         GameManager.Instance.usarDoubleJump = toggleDoubleJump.isOn;
