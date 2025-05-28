@@ -500,11 +500,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2404902693598078277, guid: a985a00bdafbb024480b8510632406a7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.72
+      value: 1.59
       objectReference: {fileID: 0}
     - target: {fileID: 2404902693598078277, guid: a985a00bdafbb024480b8510632406a7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.3944817
+      value: 5.46
       objectReference: {fileID: 0}
     - target: {fileID: 2404902693598078277, guid: a985a00bdafbb024480b8510632406a7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -557,7 +557,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3354175569778590407, guid: a799ea09bb360e9449de66df4d809caf, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 78
+      value: 86.7
       objectReference: {fileID: 0}
     - target: {fileID: 3494217458760205185, guid: a799ea09bb360e9449de66df4d809caf, type: 3}
       propertyPath: m_IsActive
@@ -992,7 +992,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3242750395836560666, guid: a799ea09bb360e9449de66df4d809caf, type: 3}
   m_PrefabInstance: {fileID: 789891914}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1239650857}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -1635,11 +1635,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1239650857 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3494217458760205185, guid: a799ea09bb360e9449de66df4d809caf, type: 3}
-  m_PrefabInstance: {fileID: 789891914}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1457476784 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4549975832699160078, guid: a799ea09bb360e9449de66df4d809caf, type: 3}
@@ -1657,7 +1652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35ba20eaee7dd1d42a35e9376d6e0d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textoPontuacao: {fileID: 0}
+  textoPontuacao: {fileID: 886121446}
 --- !u!4 &1550411755 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3149121661702705857, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
@@ -1913,14 +1908,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1641694510}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92ad2c5a57a38134d832a74c2751843f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toastUI: {fileID: 1239650857}
-  moveDistance: 500
-  moveDuration: 3
+  toastUI: {fileID: 1641694510}
+  moveDistance: 220
+  moveDuration: 0.3
 --- !u!1 &1654149702 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3741154424447236839, guid: a799ea09bb360e9449de66df4d809caf, type: 3}

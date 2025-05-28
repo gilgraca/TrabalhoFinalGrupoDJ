@@ -69,10 +69,10 @@ public class NivelTracker : MonoBehaviour
         Debug.Log("Toast parado (0.5s).");
 
         // Calcula a posição final
-        Vector3 targetPosition = startPosition + new Vector3(250f, 0, 0);
+        Vector3 targetPosition = startPosition + new Vector3(220f, 0, 0);
 
         float elapsed = 0f;
-        float duration = 2f;
+        float duration = 0.7f;
 
         // Move para o lado
         Debug.Log("Toast a mover para o lado...");

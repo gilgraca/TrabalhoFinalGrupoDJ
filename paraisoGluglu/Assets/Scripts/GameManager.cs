@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     // --- DADOS DO JOGADOR ---
 
     // Vida atual
-    public int vidaJogador = 3;
+    public int vidaJogador = 5;
 
     // Quantidade de milhos recolhidos
     public int milhoTotal = 0;

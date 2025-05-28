@@ -11,6 +11,8 @@ public class ItenMilho : MonoBehaviour
     // Velocidade de rotação da moeda (graus por segundo)
     public Vector3 rotationSpeed = new Vector3(0, 100, 0);
 
+    // Flag para evitar múltiplas ativações do trigger
+    private bool foiApanhado = false;
     void Start()
     {
         // Referência ao AudioSource ligado à moeda
@@ -25,10 +27,17 @@ public class ItenMilho : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        // Se já foi apanhado, ignora
+        if (foiApanhado)
+            return;
+
         // Garante que só o jogador pode apanhar a moeda
         if (other.GetComponent<PlayerToast>() == null)
             return;
 
+        // Marca como apanhado
+        foiApanhado = true; 
+        
         // Adiciona os pontos ao ScoreManager
         ScoreManager.AddPoints(pointToAdd);
 

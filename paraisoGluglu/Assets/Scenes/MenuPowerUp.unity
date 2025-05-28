@@ -522,7 +522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53df4379ae297af45a42a22d4c033e92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu: 
+  menu: Menu
   vidaJogador: 5
   milhoTotal: 0
   usarDoubleJump: 0
