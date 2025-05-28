@@ -32,6 +32,8 @@ public class Caixa : MonoBehaviour
 
             // Obtém o Rigidbody e ativa
             Rigidbody rb = tabua.GetComponent<Rigidbody>();
+            
+            // Garante que o Rigidbody está ativo
             rb.isKinematic = false;
 
             // Aplica força de explosão
@@ -43,8 +45,6 @@ public class Caixa : MonoBehaviour
             // LOG para verificar destruição futura
             //Debug.Log("Tábua criada e será destruída em 3 segundos.");
         }
-
-
         // Destroi o objeto da caixa
         Destroy(gameObject);
     }

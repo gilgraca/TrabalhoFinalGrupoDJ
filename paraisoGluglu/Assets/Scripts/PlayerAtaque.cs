@@ -1,7 +1,7 @@
 using UnityEngine;
 
 // Script responsável pelo movimento e deteção de colisão da pena
-public class Pena : MonoBehaviour
+public class PlayerAtaque : MonoBehaviour
 {
     // Velocidade da pena
     public float velocidade = 10f;
@@ -45,50 +45,52 @@ public class Pena : MonoBehaviour
         }
     }
 
+    // Quando o ataque colide com algo
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Pena colidiu com: " + other.name);
+        // Mostra na consola com quem colidiu
+        Debug.Log("Ataque colidiu com: " + other.name);
 
-        if (other.CompareTag("Inimigo"))
+        // Tenta obter o script de vida diretamente no objeto atingido
+        InimigoVida vida = other.GetComponent<InimigoVida>();
+
+        // Se não encontrar, tenta no objeto pai (caso o script esteja no pai)
+        if (vida == null)
+            vida = other.GetComponentInParent<InimigoVida>();
+
+        // Se encontrou o script de vida
+        if (vida != null)
         {
-            // Tenta inimigo terrestre
-            InimigoTerrestre terrestre = other.GetComponent<InimigoTerrestre>();
-            if (terrestre == null)
-                terrestre = other.GetComponentInParent<InimigoTerrestre>();
+            // Aplica dano ao inimigo
+            vida.LevarDano(dano);
 
-            if (terrestre != null)
-            {
-                terrestre.ReceberDano(dano);
-                Debug.Log("Dano causado ao inimigo terrestre");
-            }
+            // Mostra feedback de dano na consola
+            Debug.Log("Dano causado ao inimigo " + other.name + ": " + dano);
 
-            // Tenta inimigo aéreo
-            InimigoAereo aereo = other.GetComponent<InimigoAereo>();
-            if (aereo == null)
-                aereo = other.GetComponentInParent<InimigoAereo>();
-
-            if (aereo != null)
-            {
-                aereo.ReceberDano(dano);
-                Debug.Log("Dano causado ao inimigo aéreo");
-            }
-
+            // Destrói o ataque após o impacto
             Destroy(gameObject);
+            return;
         }
-        // Se atingir uma caixa
+
+        // Se o ataque colide com um objeto com a tag "Caixa"
         if (other.CompareTag("Caixa"))
         {
-            // Verifica se tem o script Caixa
+            // Tenta obter o script da caixa
             Caixa caixa = other.GetComponent<Caixa>();
+
+            // Se encontrou a caixa
             if (caixa != null)
             {
+                // Parte a caixa
                 caixa.QuebrarCaixa();
-                //Debug.Log("Caixa destruída por pena!");
+
+                // Feedback na consola
+                Debug.Log("Caixa destruída pelo ataque!");
             }
 
-            Destroy(gameObject); // destrói a pena
+            // Destrói o ataque após impactar a caixa
+            Destroy(gameObject);
         }
     }
-
 }
 

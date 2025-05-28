@@ -27,8 +27,6 @@ public class InimigoAereo : MonoBehaviour
     private float angulo = 0f;
     // Velocidade da descida/subida do ataque
     public float velocidadeAtaque = 1f;
-    // Vida do inimigo (podes ajustar o valor inicial)
-    [SerializeField] private int vida = 3;
     void Start()
     {
         // Guarda a posição inicial como centro do círculo
@@ -118,19 +116,5 @@ public class InimigoAereo : MonoBehaviour
         yield return new WaitForSeconds(cooldownAtaque);
         podeAtacar = true;
         //Debug.Log("Pode atacar novamente.");
-    }
-
-    // Quando leva dano
-    public void ReceberDano(int dano)
-    {
-        vida -= dano;
-        //Debug.Log("Inimigo aéreo levou dano. Vida restante: " + vida);
-
-        if (vida <= 0)
-        {
-            // Aqui também podes pôr efeitos visuais
-            Destroy(gameObject);
-            //Debug.Log("Inimigo aéreo morreu!");
-        }
     }
 }

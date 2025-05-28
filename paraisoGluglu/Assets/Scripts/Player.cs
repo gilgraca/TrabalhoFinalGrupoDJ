@@ -130,7 +130,7 @@ public class Player : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, rotacaoAlvo, Time.deltaTime * 10f); // 10f é a velocidade da rotação, ajusta se quiseres
 
             // Log para ver a rotação a cada frame
-            Debug.Log("Rotação suavizada para: " + transform.rotation.eulerAngles);
+            //Debug.Log("Rotação suavizada para: " + transform.rotation.eulerAngles);
         }
         // Detecção de chão com Raycast
         if (podeVerificarChao)
@@ -198,11 +198,11 @@ public class Player : MonoBehaviour
             Vector3 direcaoDisparo = transform.forward;
 
             // Atribui a direção à pena
-            novaPena.GetComponent<Pena>().DefinirDirecao(direcaoDisparo);
+            novaPena.GetComponent<PlayerAtaque>().DefinirDirecao(direcaoDisparo);
             animator.SetTrigger("attack");
 
 
-            Debug.Log("Pena disparada com botão esquerdo!");
+            //Debug.Log("Pena disparada com botão esquerdo!");
         }
         // Ataque especial (botão direito) com cooldown
         if (Input.GetMouseButtonDown(1) && ataqueEspecialDisponivel)
@@ -218,7 +218,7 @@ public class Player : MonoBehaviour
             CriarPena(disparo2.position, direcao);
             animator.SetTrigger("spAttack");
 
-            Debug.Log("Ataque especial com 3 penas disparado!");
+            //Debug.Log("Ataque especial com 3 penas disparado!");
 
             // Inicia o cooldown do ataque especial
             StartCoroutine(ReporCooldownAtaqueEspecial());
@@ -316,7 +316,7 @@ public class Player : MonoBehaviour
         estaADashar = true;
         dashDisponivel = false;
 
-        Debug.Log("Dash dado");
+        //Debug.Log("Dash dado");
 
         // Determina a direção do dash com base no input atual (Horizontal/Vertical)
         Vector3 direcao = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
@@ -342,7 +342,7 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(cooldownDash);
         dashDisponivel = true;
 
-        Debug.Log("Dash disponível");
+        //Debug.Log("Dash disponível");
     }
     // Corrotina para gerir o cooldown do ataque especial
     private IEnumerator ReporCooldownAtaqueEspecial()
@@ -352,7 +352,7 @@ public class Player : MonoBehaviour
 
         // Ativa novamente o ataque especial
         ataqueEspecialDisponivel = true;
-        Debug.Log("Ataque especial disponível novamente!");
+        //Debug.Log("Ataque especial disponível novamente!");
     }
 
     // Cria uma pena com direção específica// Cria uma pena a partir de uma posição e direção específicas
@@ -360,7 +360,7 @@ public class Player : MonoBehaviour
     {
         GameObject novaPena = Instantiate(prefabPena, posicao, Quaternion.identity);
 
-        Pena penaScript = novaPena.GetComponent<Pena>();
+        PlayerAtaque penaScript = novaPena.GetComponent<PlayerAtaque>();
         if (penaScript != null)
         {
             penaScript.DefinirDirecao(direcao);
@@ -371,7 +371,7 @@ public class Player : MonoBehaviour
         // Verifica se já está invencível ou se está em cooldown
         if (estaInvencivel || !invencibilidadeDisponivel)
         {
-            Debug.Log("Não é possível ativar invencibilidade agora.");
+            //Debug.Log("Não é possível ativar invencibilidade agora.");
             return;
         }
 
@@ -384,7 +384,7 @@ public class Player : MonoBehaviour
     private IEnumerator InvencivelTemporariamente()
     {
         estaInvencivel = true;
-        Debug.Log("INVENCIBILIDADE ATIVADA");
+        //Debug.Log("INVENCIBILIDADE ATIVADA");
 
         // Piscar como efeito visual (opcional)
         float tempoPassado = 0f;
@@ -402,13 +402,13 @@ public class Player : MonoBehaviour
         }
 
         estaInvencivel = false;
-        Debug.Log("INVENCIBILIDADE TERMINOU");
+        //Debug.Log("INVENCIBILIDADE TERMINOU");
 
         // Espera o tempo de cooldown antes de permitir outro invencibilidade
         yield return new WaitForSeconds(cooldownInvencibilidade);
         invencibilidadeDisponivel = true;
 
-        Debug.Log("Invencibilidade disponível");
+        //Debug.Log("Invencibilidade disponível");
     }
     public bool EstaInvencivel()
     {
@@ -418,7 +418,7 @@ public class Player : MonoBehaviour
     {
         if (estaInvencivel)
         {
-            Debug.Log("Jogador é invencível. Dano ignorado.");
+            //Debug.Log("Jogador é invencível. Dano ignorado.");
             return;
         }
 
@@ -439,7 +439,7 @@ public class Player : MonoBehaviour
     }
     private void Morrer()
     {
-        Debug.Log("JOGADOR MORREU!");
+        //Debug.Log("JOGADOR MORREU!");
         gameObject.SetActive(false);
     }
     public void AtivarInvisibilidade()
@@ -447,7 +447,7 @@ public class Player : MonoBehaviour
         // Verifica se já está invisível ou se está em cooldown
         if (estaInvisivel || !invisibilidadeDisponivel)
         {
-            Debug.Log("Não é possível ativar invisibilidade agora.");
+            //Debug.Log("Não é possível ativar invisibilidade agora.");
             return;
         }
 
@@ -461,7 +461,7 @@ public class Player : MonoBehaviour
     private IEnumerator InvisivelTemporariamente()
     {
         estaInvisivel = true;
-        Debug.Log("INVISIBILIDADE ATIVADA");
+        //Debug.Log("INVISIBILIDADE ATIVADA");
         // Referência ao material do renderer
         Material mat = meuRenderer.material;
         // === MODO TRANSPARENTE ===
@@ -493,12 +493,12 @@ public class Player : MonoBehaviour
         corOriginal.a = 1f;
         mat.color = corOriginal;
         estaInvisivel = false;
-        Debug.Log("Invisibilidade terminou");
+        //Debug.Log("Invisibilidade terminou");
         // Espera o tempo de cooldown antes de permitir outro invisibilidade
         yield return new WaitForSeconds(cooldownInvisibilidade);
         invisibilidadeDisponivel = true;
 
-        Debug.Log("Invisibilidade disponível");
+        //Debug.Log("Invisibilidade disponível");
     }
 
     public bool EstaInvisivel()
@@ -515,6 +515,6 @@ public class Player : MonoBehaviour
         // Ativa novamente
         podeAtivarToastManual = true;
 
-        Debug.Log("Toast manual disponível novamente.");
+        //Debug.Log("Toast manual disponível novamente.");
     }
 }

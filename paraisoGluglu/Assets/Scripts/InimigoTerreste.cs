@@ -21,8 +21,6 @@ public class InimigoTerrestre : MonoBehaviour
     private bool aVoltarAPatrulhar = false;
     // Guarda o estado anterior para logs
     private EstadoInimigo estadoAnterior;
-    // Vida do inimigo (podes ajustar o valor inicial)
-    [SerializeField] private int vida = 3;
 
     // PLAYER
     // Referência ao jogador
@@ -170,19 +168,5 @@ public class InimigoTerrestre : MonoBehaviour
         aVoltarAPatrulhar = false;
 
         //Debug.Log("Inimigo voltou a patrulhar.");
-    }
-
-    // Quando leva dano
-    public void ReceberDano(int dano)
-    {
-        vida -= dano;
-        //Debug.Log("Inimigo terrestre levou dano. Vida restante: " + vida);
-
-        if (vida <= 0)
-        {
-            // Aqui podes pôr animação ou efeitos
-            Destroy(gameObject);
-            //Debug.Log("Inimigo terrestre morreu!");
-        }
     }
 }
