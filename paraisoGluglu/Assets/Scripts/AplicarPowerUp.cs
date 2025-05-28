@@ -4,20 +4,26 @@ public class AplicarPowerUps : MonoBehaviour
 {
     void Start()
     {
-        // Encontra o jogador na cena
         GameObject jogador = GameObject.FindGameObjectWithTag("Player");
 
-        // Referências aos scripts do jogador
         PlayerPowerUp powerUp = jogador.GetComponent<PlayerPowerUp>();
         PlayerAtaque ataque = jogador.GetComponent<PlayerAtaque>();
 
-        // Aplica os power-ups com base nas escolhas do menu
-        powerUp.SetDoubleJump(MenuPowerUps.usarDoubleJump);
-        powerUp.SetDash(MenuPowerUps.usarDash);
-        powerUp.SetInvencibilidade(MenuPowerUps.usarInvencibilidade);
-        powerUp.SetInvisibilidade(MenuPowerUps.usarInvisibilidade);
-        ataque.SetAtaqueEspecial(MenuPowerUps.usarAtaqueEspecial);
+        powerUp.SetDoubleJump(GameManager.Instance.usarDoubleJump);
+        powerUp.SetDash(GameManager.Instance.usarDash);
+        powerUp.SetInvencibilidade(GameManager.Instance.usarInvencibilidade);
+        powerUp.SetInvisibilidade(GameManager.Instance.usarInvisibilidade);
+        ataque.SetAtaqueEspecial(GameManager.Instance.usarAtaqueEspecial);
 
-        Debug.Log("PowerUps aplicados do menu inicial.");
+        // Aplicar vida guardada ao PlayerVida
+        PlayerVida vida = jogador.GetComponent<PlayerVida>();
+        if (vida != null)
+        {
+            vida.SetVida(GameManager.Instance.vidaJogador);
+        }
+
+        // Debug opcional
+        Debug.Log("PowerUps e vida aplicados com GameManager.");
     }
+
 }

@@ -60,6 +60,12 @@ public class PlayerPowerUp : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         meuRenderer = GetComponentInChildren<Renderer>();
         playerMovimento = GetComponent<PlayerMovimento>();
+
+        // Carrega os estados dos power-ups guardados no GameManager
+        podeDash = GameManager.Instance.usarDash;
+        podeDoubleJump = GameManager.Instance.usarDoubleJump;
+        podeInvencibilidade = GameManager.Instance.usarInvencibilidade;
+        podeInvisibilidade = GameManager.Instance.usarInvisibilidade;
     }
 
     // Update is called once per frame

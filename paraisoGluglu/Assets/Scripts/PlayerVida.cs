@@ -30,6 +30,9 @@ public class PlayerVida : MonoBehaviour
         // Reduz a vida
         vidaAtual -= dano;
 
+        // Atualiza também o GameManager
+        GameManager.Instance.vidaJogador = vidaAtual;
+
         // Atualiza o HUD
         if (vidaAtual >= 0 && vidaAtual < hp_items.Length)
         {
@@ -64,4 +67,20 @@ public class PlayerVida : MonoBehaviour
     {
         return vidaMaxima;
     }
+    // Método para definir a vida atual do jogador a partir de um valor externo
+    public void SetVida(int novaVida)
+    {
+        // Garante que o valor não ultrapassa os limites
+        vidaAtual = Mathf.Clamp(novaVida, 0, vidaMaxima);
+
+        // Atualiza o HUD para refletir a nova vida
+        for (int i = 0; i < hp_items.Length; i++)
+        {
+            // Ativa os itens de vida até ao valor atual
+            hp_items[i].SetActive(i < vidaAtual);
+        }
+
+        Debug.Log("Vida do jogador definida para: " + vidaAtual);
+    }
+
 }

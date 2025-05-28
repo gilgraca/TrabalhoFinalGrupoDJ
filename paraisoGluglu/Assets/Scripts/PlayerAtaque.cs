@@ -24,6 +24,11 @@ public class PlayerAtaque : MonoBehaviour
 
     // Animações
     [SerializeField] private Animator animator;
+    void Start()
+    {
+        // Carrega o estado do ataque especial guardado no GameManager
+        podeAtaqueEspecial = GameManager.Instance.usarAtaqueEspecial;
+    }
 
     void Update()
     {

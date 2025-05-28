@@ -22,17 +22,37 @@ public class MenuPowerUps : MonoBehaviour
     public static bool usarInvisibilidade = false;
     public static bool usarAtaqueEspecial = false;
 
-    // Método chamado pelo botão "Começar Jogo"
     public void IniciarJogo(string nomeCena)
     {
-        // Lê o estado dos toggles e guarda nas variáveis estáticas
-        usarDoubleJump = toggleDoubleJump.isOn;
-        usarDash = toggleDash.isOn;
-        usarInvencibilidade = toggleInvencibilidade.isOn;
-        usarInvisibilidade = toggleInvisibilidade.isOn;
-        usarAtaqueEspecial = toggleAtaqueEspecial.isOn;
-
-        // Carrega a cena do jogo
+        GameManager.Instance.usarDoubleJump = toggleDoubleJump.isOn;
+        GameManager.Instance.usarDash = toggleDash.isOn;
+        GameManager.Instance.usarInvencibilidade = toggleInvencibilidade.isOn;
+        GameManager.Instance.usarInvisibilidade = toggleInvisibilidade.isOn;
+        GameManager.Instance.usarAtaqueEspecial = toggleAtaqueEspecial.isOn;
         SceneManager.LoadScene(nomeCena);
+    }
+    public void DefinirAtaqueEspecial(bool estado)
+    {
+        GameManager.Instance.usarAtaqueEspecial = estado;
+    }
+
+    public void DefinirDash(bool estado)
+    {
+        GameManager.Instance.usarDash = estado;
+    }
+
+    public void DefinirDoubleJump(bool estado)
+    {
+        GameManager.Instance.usarDoubleJump = estado;
+    }
+
+    public void DefinirInvencibilidade(bool estado)
+    {
+        GameManager.Instance.usarInvencibilidade = estado;
+    }
+
+    public void DefinirInvisibilidade(bool estado)
+    {
+        GameManager.Instance.usarInvisibilidade = estado;
     }
 }

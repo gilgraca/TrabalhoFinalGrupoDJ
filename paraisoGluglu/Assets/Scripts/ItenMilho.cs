@@ -32,6 +32,9 @@ public class ItenMilho : MonoBehaviour
         // Adiciona os pontos ao ScoreManager
         ScoreManager.AddPoints(pointToAdd);
 
+        // Atualiza o total de milhos apanhados
+        GameManager.Instance.milhoTotal += 1;
+
         // Toca o som de apanhar moeda
         //CoinPickupEffect.Play();
 
