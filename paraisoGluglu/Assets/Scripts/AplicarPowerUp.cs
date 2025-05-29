@@ -22,8 +22,8 @@ public class AplicarPowerUps : MonoBehaviour
             vida.SetVida(GameManager.Instance.vidaJogador);
         }
 
-        // Debug opcional
-        Debug.Log("PowerUps e vida aplicados com GameManager.");
+        //Debug opcional
+        //Debug.Log("PowerUps e vida aplicados com GameManager.");
     }
 
 }

@@ -64,6 +64,9 @@ public class PlayerPowerUp : MonoBehaviour
     // Material transparente (invisível)
     [SerializeField] private Material materialTransparente;
 
+    // Material de dano (para piscar durante invencibilidade)
+    [SerializeField] private Material materialDano;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -93,7 +96,7 @@ public class PlayerPowerUp : MonoBehaviour
 
                 jaUsouDoubleJump = true;
 
-                Debug.Log("DOUBLE JUMP ativado!");
+                //Debug.Log("DOUBLE JUMP ativado!");
             }
         }
         // DASH (Shift)
@@ -194,33 +197,46 @@ public class PlayerPowerUp : MonoBehaviour
     }
     private IEnumerator InvencivelTemporariamente()
     {
+        // Marca o jogador como invencível
         estaInvencivel = true;
-        //Debug.Log("INVENCIBILIDADE ATIVADA");
 
-        // Piscar como efeito visual (opcional)
+        //Debug.Log("INVENCIBILIDADE ATIVADA — começa a piscar entre materiais");
+
         float tempoPassado = 0f;
+
+        // Enquanto a duração da invencibilidade não for atingida
         while (tempoPassado < duracaoInvencivel)
         {
-            if (meuRenderer != null)
+            // Se o renderer e os dois materiais forem válidos
+            if (meuRenderer != null && materialNormal != null && materialDano != null)
             {
-                meuRenderer.enabled = false; // invisível
+                // Troca para o material de dano
+                meuRenderer.material = materialDano;
+                // Espera 0.1 segundos
                 yield return new WaitForSeconds(0.1f);
-                meuRenderer.enabled = true;  // visível
+
+                // Troca de volta para o material normal
+                meuRenderer.material = materialNormal;
+                // Espera mais 0.1 segundos
                 yield return new WaitForSeconds(0.1f);
             }
 
+            // Soma 0.2 segundos ao tempo total
             tempoPassado += 0.2f;
         }
 
+        // Termina o estado de invencibilidade
         estaInvencivel = false;
-        //Debug.Log("INVENCIBILIDADE TERMINOU");
 
-        // Espera o tempo de cooldown antes de permitir outro invencibilidade
+        //Debug.Log("INVENCIBILIDADE TERMINOU — material normal restaurado");
+
+        // Espera cooldown para poder usar outra vez
         yield return new WaitForSeconds(cooldownInvencibilidade);
         invencibilidadeDisponivel = true;
 
-        //Debug.Log("Invencibilidade disponível");
+        //Debug.Log("Invencibilidade disponível novamente");
     }
+
     public bool EstaInvencivel()
     {
         return estaInvencivel;
@@ -258,7 +274,7 @@ public class PlayerPowerUp : MonoBehaviour
             meuRenderer.material = materialTransparente;
         }
 
-        Debug.Log("INVISIBILIDADE ATIVADA — material transparente aplicado");
+        //Debug.Log("INVISIBILIDADE ATIVADA — material transparente aplicado");
 
         // Espera a duração da invisibilidade
         yield return new WaitForSeconds(duracaoInvisivel);
@@ -269,7 +285,7 @@ public class PlayerPowerUp : MonoBehaviour
             meuRenderer.material = materialNormal;
         }
 
-        Debug.Log("INVISIBILIDADE TERMINADA — material normal restaurado");
+        //Debug.Log("INVISIBILIDADE TERMINADA — material normal restaurado");
 
         // Marca como visível novamente
         estaInvisivel = false;
@@ -278,7 +294,7 @@ public class PlayerPowerUp : MonoBehaviour
         yield return new WaitForSeconds(cooldownInvisibilidade);
         invisibilidadeDisponivel = true;
 
-        Debug.Log("Invisibilidade disponível novamente");
+        //Debug.Log("Invisibilidade disponível novamente");
     }
 
     public bool EstaInvisivel()

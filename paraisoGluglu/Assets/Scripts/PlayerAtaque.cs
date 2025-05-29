@@ -89,7 +89,7 @@ public class PlayerAtaque : MonoBehaviour
         ataqueBasicoDisponivel = true;
 
         // Log para testes
-        Debug.Log("Ataque básico disponível novamente!");
+        //Debug.Log("Ataque básico disponível novamente!");
     }
 
 

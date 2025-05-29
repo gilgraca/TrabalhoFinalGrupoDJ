@@ -40,7 +40,7 @@ public class PenaAtaque : MonoBehaviour
         float distanciaPercorrida = Vector3.Distance(posicaoInicial, transform.position);
         if (distanciaPercorrida >= distanciaMaxima)
         {
-            Debug.Log("Pena atingiu a distância máxima. Vai desaparecer.");
+            //Debug.Log("Pena atingiu a distância máxima. Vai desaparecer.");
             Destroy(gameObject);
         }
     }
@@ -49,7 +49,7 @@ public class PenaAtaque : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Mostra na consola com quem colidiu
-        Debug.Log("Ataque colidiu com: " + other.name);
+        //Debug.Log("Ataque colidiu com: " + other.name);
 
         // Tenta obter o script de vida diretamente no objeto atingido
         InimigoVida vida = other.GetComponent<InimigoVida>();
@@ -65,7 +65,7 @@ public class PenaAtaque : MonoBehaviour
             vida.LevarDano(dano);
 
             // Mostra feedback de dano na consola
-            Debug.Log("Dano causado ao inimigo " + other.name + ": " + dano);
+            //Debug.Log("Dano causado ao inimigo " + other.name + ": " + dano);
 
             // Destrói o ataque após o impacto
             Destroy(gameObject);
@@ -85,7 +85,7 @@ public class PenaAtaque : MonoBehaviour
                 caixa.QuebrarCaixa();
 
                 // Feedback na consola
-                Debug.Log("Caixa destruída pelo ataque!");
+                //Debug.Log("Caixa destruída pelo ataque!");
             }
 
             // Destrói o ataque após impactar a caixa

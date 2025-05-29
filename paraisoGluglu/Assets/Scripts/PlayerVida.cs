@@ -39,7 +39,7 @@ public class PlayerVida : MonoBehaviour
             hp_items[vidaAtual].SetActive(false);
         }
 
-        Debug.Log("Jogador levou " + dano + " de dano. Vida atual: " + vidaAtual);
+        //Debug.Log("Jogador levou " + dano + " de dano. Vida atual: " + vidaAtual);
 
         powerUps?.AtivarInvencibilidade();
 
@@ -80,7 +80,7 @@ public class PlayerVida : MonoBehaviour
             hp_items[i].SetActive(i < vidaAtual);
         }
 
-        Debug.Log("Vida do jogador definida para: " + vidaAtual);
+        //Debug.Log("Vida do jogador definida para: " + vidaAtual);
     }
 
 }

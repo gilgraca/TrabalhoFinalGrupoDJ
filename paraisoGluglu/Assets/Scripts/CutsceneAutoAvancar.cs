@@ -77,7 +77,7 @@ public class CutsceneAutoAvancarComBarra : MonoBehaviour
         jaAvancou = true;
 
         // Log para testes
-        Debug.Log("Avançar para cena: " + proximaCena + " | Usar loading? " + usarLoading);
+        //Debug.Log("Avançar para cena: " + proximaCena + " | Usar loading? " + usarLoading);
 
         if (usarLoading)
         {

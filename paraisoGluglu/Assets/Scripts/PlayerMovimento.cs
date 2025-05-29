@@ -126,7 +126,7 @@ public class PlayerMovimento : MonoBehaviour
             podeVerificarChao = false;
             Invoke("AtivarDeteccaoChao", 0.2f);
 
-            // Debug.Log("Saltos disponíveis: " + saltosDisponiveis);
+            //Debug.Log("Saltos disponíveis: " + saltosDisponiveis);
 
         }
         // Pulo variável (se largar a tecla a meio do salto, corta altura)

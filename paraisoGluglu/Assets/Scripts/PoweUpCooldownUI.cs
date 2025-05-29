@@ -23,7 +23,7 @@ public class PowerUpCooldownUI : MonoBehaviour
         imagemCooldown.fillAmount = 1f;
 
         // Log para testes
-        Debug.Log("Cooldown iniciado: " + tempo + "s");
+        //Debug.Log("Cooldown iniciado: " + tempo + "s");
     }
 
     void Update()
@@ -46,7 +46,7 @@ public class PowerUpCooldownUI : MonoBehaviour
             imagemCooldown.fillAmount = 0f;
 
             // Log para testes
-            Debug.Log("Cooldown terminado!");
+            //Debug.Log("Cooldown terminado!");
         }
     }
 }

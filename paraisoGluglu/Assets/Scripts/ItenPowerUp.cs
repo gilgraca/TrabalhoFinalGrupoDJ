@@ -24,11 +24,11 @@ public class ItemPowerUp : MonoBehaviour
         {
             case TipoPowerUp.Invencibilidade:
                 jogadorPowerUps.AtivarInvencibilidade();
-                Debug.Log("Power-up de Invencibilidade ativado!");
+                //Debug.Log("Power-up de Invencibilidade ativado!");
                 break;
             case TipoPowerUp.Invisibilidade:
                 jogadorPowerUps.AtivarInvisibilidade();
-                Debug.Log("Power-up de Invisibilidade ativado!");
+                //Debug.Log("Power-up de Invisibilidade ativado!");
                 break;
         }
 

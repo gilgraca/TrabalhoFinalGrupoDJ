@@ -16,7 +16,7 @@ public class PlayerToast : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I) && podeAtivarToastManual)
         {
             // Log de teste para consola
-            Debug.Log("Tecla I pressionada — toast ativado manualmente.");
+            //Debug.Log("Tecla I pressionada — toast ativado manualmente.");
 
             // Ativa o toast
             FindFirstObjectByType<NivelTracker>()?.MostrarToastManual();

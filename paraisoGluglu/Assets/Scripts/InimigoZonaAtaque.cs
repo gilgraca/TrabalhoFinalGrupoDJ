@@ -17,11 +17,11 @@ public class InimigoZonaAtaque : MonoBehaviour
             {
                 playerVida.LevarDano(dano);
 
-                Debug.Log("Jogador levou dano do focinho/pata!");
+                //Debug.Log("Jogador levou dano do focinho/pata!");
             }
             else
             {
-                Debug.Log("Jogador tocado mas está invencível.");
+                //Debug.Log("Jogador tocado mas está invencível.");
             }
         }
     }

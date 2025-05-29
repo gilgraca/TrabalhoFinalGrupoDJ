@@ -12,7 +12,7 @@ public class GerenciadorDeCenas : MonoBehaviour
     // Chamado por botão, trigger ou ao fim da cutscene
     public void CarregarProximaCena()
     {
-        Debug.Log("A carregar cena: " + proximaCena + " | Usar loading? " + usarLoading);
+        //Debug.Log("A carregar cena: " + proximaCena + " | Usar loading? " + usarLoading);
 
         if (usarLoading)
         {
