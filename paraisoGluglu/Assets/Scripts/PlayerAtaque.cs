@@ -48,7 +48,9 @@ public class PlayerAtaque : MonoBehaviour
             novaPena.GetComponent<PenaAtaque>().DefinirDirecao(direcaoDisparo);
 
             // Animação
-            animator.SetTrigger("attack");
+            animator.SetBool("isAttacking", true);
+            // Desativa a animação após um tempo
+            StartCoroutine(DesativarBool("isAttacking", 0.5f));
 
             //Debug.Log("Pena disparada com botão esquerdo!");
         }
@@ -79,11 +81,21 @@ public class PlayerAtaque : MonoBehaviour
         CriarPena(disparo2.position, direcao);
 
         // Animação
-        animator.SetTrigger("spAttack");
+        animator.SetBool("isSpAttack", true);
+        // Desativa a animação após um tempo
+        StartCoroutine(DesativarBool("isSpAttack", 0.5f));
 
         // Inicia o cooldown
         StartCoroutine(ReporCooldownAtaqueEspecial());
     }
+
+    // Desativa o bool após um tempo
+    private IEnumerator DesativarBool(string nomeBool, float tempo)
+    {
+        yield return new WaitForSeconds(tempo);
+        animator.SetBool(nomeBool, false);
+    }
+
 
     // Corrotina para o cooldown
     private IEnumerator ReporCooldownAtaqueEspecial()

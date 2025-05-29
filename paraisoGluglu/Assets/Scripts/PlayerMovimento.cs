@@ -139,14 +139,14 @@ public class PlayerMovimento : MonoBehaviour
         {
             jaSaltou = false;
         }
-        if (rb.linearVelocity.x > 0)
-        {
-            animator.SetFloat("speed", rb.linearVelocity.x);
-        }
-        else if (rb.linearVelocity.z > 0)
-        {
-            animator.SetFloat("speed", rb.linearVelocity.z);
-        }
+        // Calcula a velocidade horizontal total (sem contar com o Y)
+        // Isto assegura que o valor é sempre positivo e correto para animações de andar/parar
+        float velocidadeHorizontal = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z).magnitude;
+
+        // Define o valor da "speed" no Animator com base na velocidade horizontal total
+        animator.SetFloat("speed", velocidadeHorizontal);
+
+        // Define também a velocidade vertical (caso tenhas animações para saltar/cair)
         animator.SetFloat("verticalspeed", rb.linearVelocity.y);
     }
     // Retorna se o jogador está ou não no chão (para outros scripts)
