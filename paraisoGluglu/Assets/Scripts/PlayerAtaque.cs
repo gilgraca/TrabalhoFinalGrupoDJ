@@ -24,6 +24,11 @@ public class PlayerAtaque : MonoBehaviour
 
     // Animações
     [SerializeField] private Animator animator;
+
+    [SerializeField] private PowerUpCooldownUI ataqueEspecialCooldownUI;
+
+    [SerializeField] private PowerUpCooldownUI ataqueNormalCooldownUI;
+
     void Start()
     {
         // Carrega o estado do ataque especial guardado no GameManager
@@ -87,6 +92,11 @@ public class PlayerAtaque : MonoBehaviour
 
         // Inicia o cooldown
         StartCoroutine(ReporCooldownAtaqueEspecial());
+
+        // Cooldown visual do ataque especial
+        if (ataqueEspecialCooldownUI != null)
+            ataqueEspecialCooldownUI.IniciarCooldown(cooldownAtaqueEspecial);
+
     }
 
     // Desativa o bool após um tempo

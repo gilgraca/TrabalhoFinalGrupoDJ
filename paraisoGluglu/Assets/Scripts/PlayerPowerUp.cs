@@ -54,6 +54,12 @@ public class PlayerPowerUp : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
+    // Referências visuais dos cooldowns
+    [SerializeField] private PowerUpCooldownUI dashCooldownUI;
+    [SerializeField] private PowerUpCooldownUI invisibilidadeCooldownUI;
+    [SerializeField] private PowerUpCooldownUI invencibilidadeCooldownUI;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -121,6 +127,11 @@ public class PlayerPowerUp : MonoBehaviour
         // Marca como indisponível e começa o dash
         dashDisponivel = false;
         StartCoroutine(FazerDash());
+
+        // Cooldown visual do dash
+        if (dashCooldownUI != null)
+            dashCooldownUI.IniciarCooldown(cooldownDash + tempoDash);
+
     }
     // Dash temporário com cooldown
     private System.Collections.IEnumerator FazerDash()
@@ -171,6 +182,11 @@ public class PlayerPowerUp : MonoBehaviour
 
         // Inicia o efeito
         StartCoroutine(InvencivelTemporariamente());
+
+        // Cooldown visual da invencibilidade
+        if (invencibilidadeCooldownUI != null)
+            invencibilidadeCooldownUI.IniciarCooldown(cooldownInvencibilidade + duracaoInvencivel);
+
     }
     private IEnumerator InvencivelTemporariamente()
     {
@@ -219,6 +235,11 @@ public class PlayerPowerUp : MonoBehaviour
 
         // Inicia o efeito
         StartCoroutine(InvisivelTemporariamente());
+
+        // Cooldown visual da invisibilidade
+        if (invisibilidadeCooldownUI != null)
+            invisibilidadeCooldownUI.IniciarCooldown(cooldownInvisibilidade + duracaoInvisivel);
+
     }
 
     private IEnumerator InvisivelTemporariamente()
