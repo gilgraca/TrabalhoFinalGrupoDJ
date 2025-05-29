@@ -982,6 +982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proximaCena: Tutorial
+  usarLoading: 1
 --- !u!1 &851691770
 GameObject:
   m_ObjectHideFlags: 0

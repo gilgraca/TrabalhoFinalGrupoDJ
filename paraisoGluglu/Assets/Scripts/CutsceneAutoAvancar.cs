@@ -23,6 +23,10 @@ public class CutsceneAutoAvancarComBarra : MonoBehaviour
     // Flag para impedir chamadas múltiplas
     private bool jaAvancou = false;
 
+    // Se estiver ativo, usa o sistema de loading
+    [SerializeField] private bool usarLoading = false;
+
+
     void Start()
     {
         // Evita conflito com UI: limpa o foco de elementos de UI ativos
@@ -72,6 +76,19 @@ public class CutsceneAutoAvancarComBarra : MonoBehaviour
         if (jaAvancou) return;
         jaAvancou = true;
 
-        SceneManager.LoadScene(proximaCena);
+        // Log para testes
+        Debug.Log("Avançar para cena: " + proximaCena + " | Usar loading? " + usarLoading);
+
+        if (usarLoading)
+        {
+            // Vai para a cena com transição de loading
+            CarregadorDeCenas.IrParaCenaComLoading(proximaCena);
+        }
+        else
+        {
+            // Vai diretamente para a cena
+            SceneManager.LoadScene(proximaCena);
+        }
     }
+
 }

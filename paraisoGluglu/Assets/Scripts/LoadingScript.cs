@@ -1,57 +1,61 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
+using TMPro;
+
 
 public class LoadingScript : MonoBehaviour
 {
-    public GameObject LoadingScene;    
-    public VideoPlayer videoPlayer;
-    private AsyncOperation asyncLoad;
+    [SerializeField] private GameObject painelLoading;             // Painel principal de loading
+    [SerializeField] private TMP_Text textoPressioneTecla;             // Texto a mostrar ("Pressione qualquer tecla")
+    [SerializeField] private VideoPlayer videoPlayer;              // (Opcional) vídeo de loading
 
-    public void LoadScene(string newScene)
+    private AsyncOperation asyncLoad;
+    private bool prontoParaAvancar = false;
+
+    void Start()
     {
-        LoadingScene.SetActive(true);
-        StartCoroutine(PlayVideoThenLoadScene(newScene));
+        painelLoading.SetActive(true);
+
+        // Esconde o texto até estar tudo carregado
+        if (textoPressioneTecla != null)
+            textoPressioneTecla.gameObject.SetActive(false);
+
+        StartCoroutine(CarregarCena());
     }
 
-    IEnumerator PlayVideoThenLoadScene(string newScene)
+    IEnumerator CarregarCena()
     {
-        // Show loading UI
-
-
-        // Ensure video is prepared before playing
-        videoPlayer.Prepare();
-        while (!videoPlayer.isPrepared)
+        // Se tiveres vídeo, prepara e toca
+        if (videoPlayer != null)
         {
-            yield return null;
+            videoPlayer.isLooping = true;
+            videoPlayer.Prepare();
+            while (!videoPlayer.isPrepared) yield return null;
+            videoPlayer.Play();
         }
 
-        // Play video
-        videoPlayer.Play();
-
-        // Begin async loading in background, but don't switch yet
-        asyncLoad = SceneManager.LoadSceneAsync(newScene);
+        // Começa a carregar a cena real (sem ativar ainda)
+        asyncLoad = SceneManager.LoadSceneAsync(CarregadorGlobal.ProximaCena);
         asyncLoad.allowSceneActivation = false;
 
-        // Wait until the scene is mostly loaded
         while (asyncLoad.progress < 0.9f)
-        {
             yield return null;
+
+        // Cena está pronta, agora espera input do jogador
+        if (textoPressioneTecla != null)
+            textoPressioneTecla.gameObject.SetActive(true);
+
+        prontoParaAvancar = true;
+    }
+
+    void Update()
+    {
+        // Se estiver pronto e o jogador pressionar qualquer tecla
+        if (prontoParaAvancar && Input.anyKeyDown)
+        {
+            asyncLoad.allowSceneActivation = true;
         }
-
-        // At this point, the scene is loaded and waiting
-        // Optionally wait for a fixed time or end video
-        // Here, we just wait a little to ensure the video plays
-        yield return new WaitForSeconds(0.2f);
-
-        /*
-        // Stop video and hide UI
-        videoPlayer.Stop();
-        LoadingScene.SetActive(false);
-        */
-        // Activate the new scene
-        asyncLoad.allowSceneActivation = true;
     }
 }
