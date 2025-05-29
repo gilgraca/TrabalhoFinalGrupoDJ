@@ -26,7 +26,11 @@ public class PlayerAtaque : MonoBehaviour
     [SerializeField] private Animator animator;
 
     [SerializeField] private PowerUpCooldownUI ataqueEspecialCooldownUI;
+    // Tempo de cooldown do ataque básico
+    [SerializeField] private float cooldownAtaqueBasico = 0.5f;
 
+    // Flag que indica se o ataque básico pode ser usado
+    private bool ataqueBasicoDisponivel = true;
     [SerializeField] private PowerUpCooldownUI ataqueNormalCooldownUI;
 
     void Start()
@@ -41,8 +45,11 @@ public class PlayerAtaque : MonoBehaviour
         if (MenuPausa.jogoPausado) return;
 
         // Disparo normal com botão esquerdo
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && ataqueBasicoDisponivel)
         {
+            // Marca como indisponível
+            ataqueBasicoDisponivel = false;
+
             // Cria a pena na posição base
             GameObject novaPena = Instantiate(prefabPena, pontoDisparo.position, Quaternion.identity);
 
@@ -54,10 +61,14 @@ public class PlayerAtaque : MonoBehaviour
 
             // Animação
             animator.SetBool("isAttacking", true);
-            // Desativa a animação após um tempo
             StartCoroutine(DesativarBool("isAttacking", 0.5f));
 
-            //Debug.Log("Pena disparada com botão esquerdo!");
+            // Inicia cooldown visual
+            if (ataqueNormalCooldownUI != null)
+                ataqueNormalCooldownUI.IniciarCooldown(cooldownAtaqueBasico);
+
+            // Inicia cooldown funcional
+            StartCoroutine(ReporCooldownAtaqueBasico());
         }
 
         // Disparo especial com botão direito
@@ -67,6 +78,20 @@ public class PlayerAtaque : MonoBehaviour
             AtivarAtaqueEspecial(); // Usa novo sistema com cooldown
         }
     }
+
+    // Corrotina para repor o cooldown do ataque básico
+    private IEnumerator ReporCooldownAtaqueBasico()
+    {
+        // Espera o tempo definido
+        yield return new WaitForSeconds(cooldownAtaqueBasico);
+
+        // Torna o ataque básico novamente disponível
+        ataqueBasicoDisponivel = true;
+
+        // Log para testes
+        Debug.Log("Ataque básico disponível novamente!");
+    }
+
 
     // Método para ativar o ataque especial
     private void AtivarAtaqueEspecial()

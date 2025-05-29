@@ -128,9 +128,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2569704439073490124, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
+      propertyPath: cooldownAtaqueBasico
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2569704439073490124, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
       propertyPath: ataqueNormalCooldownUI
       value: 
       objectReference: {fileID: 1030263348}
+    - target: {fileID: 2569704439073490124, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
+      propertyPath: cooldownAtaqueEspecial
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2569704439073490124, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
       propertyPath: ataqueEspecialCooldownUI
       value: 
@@ -196,9 +204,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 331360636}
     - target: {fileID: 7265634185341131841, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
+      propertyPath: cooldownDash
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7265634185341131841, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
       propertyPath: dashCooldownUI
       value: 
       objectReference: {fileID: 465015916}
+    - target: {fileID: 7265634185341131841, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
+      propertyPath: cooldownInvisibilidade
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7265634185341131841, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
+      propertyPath: cooldownInvencibilidade
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7265634185341131841, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
       propertyPath: invisibilidadeCooldownUI
       value: 
