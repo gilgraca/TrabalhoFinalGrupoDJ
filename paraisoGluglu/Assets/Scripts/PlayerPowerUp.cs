@@ -59,6 +59,10 @@ public class PlayerPowerUp : MonoBehaviour
     [SerializeField] private PowerUpCooldownUI invisibilidadeCooldownUI;
     [SerializeField] private PowerUpCooldownUI invencibilidadeCooldownUI;
 
+    // Material normal (visível)
+    [SerializeField] private Material materialNormal;
+    // Material transparente (invisível)
+    [SerializeField] private Material materialTransparente;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -242,48 +246,41 @@ public class PlayerPowerUp : MonoBehaviour
 
     }
 
+    // Coroutine que ativa a invisibilidade temporária
     private IEnumerator InvisivelTemporariamente()
     {
+        // Marca o estado como invisível
         estaInvisivel = true;
-        //Debug.Log("INVISIBILIDADE ATIVADA");
-        // Referência ao material do renderer
-        Material mat = meuRenderer.material;
-        // === MODO TRANSPARENTE ===
-        mat.SetFloat("_Mode", 2);
-        mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-        mat.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-        mat.SetInt("_ZWrite", 0);
-        mat.DisableKeyword("_ALPHATEST_ON");
-        mat.EnableKeyword("_ALPHABLEND_ON");
-        mat.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-        mat.renderQueue = 3000;
-        // Torna a cor com alpha reduzido
-        Color corTransparente = mat.color;
-        corTransparente.a = 0.5f;
-        mat.color = corTransparente;
-        // Espera o tempo de invisibilidade
+
+        // Troca o material para o transparente
+        if (meuRenderer != null && materialTransparente != null)
+        {
+            meuRenderer.material = materialTransparente;
+        }
+
+        Debug.Log("INVISIBILIDADE ATIVADA — material transparente aplicado");
+
+        // Espera a duração da invisibilidade
         yield return new WaitForSeconds(duracaoInvisivel);
-        // === VOLTA AO MODO OPACO ===
-        mat.SetFloat("_Mode", 0);
-        mat.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
-        mat.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
-        mat.SetInt("_ZWrite", 1);
-        mat.DisableKeyword("_ALPHATEST_ON");
-        mat.DisableKeyword("_ALPHABLEND_ON");
-        mat.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-        mat.renderQueue = -1;
-        // Volta à cor original com alpha 1
-        Color corOriginal = mat.color;
-        corOriginal.a = 1f;
-        mat.color = corOriginal;
+
+        // Volta ao material normal
+        if (meuRenderer != null && materialNormal != null)
+        {
+            meuRenderer.material = materialNormal;
+        }
+
+        Debug.Log("INVISIBILIDADE TERMINADA — material normal restaurado");
+
+        // Marca como visível novamente
         estaInvisivel = false;
-        //Debug.Log("Invisibilidade terminou");
-        // Espera o tempo de cooldown antes de permitir outro invisibilidade
+
+        // Espera cooldown para permitir nova invisibilidade
         yield return new WaitForSeconds(cooldownInvisibilidade);
         invisibilidadeDisponivel = true;
 
-        //Debug.Log("Invisibilidade disponível");
+        Debug.Log("Invisibilidade disponível novamente");
     }
+
     public bool EstaInvisivel()
     {
         return estaInvisivel;

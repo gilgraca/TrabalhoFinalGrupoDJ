@@ -203,6 +203,10 @@ PrefabInstance:
       propertyPath: 'hp_items.Array.data[4]'
       value: 
       objectReference: {fileID: 331360636}
+    - target: {fileID: 7075069456048055350, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f27cfdcdd625bac48b12a5f5f8ca4bce, type: 2}
     - target: {fileID: 7265634185341131841, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
       propertyPath: cooldownDash
       value: 5
@@ -211,6 +215,18 @@ PrefabInstance:
       propertyPath: dashCooldownUI
       value: 
       objectReference: {fileID: 465015916}
+    - target: {fileID: 7265634185341131841, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
+      propertyPath: materialNormal
+      value: 
+      objectReference: {fileID: 2100000, guid: f27cfdcdd625bac48b12a5f5f8ca4bce, type: 2}
+    - target: {fileID: 7265634185341131841, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
+      propertyPath: materialInvisivel
+      value: 
+      objectReference: {fileID: 2100000, guid: 6e5687f8814b0884b95ba439ef3808fa, type: 2}
+    - target: {fileID: 7265634185341131841, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
+      propertyPath: materialTransparente
+      value: 
+      objectReference: {fileID: 2100000, guid: 575973a6172090a4e946ae00b0111a83, type: 2}
     - target: {fileID: 7265634185341131841, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
       propertyPath: cooldownInvisibilidade
       value: 10
