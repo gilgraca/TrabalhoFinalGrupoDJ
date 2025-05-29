@@ -25,17 +25,22 @@ public class InimigoTerrestrePatrulha : MonoBehaviour
 
     void Start()
     {
-        // Procurar o jogador
         GameObject objJogador = GameObject.FindGameObjectWithTag("Player");
         if (objJogador != null)
         {
             jogador = objJogador.transform;
             jogadorPowerUps = objJogador.GetComponent<PlayerPowerUp>();
         }
+
+        // LOG para confirmar que o Start correu
+        Debug.Log("InimigoTerrestrePatrulha: Start() iniciado. Estado atual: " + estadoAtual);
     }
 
     void Update()
     {
+        // LOG para ver se o Update corre
+        Debug.Log("InimigoTerrestrePatrulha: Update() chamado. Estado: " + estadoAtual);
+
         if (estadoAtual == Estado.Patrulhar && !aEsperar)
         {
             Patrulhar();
@@ -44,13 +49,17 @@ public class InimigoTerrestrePatrulha : MonoBehaviour
 
     void Patrulhar()
     {
-        if (pontosPatrulha.Length == 0) return;
+        if (pontosPatrulha.Length == 0)
+        {
+            Debug.LogWarning("InimigoTerrestrePatrulha: Nenhum ponto de patrulha definido!");
+            return;
+        }
 
-        // Move-se em direção ao ponto atual
         Transform destino = pontosPatrulha[indiceAtual];
+        Debug.Log("InimigoTerrestrePatrulha: A mover para ponto " + indiceAtual + " - " + destino.name);
+
         transform.position = Vector3.MoveTowards(transform.position, destino.position, velocidade * Time.deltaTime);
 
-        // Roda para o ponto
         Vector3 direcao = (destino.position - transform.position).normalized;
         if (direcao != Vector3.zero)
         {
@@ -58,12 +67,13 @@ public class InimigoTerrestrePatrulha : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, rotacao, Time.deltaTime * 5f);
         }
 
-        // Chegou ao ponto?
         if (Vector3.Distance(transform.position, destino.position) < 0.1f)
         {
+            Debug.Log("InimigoTerrestrePatrulha: Chegou ao ponto " + indiceAtual);
             StartCoroutine(EsperarAntesDeAvancar());
         }
     }
+
 
     IEnumerator EsperarAntesDeAvancar()
     {

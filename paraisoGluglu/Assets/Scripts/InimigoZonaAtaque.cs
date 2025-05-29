@@ -13,7 +13,7 @@ public class InimigoZonaAtaque : MonoBehaviour
             PlayerPowerUp powerUps = other.GetComponent<PlayerPowerUp>();
             PlayerVida playerVida = other.GetComponent<PlayerVida>();
 
-            if (powerUps != null && !powerUps.EstaInvencivel())
+            if (powerUps != null && !powerUps.EstaInvencivel() && !powerUps.EstaInvencivelPorDano())
             {
                 playerVida.LevarDano(dano);
 

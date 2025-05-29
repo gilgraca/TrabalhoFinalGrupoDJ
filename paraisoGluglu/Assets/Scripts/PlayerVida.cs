@@ -41,7 +41,11 @@ public class PlayerVida : MonoBehaviour
 
         //Debug.Log("Jogador levou " + dano + " de dano. Vida atual: " + vidaAtual);
 
-        powerUps?.AtivarInvencibilidade();
+        // Ativa apenas a invencibilidade de dano
+        if (powerUps != null && !powerUps.EstaInvencivelPorDano())
+        {
+            StartCoroutine(powerUps.InvencivelPorDano());
+        }
 
         // Se a vida chegar a 0 ou menos, morre
         if (vidaAtual <= 0)

@@ -67,6 +67,11 @@ public class PlayerPowerUp : MonoBehaviour
     // Material de dano (para piscar durante invencibilidade)
     [SerializeField] private Material materialDano;
 
+    // --- INVENCIBILIDADE DE DANO ---
+    // Ativada automaticamente ao levar dano
+    private bool estaInvencivelDano = false; // Estado atual
+    [SerializeField] private float duracaoInvencivelDano = 1.5f; // Tempo da invencibilidade após levar dano
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -325,6 +330,42 @@ public class PlayerPowerUp : MonoBehaviour
     public bool PodeDoubleJump()
     {
         return podeDoubleJump;
+    }
+
+    // Coroutine que ativa a invencibilidade ao levar dano
+    public IEnumerator InvencivelPorDano()
+    {
+        estaInvencivelDano = true;
+
+        // Debug para testes
+        Debug.Log("Jogador está invencível devido a dano!");
+
+        float tempoPassado = 0f;
+
+        // Enquanto durar, pisca
+        while (tempoPassado < duracaoInvencivelDano)
+        {
+            if (meuRenderer != null && materialNormal != null && materialDano != null)
+            {
+                meuRenderer.material = materialDano;
+                yield return new WaitForSeconds(0.1f);
+                meuRenderer.material = materialNormal;
+                yield return new WaitForSeconds(0.1f);
+            }
+
+            tempoPassado += 0.2f;
+        }
+
+        estaInvencivelDano = false;
+
+        // Debug
+        Debug.Log("Invencibilidade de dano terminou.");
+    }
+
+    // Método auxiliar para verificar se está invencível por dano
+    public bool EstaInvencivelPorDano()
+    {
+        return estaInvencivelDano;
     }
 
 }
