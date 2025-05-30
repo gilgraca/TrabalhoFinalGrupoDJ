@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: 9f4ffb5b1e6a397488d6fbe6e7ffd4f7
+=======
+<<<<<<<< HEAD:paraisoGluglu/Assets/Footsteps - Essentials.meta
+guid: a5d3175d2eea6f846b41cef204f4a5fd
+========
+guid: 15f3bea8c853c5e4ba3c756b671ab90d
+>>>>>>>> f5cbfab1e80f18ae51f10c0584436a4409441ac1:paraisoGluglu/Assets/Videos.meta
+>>>>>>> Stashed changes
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
