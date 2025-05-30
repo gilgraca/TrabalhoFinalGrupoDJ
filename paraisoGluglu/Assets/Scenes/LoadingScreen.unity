@@ -290,6 +290,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 878775989575932202, guid: 3ec63e09c9f09e04e9b8e5847d7ca446, type: 3}
+      propertyPath: m_DataSource
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5503997692121123676, guid: 3ec63e09c9f09e04e9b8e5847d7ca446, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -319,6 +323,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ec63e09c9f09e04e9b8e5847d7ca446, type: 3}
+--- !u!328 &451812659 stripped
+VideoPlayer:
+  m_CorrespondingSourceObject: {fileID: 878775989575932202, guid: 3ec63e09c9f09e04e9b8e5847d7ca446, type: 3}
+  m_PrefabInstance: {fileID: 451812658}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &720394430
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,6 +338,7 @@ GameObject:
   m_Component:
   - component: {fileID: 720394431}
   - component: {fileID: 720394432}
+  - component: {fileID: 720394433}
   m_Layer: 0
   m_Name: CutsceneManager
   m_TagString: Untagged
@@ -368,6 +378,20 @@ MonoBehaviour:
   tempoPressionadoNecessario: 2
   barraProgresso: {fileID: 0}
   usarLoading: 0
+--- !u!114 &720394433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720394430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dd32f54524b28f408bbaa5708c8af5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoPlayer: {fileID: 451812659}
+  videoURL: 'https://gilgraca.github.io/cutscenes/LoadingAnim.mp4 '
 --- !u!1 &1282893095
 GameObject:
   m_ObjectHideFlags: 0

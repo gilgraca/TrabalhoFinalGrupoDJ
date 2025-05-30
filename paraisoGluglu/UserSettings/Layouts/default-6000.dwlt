@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 332}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 117
+  controlID: 126
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -358,7 +358,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 1cfbffff
+      m_ExpandedIDs: 92c3feffaac3feff94cdfeffbacdfeffc0cdfeffdccdfeffe2cdfeffeccdfeff08cefeff3034ffff843effff6c44ffff1c6effff566fffff1acaffff9ee4ffff1cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -962,9 +962,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -4.385563, y: 2.0143309, z: -13.823557}
+    m_Target: {x: -33.339756, y: 5.188877, z: -2.398611}
     speed: 2
-    m_Value: {x: -4.385563, y: 2.0143309, z: -13.823557}
+    m_Value: {x: -33.339756, y: 5.188877, z: -2.398611}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1010,13 +1010,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.15239222, y: 0.13739315, z: -0.021398038, w: 0.9784953}
+    m_Target: {x: 0.06691482, y: 0.12538218, z: -0.008476009, w: 0.9898199}
     speed: 2
-    m_Value: {x: -0.15239222, y: -0.13739315, z: 0.021398038, w: -0.9784953}
+    m_Value: {x: -0.06691482, y: -0.12538218, z: 0.008476009, w: -0.9898199}
   m_Size:
-    m_Target: 10.244629
+    m_Target: 11.806719
     speed: 2
-    m_Value: 10.244629
+    m_Value: 11.806719
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1200,7 +1200,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Models/Lito
+    - Assets/Scripts
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1210,16 +1210,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 68
   m_LastFolders:
-  - Assets/Models/Lito
+  - Assets/Scripts
   m_LastFoldersGridSize: 68
   m_LastProjectPath: C:\Users\gilfg\Desktop\TDM\DJ\TrabalhoFinalGrupoDJ\paraisoGluglu
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 114}
-    m_SelectedIDs: 3eba0000
-    m_LastClickedID: 47678
-    m_ExpandedIDs: 0000000076b90000
+    scrollPos: {x: 0, y: 195}
+    m_SelectedIDs: 2eba0000
+    m_LastClickedID: 47662
+    m_ExpandedIDs: 000000009cae0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1248,7 +1248,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000076b90000
+    m_ExpandedIDs: 000000009cae0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1344,7 +1344,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -31648
+  m_LastSelectedObjectID: 66602
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52

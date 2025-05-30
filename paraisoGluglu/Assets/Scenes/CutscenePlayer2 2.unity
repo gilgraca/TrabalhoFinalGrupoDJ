@@ -337,6 +337,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2463011893194967042, guid: 97730f3b2878b004ba4aa41d29cf78c8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 16465194}
+    - targetCorrespondingSourceObject: {fileID: 2463011893194967042, guid: 97730f3b2878b004ba4aa41d29cf78c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 16465195}
+    - targetCorrespondingSourceObject: {fileID: 2463011893194967042, guid: 97730f3b2878b004ba4aa41d29cf78c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 16465196}
   m_SourcePrefab: {fileID: 100100000, guid: 97730f3b2878b004ba4aa41d29cf78c8, type: 3}
 --- !u!1 &16465193 stripped
 GameObject:
@@ -359,6 +365,35 @@ MonoBehaviour:
   duracaoCutscene: 20
   tempoPressionadoNecessario: 2
   barraProgresso: {fileID: 3401914}
+  usarLoading: 0
+--- !u!114 &16465195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16465193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dd32f54524b28f408bbaa5708c8af5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoPlayer: {fileID: 2131344605}
+  videoURL: 'https://gilgraca.github.io/cutscenes/Cutscene1.mp4 '
+--- !u!114 &16465196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16465193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a0cfd3819ebccd4abd81740d1481c58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  proximaCena: Tutorial
+  usarLoading: 1
 --- !u!1 &1142100625
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,7 +837,7 @@ VideoPlayer:
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 2
   m_AspectRatio: 2
-  m_DataSource: 0
+  m_DataSource: 1
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
@@ -810,7 +845,7 @@ VideoPlayer:
   - {fileID: 0}
   m_DirectAudioVolumes:
   - 1
-  m_Url: 
+  m_Url: https://connected-ndr.myds.me/cutscenes/Cutscene_1.mp4
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1

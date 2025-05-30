@@ -345,7 +345,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 575973a6172090a4e946ae00b0111a83, type: 2}
+  - {fileID: 2100000, guid: f27cfdcdd625bac48b12a5f5f8ca4bce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -574,7 +574,7 @@ Transform:
   m_GameObject: {fileID: 4649664597751926481}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1163,14 +1163,21 @@ MonoBehaviour:
   podeDash: 0
   forcaDash: 12
   tempoDash: 0.2
-  cooldownDash: 1
+  cooldownDash: 5
   podeInvencibilidade: 0
   duracaoInvencivel: 2
-  cooldownInvencibilidade: 1
+  cooldownInvencibilidade: 10
   podeInvisibilidade: 0
   duracaoInvisivel: 5
-  cooldownInvisibilidade: 1
+  cooldownInvisibilidade: 10
   animator: {fileID: 6149666350675806620}
+  dashCooldownUI: {fileID: 0}
+  invisibilidadeCooldownUI: {fileID: 0}
+  invencibilidadeCooldownUI: {fileID: 0}
+  materialNormal: {fileID: 2100000, guid: f27cfdcdd625bac48b12a5f5f8ca4bce, type: 2}
+  materialTransparente: {fileID: 2100000, guid: 575973a6172090a4e946ae00b0111a83, type: 2}
+  materialDano: {fileID: 2100000, guid: b67caa85c34a7c24888378e093b378db, type: 2}
+  duracaoInvencivelDano: 1.5
 --- !u!114 &2569704439073490124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1187,9 +1194,12 @@ MonoBehaviour:
   pontoDisparo: {fileID: 4026749351597486030}
   disparo1: {fileID: 1506943456754610341}
   disparo2: {fileID: 7623326501431495688}
-  cooldownAtaqueEspecial: 1
+  cooldownAtaqueEspecial: 5
   podeAtaqueEspecial: 0
   animator: {fileID: 6149666350675806620}
+  ataqueEspecialCooldownUI: {fileID: 0}
+  cooldownAtaqueBasico: 1
+  ataqueNormalCooldownUI: {fileID: 0}
 --- !u!114 &3742789649237219189
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,7 +9,6 @@ public class LoadingScript : MonoBehaviour
 {
     [SerializeField] private GameObject painelLoading;             // Painel principal de loading
     [SerializeField] private TMP_Text textoPressioneTecla;             // Texto a mostrar ("Pressione qualquer tecla")
-    [SerializeField] private VideoPlayer videoPlayer;              // (Opcional) vídeo de loading
 
     private AsyncOperation asyncLoad;
     private bool prontoParaAvancar = false;
@@ -27,15 +26,6 @@ public class LoadingScript : MonoBehaviour
 
     IEnumerator CarregarCena()
     {
-        // Se tiveres vídeo, prepara e toca
-        if (videoPlayer != null)
-        {
-            videoPlayer.isLooping = true;
-            videoPlayer.Prepare();
-            while (!videoPlayer.isPrepared) yield return null;
-            videoPlayer.Play();
-        }
-
         // Começa a carregar a cena real (sem ativar ainda)
         asyncLoad = SceneManager.LoadSceneAsync(CarregadorGlobal.ProximaCena);
         asyncLoad.allowSceneActivation = false;
