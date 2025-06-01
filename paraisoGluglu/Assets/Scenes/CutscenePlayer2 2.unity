@@ -362,10 +362,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proximaCena: Tutorial
-  duracaoCutscene: 20
+  duracaoCutscene: 8
   tempoPressionadoNecessario: 2
   barraProgresso: {fileID: 3401914}
-  usarLoading: 0
+  usarLoading: 1
 --- !u!114 &16465195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 2131344605}
-  videoURL: 'https://gilgraca.github.io/cutscenes/Cutscene1.mp4 '
+  videoURL: 'https://gilgraca.github.io/cutscenes/Cutscene2-2.mp4 '
 --- !u!114 &16465196
 MonoBehaviour:
   m_ObjectHideFlags: 0

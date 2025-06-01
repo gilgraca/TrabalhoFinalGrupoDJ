@@ -1140,7 +1140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a4c548c42a0be84faee3a186b8aa6a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: 5
+  velocidade: 8
   forcaSalto: 7
   saltosMaximos: 1
   pontoChao: {fileID: 1097347779229209040}

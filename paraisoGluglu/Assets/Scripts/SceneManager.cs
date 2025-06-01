@@ -24,6 +24,15 @@ public class GerenciadorDeCenas : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        // Verifica se o objeto que colidiu tem o tag "Player"
+        if (other.CompareTag("Player"))
+        {
+            // Carrega a próxima cena
+            CarregarProximaCena();
+        }
+    }
 
     // Ou versão com delay (ex: após fade out)
     public void CarregarCenaComDelay(float tempo)
