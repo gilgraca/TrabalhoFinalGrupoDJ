@@ -9,6 +9,8 @@ TagManager:
   - InimigoTerrestre
   - Inimigo
   - Corn
+  - Caixa
+  - ChangeScene
   layers:
   - Default
   - TransparentFX

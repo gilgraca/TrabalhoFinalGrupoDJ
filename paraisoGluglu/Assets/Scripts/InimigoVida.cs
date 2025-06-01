@@ -5,12 +5,13 @@ public class InimigoVida : MonoBehaviour
 {
     // Vida inicial do inimigo (podes ajustar no Inspector)
     [SerializeField] private int vida = 3;
-
+    [SerializeField] private Animator animator;
     // Método público para receber dano
     public void LevarDano(int dano)
     {
         // Reduz a vida
         vida -= dano;
+        animator.SetTrigger("Damaged");
 
         // LOG para testar o dano recebido
         //Debug.Log($"{gameObject.name} levou {dano} de dano. Vida restante: {vida}");
