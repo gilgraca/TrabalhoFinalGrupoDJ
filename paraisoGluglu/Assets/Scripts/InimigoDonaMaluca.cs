@@ -79,4 +79,29 @@ public class InimigoDonaMaluca : MonoBehaviour
             Debug.Log("Empurrão aplicado.");
         }
     }
+    // Método chamado ao entrar em contacto com colisores marcados como Trigger
+    private void OnTriggerEnter(Collider other)
+    {
+        // Verifica se o objeto tem a tag "Caixa"
+        if (other.CompareTag("Caixa"))
+        {
+            // LOG para testes
+            Debug.Log("Inimigo colidiu com caixa");
+
+            // Acede ao script de destruição da caixa
+            DestruirCaixa caixa = other.GetComponent<DestruirCaixa>();
+            if (caixa != null)
+            {
+                // Chama o método para destruir a caixa
+                caixa.QuebrarCaixa();
+            }
+            else
+            {
+                // Se o script não estiver presente, remove diretamente o objeto
+                Debug.LogWarning("A caixa não tinha o script DestruirCaixa!");
+                Destroy(other.gameObject);
+            }
+        }
+    }
+
 }
