@@ -17,7 +17,12 @@ public class NivelTracker : MonoBehaviour
     public GameObject toastUI;
     //Texto 
     public TMPro.TMP_Text toastText;
-
+    // Guarda o tempo do último toast manual
+    private float ultimoToastManual = -999f;
+    // Cooldown global para o toast manual
+    [SerializeField] private float cooldownToastManual = 10f;
+    // Flag para evitar múltiplas ativações da animação do toast
+    private bool toastAnimacaoAtiva = false;
 
     void Start()
     {
@@ -51,22 +56,25 @@ public class NivelTracker : MonoBehaviour
     }
     public IEnumerator MostrarToastAnimado()
     {
+        // Se a animação já está ativa, ignora nova chamada
+        if (toastAnimacaoAtiva)
+            yield break;
+
+        // Marca como ativa
+        toastAnimacaoAtiva = true;
+
         // Guarda a posição inicial do toast
         Vector3 startPosition = toastUI.transform.localPosition;
 
         // Ativa o toast
         toastUI.SetActive(true);
-        //Debug.Log(toastText);
+
         // Ativa o texto (caso exista)
         if (toastText != null)
             toastText.gameObject.SetActive(true);
 
-
-        //Debug.Log("Toast ativado!");
-
         // Espera 0.5 segundos
         yield return new WaitForSeconds(0.5f);
-        //Debug.Log("Toast parado (0.5s).");
 
         // Calcula a posição final
         Vector3 targetPosition = startPosition + new Vector3(220f, 0, 0);
@@ -75,7 +83,6 @@ public class NivelTracker : MonoBehaviour
         float duration = 0.7f;
 
         // Move para o lado
-        //Debug.Log("Toast a mover para o lado...");
         while (elapsed < duration)
         {
             toastUI.transform.localPosition = Vector3.Lerp(startPosition, targetPosition, elapsed / duration);
@@ -85,12 +92,10 @@ public class NivelTracker : MonoBehaviour
         toastUI.transform.localPosition = targetPosition;
 
         // Espera 3 segundos na nova posição
-        //Debug.Log("Toast parado (3s).");
         yield return new WaitForSeconds(3f);
 
         // Volta à posição inicial
         elapsed = 0f;
-        //Debug.Log("Toast a regressar...");
         while (elapsed < duration)
         {
             toastUI.transform.localPosition = Vector3.Lerp(targetPosition, startPosition, elapsed / duration);
@@ -100,16 +105,15 @@ public class NivelTracker : MonoBehaviour
         toastUI.transform.localPosition = startPosition;
 
         // Espera 0.5 segundos antes de desaparecer
-        //Debug.Log("Toast parado antes de desaparecer (0.5s).");
         yield return new WaitForSeconds(0.5f);
 
         // Desativa o toast e o texto
-        // if (toastText != null)
-        //     toastText.gameObject.SetActive(false);
-
-
         toastUI.SetActive(false);
-        //Debug.Log("Toast desativado.");
+        if (toastText != null)
+            toastText.gameObject.SetActive(false);
+
+        // Liberta a flag para permitir futuras ativações
+        toastAnimacaoAtiva = false;
     }
 
     // Método público para ativar o toast manualmente
@@ -117,4 +121,26 @@ public class NivelTracker : MonoBehaviour
     {
         StartCoroutine(MostrarToastAnimado());
     }
+    // Mostra o toast manual apenas se o cooldown tiver passado
+    public void TentarMostrarToastManual()
+    {
+        // Verifica se já passou o tempo suficiente desde o último toast
+        if (Time.time - ultimoToastManual >= cooldownToastManual)
+        {
+            // Mostra o toast
+            MostrarToastManual();
+
+            // Atualiza o tempo do último toast
+            ultimoToastManual = Time.time;
+
+            // Log para testar
+            Debug.Log("Toast manual mostrado com cooldown.");
+        }
+        else
+        {
+            // Log para testar
+            Debug.Log("Cooldown ativo: ainda não é possível mostrar toast.");
+        }
+    }
+
 }
