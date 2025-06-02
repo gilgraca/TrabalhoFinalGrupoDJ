@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 2131344605}
-  videoURL: 'https://gilgraca.github.io/cutscenes/Cutscene1.mp4 '
+  videoURL: 'https://gilgraca.github.io/cutscenes/Cutscene3.mp4 '
 --- !u!114 &16465196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -845,7 +845,7 @@ VideoPlayer:
   - {fileID: 0}
   m_DirectAudioVolumes:
   - 1
-  m_Url: https://connected-ndr.myds.me/cutscenes/Cutscene_3.mp4
+  m_Url: https://connected-ndr.myds.me/cutscenes/Cutscene3.mp4
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
