@@ -1,4 +1,5 @@
 // Script responsável por dar pontos ao jogador ao apanhar milhos e reproduzir som
+using System.Collections;
 using UnityEngine;
 public class ItenMilho : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class ItenMilho : MonoBehaviour
 
     // Flag para evitar múltiplas ativações do trigger
     private bool foiApanhado = false;
+    // Se pode ou não ativar novamente
+    private bool podeAtivarToastManual = true;
+    // Tempo de espera entre ativações do toast com tecla I
+    [SerializeField] private float cooldownToastManual = 10f;
     void Start()
     {
         // Referência ao AudioSource ligado à moeda
@@ -36,13 +41,16 @@ public class ItenMilho : MonoBehaviour
             return;
 
         // Marca como apanhado
-        foiApanhado = true; 
-        
+        foiApanhado = true;
+
         // Adiciona os pontos ao ScoreManager
         ScoreManager.AddPoints(pointToAdd);
 
         // Atualiza o total de milhos apanhados
         GameManager.Instance.milhoTotal += 1;
+
+        // Mostrar Toast Global
+        FindFirstObjectByType<NivelTracker>()?.MostrarToastManual();
 
         // Toca o som de apanhar moeda
         //CoinPickupEffect.Play();

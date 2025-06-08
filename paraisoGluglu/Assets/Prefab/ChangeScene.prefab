@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1411524660970547469}
   - component: {fileID: 7905415282092760477}
   - component: {fileID: 6761050837789547356}
+  - component: {fileID: 7497308155153835194}
   m_Layer: 0
   m_Name: ChangeScene
   m_TagString: Untagged
@@ -122,3 +123,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: {x: 0, y: 100, z: 0}
+--- !u!114 &7497308155153835194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390070058326379191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a0cfd3819ebccd4abd81740d1481c58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  proximaCena: CutscenePlayer3
+  usarLoading: 1
