@@ -2441,6 +2441,7 @@ GameObject:
   - component: {fileID: 146047116}
   - component: {fileID: 146047115}
   - component: {fileID: 146047114}
+  - component: {fileID: 146047118}
   m_Layer: 0
   m_Name: HouseDoor_01_LOD0 (9)
   m_TagString: Caixa
@@ -2553,6 +2554,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 146047112}
   m_Mesh: {fileID: -7408364419616361824, guid: b4270f43d7c790c44847a6b451b2bc45, type: 3}
+--- !u!114 &146047118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146047112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740fa89be0f148e4cb7d4dfc7cf10029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idChaveNecessaria: 1
+  parteVisualDaPorta: {fileID: 146047113}
+  rotacaoAberta: {x: 0, y: 90, z: 0}
+  velocidadeAbertura: 2
 --- !u!1 &152836643
 GameObject:
   m_ObjectHideFlags: 0
@@ -4968,6 +4985,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6852975177513937262, guid: 2343b3a108edf9a49b06659f0928a030, type: 3}
   m_PrefabInstance: {fileID: 1784718721}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &284214552 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5258030673550839010, guid: bd74d0bee1f3c4449a3fb1e9eb32965d, type: 3}
+  m_PrefabInstance: {fileID: 1646369920}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &284214553 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8310581939920932668, guid: bd74d0bee1f3c4449a3fb1e9eb32965d, type: 3}
+  m_PrefabInstance: {fileID: 1646369920}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &284214557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284214552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740fa89be0f148e4cb7d4dfc7cf10029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idChaveNecessaria: 1
+  parteVisualDaPorta: {fileID: 284214553}
+  rotacaoAberta: {x: 0, y: 90, z: 0}
+  velocidadeAbertura: 2
 --- !u!4 &285038915 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 677336156131347977, guid: 80e5bbfa6aa12b34ca98423c9e7a0f86, type: 3}
@@ -8963,6 +9006,7 @@ GameObject:
   - component: {fileID: 570444752}
   - component: {fileID: 570444751}
   - component: {fileID: 570444750}
+  - component: {fileID: 570444755}
   m_Layer: 0
   m_Name: HouseDoor_01_LOD0 (8)
   m_TagString: Caixa
@@ -9075,6 +9119,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 175018487}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &570444755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570444749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740fa89be0f148e4cb7d4dfc7cf10029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idChaveNecessaria: 1
+  parteVisualDaPorta: {fileID: 570444754}
+  rotacaoAberta: {x: 0, y: 90, z: 0}
+  velocidadeAbertura: 2
 --- !u!4 &587504856 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2296815006206992986, guid: 1279e726d2b09334ca77abe228aa5a47, type: 3}
@@ -13981,6 +14041,7 @@ GameObject:
   - component: {fileID: 875931583}
   - component: {fileID: 875931582}
   - component: {fileID: 875931585}
+  - component: {fileID: 875931586}
   m_Layer: 0
   m_Name: HouseDoor_01_LOD1 (1)
   m_TagString: Caixa
@@ -14093,6 +14154,22 @@ MonoBehaviour:
   quantidadeTabuas: 5
   forcaExplosao: 300
   raioExplosao: 2
+--- !u!114 &875931586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875931580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740fa89be0f148e4cb7d4dfc7cf10029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idChaveNecessaria: 1
+  parteVisualDaPorta: {fileID: 875931581}
+  rotacaoAberta: {x: 0, y: 90, z: 0}
+  velocidadeAbertura: 2
 --- !u!1 &883209041 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4dcb36ac532bd174ab2cbdee16df10f5, type: 3}
@@ -17847,6 +17924,7 @@ GameObject:
   - component: {fileID: 1098782347}
   - component: {fileID: 1098782350}
   - component: {fileID: 1098782351}
+  - component: {fileID: 1098782352}
   m_Layer: 0
   m_Name: HouseDoor_01_LOD0 (5)
   m_TagString: Caixa
@@ -17884,7 +17962,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -17975,6 +18053,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.48700002, y: 1.042, z: 0.054}
   m_TimeToStationary: 0.5
+--- !u!114 &1098782352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098782345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740fa89be0f148e4cb7d4dfc7cf10029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idChaveNecessaria: 1
+  parteVisualDaPorta: {fileID: 1098782346}
+  rotacaoAberta: {x: 0, y: 90, z: 0}
+  velocidadeAbertura: 2
 --- !u!1 &1101734690
 GameObject:
   m_ObjectHideFlags: 0
@@ -19629,10 +19723,47 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1234471942}
   m_Mesh: {fileID: 4356252935627708071, guid: 914e26c773673014a80d972d24d6abb9, type: 3}
+--- !u!1 &1248802914
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1248802915}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1248802915
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248802914}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -25.918669, y: -1.3670223, z: 26.875534}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1456867496}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1250412409 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1838943817591124446, guid: a9b3dec6c36033744a62441b6a92cd76, type: 3}
   m_PrefabInstance: {fileID: 244636949}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1265429029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8434010047928090759, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
+  m_PrefabInstance: {fileID: 1607511911}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1273116725
 GameObject:
@@ -21030,6 +21161,7 @@ GameObject:
   - component: {fileID: 1357718375}
   - component: {fileID: 1357718378}
   - component: {fileID: 1357718379}
+  - component: {fileID: 1357718380}
   m_Layer: 0
   m_Name: HouseDoor_01_LOD0 (2)
   m_TagString: Caixa
@@ -21067,8 +21199,8 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.974095, y: 2.0834568, z: 0.35967502}
@@ -21158,6 +21290,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.48700002, y: 1.042, z: 0.054}
   m_TimeToStationary: 0.5
+--- !u!114 &1357718380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357718373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740fa89be0f148e4cb7d4dfc7cf10029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idChaveNecessaria: 1
+  parteVisualDaPorta: {fileID: 1357718374}
+  rotacaoAberta: {x: 0, y: -200, z: 0}
+  velocidadeAbertura: 2
 --- !u!4 &1364885027 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6071182890408227243, guid: 70f2476d20751ab40955cefa08b6f978, type: 3}
@@ -22989,6 +23137,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1455866800}
   m_Mesh: {fileID: 4356252935627708071, guid: 914e26c773673014a80d972d24d6abb9, type: 3}
+--- !u!4 &1456867496 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7841462086530327075, guid: 402a288dc3dbeee4ba0f455b7bd1bcfd, type: 3}
+  m_PrefabInstance: {fileID: 5418219999399089958}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1459393943
 GameObject:
   m_ObjectHideFlags: 0
@@ -23435,6 +23588,7 @@ GameObject:
   - component: {fileID: 1466761458}
   - component: {fileID: 1466761461}
   - component: {fileID: 1466761462}
+  - component: {fileID: 1466761463}
   m_Layer: 0
   m_Name: HouseDoor_01_LOD0 (4)
   m_TagString: Caixa
@@ -23472,7 +23626,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -23563,6 +23717,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: -0.48700002, y: 1.042, z: 0.054}
   m_TimeToStationary: 0.5
+--- !u!114 &1466761463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466761456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740fa89be0f148e4cb7d4dfc7cf10029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idChaveNecessaria: 1
+  parteVisualDaPorta: {fileID: 1466761457}
+  rotacaoAberta: {x: 0, y: 90, z: 0}
+  velocidadeAbertura: 2
 --- !u!1001 &1469655926
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24011,6 +24181,7 @@ GameObject:
   - component: {fileID: 1520408462}
   - component: {fileID: 1520408465}
   - component: {fileID: 1520408466}
+  - component: {fileID: 1520408467}
   m_Layer: 0
   m_Name: HouseDoor_01_LOD0 (7)
   m_TagString: Caixa
@@ -24139,6 +24310,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.48700002, y: 1.042, z: 0.054}
   m_TimeToStationary: 0.5
+--- !u!114 &1520408467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520408460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740fa89be0f148e4cb7d4dfc7cf10029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idChaveNecessaria: 1
+  parteVisualDaPorta: {fileID: 1520408461}
+  rotacaoAberta: {x: 0, y: 90, z: 0}
+  velocidadeAbertura: 2
 --- !u!1 &1523144353
 GameObject:
   m_ObjectHideFlags: 0
@@ -25647,6 +25834,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1912494435207170601, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
+      propertyPath: forcaSalto
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2569704439073490124, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
       propertyPath: ataqueNormalCooldownUI
       value: 
@@ -25734,13 +25925,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8434010047928090759, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1607511922}
   m_SourcePrefab: {fileID: 100100000, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
 --- !u!4 &1607511912 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3149121661702705857, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
   m_PrefabInstance: {fileID: 1607511911}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1607511922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265429029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a3a26882f14cc41b4d18b17529664c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChavesDoJogador: 
 --- !u!1 &1608346206
 GameObject:
   m_ObjectHideFlags: 0
@@ -27032,6 +27239,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.0000006159147
       objectReference: {fileID: 0}
+    - target: {fileID: 9148400331633473378, guid: bd74d0bee1f3c4449a3fb1e9eb32965d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1617449720919656531, guid: bd74d0bee1f3c4449a3fb1e9eb32965d, type: 3}
@@ -27670,13 +27881,99 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7976139434093852370, guid: bd74d0bee1f3c4449a3fb1e9eb32965d, type: 3}
       insertIndex: 10
       addedObject: {fileID: 1357718374}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7348502550784928872, guid: bd74d0bee1f3c4449a3fb1e9eb32965d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1646369926}
+    - targetCorrespondingSourceObject: {fileID: 5293861009278670029, guid: bd74d0bee1f3c4449a3fb1e9eb32965d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1646369931}
+    - targetCorrespondingSourceObject: {fileID: 5258030673550839010, guid: bd74d0bee1f3c4449a3fb1e9eb32965d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 284214557}
   m_SourcePrefab: {fileID: 100100000, guid: bd74d0bee1f3c4449a3fb1e9eb32965d, type: 3}
 --- !u!4 &1646369921 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1397205257145129185, guid: bd74d0bee1f3c4449a3fb1e9eb32965d, type: 3}
   m_PrefabInstance: {fileID: 1646369920}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1646369922 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4368441495851366438, guid: bd74d0bee1f3c4449a3fb1e9eb32965d, type: 3}
+  m_PrefabInstance: {fileID: 1646369920}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1646369923 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5293861009278670029, guid: bd74d0bee1f3c4449a3fb1e9eb32965d, type: 3}
+  m_PrefabInstance: {fileID: 1646369920}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1646369924 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7348502550784928872, guid: bd74d0bee1f3c4449a3fb1e9eb32965d, type: 3}
+  m_PrefabInstance: {fileID: 1646369920}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1646369926
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646369924}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &1646369931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646369923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740fa89be0f148e4cb7d4dfc7cf10029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idChaveNecessaria: 1
+  parteVisualDaPorta: {fileID: 1646369922}
+  rotacaoAberta: {x: 0, y: 90, z: 0}
+  velocidadeAbertura: 2
 --- !u!1 &1649532759
 GameObject:
   m_ObjectHideFlags: 0
@@ -28358,6 +28655,7 @@ GameObject:
   - component: {fileID: 1674602138}
   - component: {fileID: 1674602141}
   - component: {fileID: 1674602142}
+  - component: {fileID: 1674602143}
   m_Layer: 0
   m_Name: HouseDoor_01_LOD0 (3)
   m_TagString: Caixa
@@ -28486,6 +28784,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.48700002, y: 1.042, z: 0.054}
   m_TimeToStationary: 0.5
+--- !u!114 &1674602143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674602136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740fa89be0f148e4cb7d4dfc7cf10029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idChaveNecessaria: 1
+  parteVisualDaPorta: {fileID: 1674602137}
+  rotacaoAberta: {x: 0, y: 90, z: 0}
+  velocidadeAbertura: 2
 --- !u!1001 &1676274770
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31080,6 +31394,7 @@ GameObject:
   - component: {fileID: 1810110474}
   - component: {fileID: 1810110477}
   - component: {fileID: 1810110478}
+  - component: {fileID: 1810110479}
   m_Layer: 0
   m_Name: HouseDoor_01_LOD0 (6)
   m_TagString: Caixa
@@ -31208,6 +31523,22 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.48700002, y: 1.042, z: 0.054}
   m_TimeToStationary: 0.5
+--- !u!114 &1810110479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810110472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740fa89be0f148e4cb7d4dfc7cf10029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idChaveNecessaria: 1
+  parteVisualDaPorta: {fileID: 1810110473}
+  rotacaoAberta: {x: 0, y: 90, z: 0}
+  velocidadeAbertura: 2
 --- !u!4 &1813113335 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3002491822927941682, guid: d586cdda16abbf74e84b1e76b588d8bf, type: 3}
@@ -35256,6 +35587,7 @@ GameObject:
   - component: {fileID: 2084263743}
   - component: {fileID: 2084263742}
   - component: {fileID: 2084263741}
+  - component: {fileID: 2084263745}
   m_Layer: 0
   m_Name: HouseDoor_01_LOD0 (8)
   m_TagString: Caixa
@@ -35368,6 +35700,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084263739}
   m_Mesh: {fileID: -7408364419616361824, guid: b4270f43d7c790c44847a6b451b2bc45, type: 3}
+--- !u!114 &2084263745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084263739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740fa89be0f148e4cb7d4dfc7cf10029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idChaveNecessaria: 1
+  parteVisualDaPorta: {fileID: 2084263740}
+  rotacaoAberta: {x: 0, y: 90, z: 0}
+  velocidadeAbertura: 2
 --- !u!1 &2095275624
 GameObject:
   m_ObjectHideFlags: 0
@@ -36581,7 +36929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423189617985187196, guid: ebc13ed40311b184c98364ffba271c6c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.59
       objectReference: {fileID: 0}
     - target: {fileID: 1423189617985187196, guid: ebc13ed40311b184c98364ffba271c6c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -37233,6 +37581,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144720582}
   m_Mesh: {fileID: -19047604262553715, guid: b4270f43d7c790c44847a6b451b2bc45, type: 3}
+--- !u!1001 &5418219999399089958
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1248802915}
+    m_Modifications:
+    - target: {fileID: 741266503687484853, guid: 402a288dc3dbeee4ba0f455b7bd1bcfd, type: 3}
+      propertyPath: m_Name
+      value: Chave
+      objectReference: {fileID: 0}
+    - target: {fileID: 7841462086530327075, guid: 402a288dc3dbeee4ba0f455b7bd1bcfd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 7841462086530327075, guid: 402a288dc3dbeee4ba0f455b7bd1bcfd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 7841462086530327075, guid: 402a288dc3dbeee4ba0f455b7bd1bcfd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -40.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 7841462086530327075, guid: 402a288dc3dbeee4ba0f455b7bd1bcfd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7841462086530327075, guid: 402a288dc3dbeee4ba0f455b7bd1bcfd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7841462086530327075, guid: 402a288dc3dbeee4ba0f455b7bd1bcfd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7841462086530327075, guid: 402a288dc3dbeee4ba0f455b7bd1bcfd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7841462086530327075, guid: 402a288dc3dbeee4ba0f455b7bd1bcfd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7841462086530327075, guid: 402a288dc3dbeee4ba0f455b7bd1bcfd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7841462086530327075, guid: 402a288dc3dbeee4ba0f455b7bd1bcfd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 402a288dc3dbeee4ba0f455b7bd1bcfd, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -37253,3 +37658,4 @@ SceneRoots:
   - {fileID: 853032062}
   - {fileID: 850097272}
   - {fileID: 1061856012}
+  - {fileID: 1248802915}

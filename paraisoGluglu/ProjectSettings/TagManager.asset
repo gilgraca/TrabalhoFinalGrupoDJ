@@ -11,6 +11,7 @@ TagManager:
   - Corn
   - Caixa
   - ChangeScene
+  - Key
   layers:
   - Default
   - TransparentFX
