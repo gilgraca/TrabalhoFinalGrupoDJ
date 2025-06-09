@@ -294,6 +294,10 @@ PrefabInstance:
       propertyPath: m_DataSource
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2724961244390515177, guid: 3ec63e09c9f09e04e9b8e5847d7ca446, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 5503997692121123676, guid: 3ec63e09c9f09e04e9b8e5847d7ca446, type: 3}
       propertyPath: m_IsActive
       value: 1
