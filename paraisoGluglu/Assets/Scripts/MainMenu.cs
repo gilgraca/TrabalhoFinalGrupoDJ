@@ -6,6 +6,8 @@ public class MainMenu : MonoBehaviour
 {
     // Nome da cena do menu principal
     public string menuprincipal;
+    // Nome da cena dos creditos
+    public string creditos;
     // Inicia um novo jogo, resetando pontuação e GameManager
     public void NewGame()
     {
@@ -36,5 +38,17 @@ public class MainMenu : MonoBehaviour
 
         // Carrega a cena pelo nome
         SceneManager.LoadScene(menuprincipal);
+    }
+    // Volta ao menu principal a partir de qualquer cena
+    public void Creditos()
+    {
+        // Debug para confirmar o nome da cena
+        Debug.Log("A carregar cena: " + creditos);
+
+        // Retoma o tempo de jogo se estiver pausado
+        Time.timeScale = 1f;
+
+        // Carrega a cena pelo nome
+        SceneManager.LoadScene(creditos);
     }
 }

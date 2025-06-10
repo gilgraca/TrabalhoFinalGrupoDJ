@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GerenciadorDeCenas : MonoBehaviour
+public class SceneManagement : MonoBehaviour
 {
     // Próxima cena a carregar
     [SerializeField] private string proximaCena;
