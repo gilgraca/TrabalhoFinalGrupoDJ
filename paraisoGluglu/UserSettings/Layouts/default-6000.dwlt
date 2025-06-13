@@ -272,8 +272,8 @@ MonoBehaviour:
     y: 0
     width: 359.19995
     height: 716.8
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 76}
+  m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 79.200005
+    y: 24
     width: 279.8
     height: 396.4
   m_SerializedDataModeController:
@@ -318,23 +318,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 16ddfcff
-      m_LastClickedID: -205546
+      m_SelectedIDs: 
+      m_LastClickedID: 0
       m_ExpandedIDs: 16ddfcffd2defcff7ee3fcff1e01fdffd205fdff7e0afdff5648fdff224cfdff784efdffec5afdffceedffff88eeffff00efffff20f5ffff58f6ffff72f6ffff1cfbffff52b1000006f5000024fd0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: "pontoCh\xE3o"
-        m_OriginalName: "pontoCh\xE3o"
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -205646
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
         m_ClientGUIView: {fileID: 8}
@@ -366,8 +366,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 280.80002
-    y: 79.200005
+    x: 281.8
+    y: 24
     width: 894.00006
     height: 396.4
   m_SerializedDataModeController:
@@ -988,11 +988,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.092607036, y: 0.7073904, z: 0.09434779, w: 0.69435835}
     speed: 2
-    m_Value: {x: -0.09260647, y: 0.70738614, z: 0.094347216, w: 0.6943541}
+    m_Value: {x: -0.092607036, y: 0.7073904, z: 0.09434779, w: 0.69435835}
   m_Size:
     m_Target: 3.0975819
     speed: 2
-    m_Value: 2.964193
+    m_Value: 3.0975819
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1120,7 +1120,7 @@ MonoBehaviour:
       height: 864
     m_MinimalGUI: 1
   m_defaultScale: 0.43449074
-  m_LastWindowPixelSize: {x: 1117.5001, y: 495.5}
+  m_LastWindowPixelSize: {x: 894.00006, y: 396.4}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -1149,7 +1149,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 501.6
+    y: 446.4
     width: 1175.8
     height: 268.4
   m_SerializedDataModeController:
@@ -1193,7 +1193,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 319}
     m_SelectedIDs: 76af0000
     m_LastClickedID: 44918
-    m_ExpandedIDs: 00000000faae000070af000082af0000baaf0000b2bf0000b4c90000b6c9000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000f8b20000fab20000fcb20000feb2000000b3000002b30000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1222,7 +1222,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000faae000082af0000baaf0000b2bf0000b4c90000b6c9000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000f8b20000fab20000fcb20000feb2000000b3000002b30000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1337,8 +1337,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1176.8
-    y: 79.200005
+    x: 1177.8
+    y: 24
     width: 358.19995
     height: 690.8
   m_SerializedDataModeController:
