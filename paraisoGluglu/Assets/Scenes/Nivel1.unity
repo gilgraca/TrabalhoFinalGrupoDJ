@@ -9322,7 +9322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7497308155153835194, guid: 84ecdcd3b78e05445860426c7705f270, type: 3}
       propertyPath: proximaCena
-      value: Complete
+      value: Nivel2
       objectReference: {fileID: 0}
     - target: {fileID: 7497308155153835194, guid: 84ecdcd3b78e05445860426c7705f270, type: 3}
       propertyPath: usarLoading
