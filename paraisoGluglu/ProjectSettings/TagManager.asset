@@ -12,6 +12,7 @@ TagManager:
   - Caixa
   - ChangeScene
   - Key
+  - DamageRespawn
   layers:
   - Default
   - TransparentFX
