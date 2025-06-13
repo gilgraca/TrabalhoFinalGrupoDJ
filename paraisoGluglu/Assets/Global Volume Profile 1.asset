@@ -15,10 +15,10 @@ MonoBehaviour:
   active: 1
   distance:
     m_OverrideState: 1
-    m_Value: 0.282
+    m_Value: 0.507
   cropToFit:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.915
 --- !u!114 &-3691202134626293148
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -314,7 +314,7 @@ MonoBehaviour:
   active: 1
   color:
     m_OverrideState: 1
-    m_Value: {r: 0.4113207, g: 0.32828045, b: 0.32828045, a: 1}
+    m_Value: {r: 0.2603773, g: 0.042741165, b: 0.042741165, a: 1}
   center:
     m_OverrideState: 1
     m_Value: {x: 0.5, y: 0.69}
