@@ -50,11 +50,18 @@ public class PlayerAtaque : MonoBehaviour
             // Marca como indisponível
             ataqueBasicoDisponivel = false;
 
-            // Cria a pena na posição base
-            GameObject novaPena = Instantiate(prefabPena, pontoDisparo.position, Quaternion.identity);
-
             // Direção à frente
             Vector3 direcaoDisparo = transform.forward;
+
+            // Calcula a rotação para apontar na direção desejada
+            Quaternion rotacaoDirecao = Quaternion.LookRotation(direcaoDisparo);
+
+            // Garante que o X seja sempre 90°
+            Quaternion rotacaoFinal = Quaternion.Euler(90f, rotacaoDirecao.eulerAngles.y, rotacaoDirecao.eulerAngles.z);
+
+            // Cria a pena na posição base
+            GameObject novaPena = Instantiate(prefabPena, pontoDisparo.position, rotacaoFinal);
+
 
             // Define a direção
             novaPena.GetComponent<PenaAtaque>().DefinirDirecao(direcaoDisparo);
