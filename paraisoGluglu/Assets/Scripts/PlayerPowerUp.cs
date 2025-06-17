@@ -14,7 +14,7 @@ public class PlayerPowerUp : MonoBehaviour
     [SerializeField] private float forcaSaltoExtra = 6f;
 
     // Referência ao PlayerMovimento (para saber se está no chão)
-    private PlayerMovimento playerMovimento;
+    private PlayerMovimentoCrash playerMovimento;
 
     // DASH
     [SerializeField] private bool podeDash = false;
@@ -77,7 +77,7 @@ public class PlayerPowerUp : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         meuRenderer = GetComponentInChildren<Renderer>();
-        playerMovimento = GetComponent<PlayerMovimento>();
+        playerMovimento = GetComponent<PlayerMovimentoCrash>();
 
         // Carrega os estados dos power-ups guardados no GameManager
         podeDash = GameManager.Instance.usarDash;

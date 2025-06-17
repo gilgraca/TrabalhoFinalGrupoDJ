@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MainCamaraScript : MonoBehaviour
+public class MainCamaraScriptCrash : MonoBehaviour
 {
     // O player
     public Transform player;

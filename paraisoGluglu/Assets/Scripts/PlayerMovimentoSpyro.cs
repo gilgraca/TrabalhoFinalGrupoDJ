@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class PlayerMovimento : MonoBehaviour
+public class PlayerMovimentoSpyro : MonoBehaviour
 {
     // === VARIÁVEIS DE MOVIMENTO ===
 
@@ -55,8 +55,22 @@ public class PlayerMovimento : MonoBehaviour
         float inputX = Input.GetAxis("Horizontal");
         float inputZ = Input.GetAxis("Vertical");
 
-        // Cria um vetor de movimento com base no input
-        Vector3 movimento = new Vector3(inputX, 0f, inputZ).normalized * velocidade;
+        // Obtém a direção da câmara (sem inclinação vertical)
+        Vector3 forwardCam = Camera.main.transform.forward;
+        Vector3 rightCam = Camera.main.transform.right;
+
+        // Remove componente vertical (para não andar no ar)
+        forwardCam.y = 0f;
+        rightCam.y = 0f;
+
+        // Normaliza as direções para manter velocidade constante
+        forwardCam.Normalize();
+        rightCam.Normalize();
+
+        // Movimento relativo à câmara
+        Vector3 direcaoDesejada = forwardCam * inputZ + rightCam * inputX;
+        Vector3 movimento = direcaoDesejada.normalized * velocidade;
+
 
         // Aplica o movimento à velocidade do rigidbody (mantém a velocidade vertical atual)
         rb.linearVelocity = new Vector3(movimento.x, rb.linearVelocity.y, movimento.z);
@@ -64,7 +78,7 @@ public class PlayerMovimento : MonoBehaviour
         if (movimento != Vector3.zero)
         {
             // Direção alvo para onde o jogador deve olhar
-            Vector3 direcaoAlvo = new Vector3(movimento.x, 0f, movimento.z);
+            Vector3 direcaoAlvo = direcaoDesejada;
 
             // Calcula a rotação alvo com base na direção
             Quaternion rotacaoAlvo = Quaternion.LookRotation(direcaoAlvo);
