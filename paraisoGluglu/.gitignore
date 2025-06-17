@@ -76,3 +76,7 @@ crashlytics-build.properties
 
 # Ignorar a pasta library
 Library/
+
+*.dwlt
+
+[Pp]rojectSettings/EditorUserSettings.asset
