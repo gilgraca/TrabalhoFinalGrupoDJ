@@ -272,6 +272,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChangeScene
       objectReference: {fileID: 0}
+    - target: {fileID: 7497308155153835194, guid: 84ecdcd3b78e05445860426c7705f270, type: 3}
+      propertyPath: proximaCena
+      value: CutscenePlayer5
+      objectReference: {fileID: 0}
     - target: {fileID: 8201435785486082718, guid: 84ecdcd3b78e05445860426c7705f270, type: 3}
       propertyPath: m_LocalPosition.x
       value: -865.6
