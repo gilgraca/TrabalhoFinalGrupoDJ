@@ -1008,6 +1008,7 @@ GameObject:
   - component: {fileID: 8258035947180688233}
   - component: {fileID: 6149666350675806620}
   - component: {fileID: 3378804944662451099}
+  - component: {fileID: 1095181781341937224}
   - component: {fileID: 1912494435207170601}
   - component: {fileID: 7265634185341131841}
   - component: {fileID: 2569704439073490124}
@@ -1058,8 +1059,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.8539815, y: 6.410835, z: 3.9383457}
-  m_Center: {x: -0.13211337, y: -1.6417176, z: 0.57765764}
+  m_Size: {x: 3.8751767, y: 5.3152785, z: 5.9076476}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8258035947180688233
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1128,7 +1129,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   vidaMaxima: 5
---- !u!114 &1912494435207170601
+--- !u!114 &1095181781341937224
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1137,14 +1138,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 8434010047928090759}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c612d2fe80ead340a9139335c40ad3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidade: 14
+  forcaSalto: 9
+  saltosMaximos: 1
+  pontoChao: {fileID: 1097347779229209040}
+  distanciaRaycast: 1
+  animator: {fileID: 6149666350675806620}
+--- !u!114 &1912494435207170601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8434010047928090759}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a4c548c42a0be84faee3a186b8aa6a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: 8
-  forcaSalto: 7
+  velocidade: 14
+  forcaSalto: 9
   saltosMaximos: 1
   pontoChao: {fileID: 1097347779229209040}
-  distanciaRaycast: 0.1
+  distanciaRaycast: 1
   animator: {fileID: 6149666350675806620}
 --- !u!114 &7265634185341131841
 MonoBehaviour:
