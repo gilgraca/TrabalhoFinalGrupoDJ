@@ -1648,6 +1648,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1631217477}
+    - target: {fileID: 4288345752227368646, guid: 44721e1da47798f43a945a0183e6249b, type: 3}
+      propertyPath: jogador
+      value: 
+      objectReference: {fileID: 1631217477}
     - target: {fileID: 4332174028886432010, guid: 44721e1da47798f43a945a0183e6249b, type: 3}
       propertyPath: m_Name
       value: Main Camera
