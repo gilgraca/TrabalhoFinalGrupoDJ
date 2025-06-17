@@ -1013,6 +1013,7 @@ GameObject:
   - component: {fileID: 7265634185341131841}
   - component: {fileID: 2569704439073490124}
   - component: {fileID: 3742789649237219189}
+  - component: {fileID: 2294088171906428459}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1059,7 +1060,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.8751767, y: 5.3152785, z: 5.9076476}
+  m_Size: {x: 3, y: 4.2, z: 5.9076476}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8258035947180688233
 Rigidbody:
@@ -1160,7 +1161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidade: 14
-  forcaSalto: 9
+  forcaSalto: 10
   saltosMaximos: 1
   pontoChao: {fileID: 1097347779229209040}
   distanciaRaycast: 1
@@ -1232,6 +1233,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownToastManual: 10
+--- !u!114 &2294088171906428459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8434010047928090759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a3a26882f14cc41b4d18b17529664c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChavesDoJogador: 
 --- !u!1 &8474399264530868557
 GameObject:
   m_ObjectHideFlags: 0

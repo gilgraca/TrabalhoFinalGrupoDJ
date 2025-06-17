@@ -1299,6 +1299,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2503685667089322176, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
+      propertyPath: m_Size.y
+      value: 4.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2569704439073490124, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
       propertyPath: ataqueNormalCooldownUI
       value: 
