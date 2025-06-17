@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6361354031677033269}
+  - component: {fileID: 4348717592278511930}
+  - component: {fileID: 4069812319832957209}
   m_Layer: 5
   m_Name: CutsceneSkipInfo
   m_TagString: Untagged
@@ -37,6 +39,32 @@ RectTransform:
   m_AnchoredPosition: {x: -683.1, y: -428}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4348717592278511930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555871660362082672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d4f1cee0e7d871479870e45300e40d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempoVisivel: 3
+  duracaoFade: 1
+--- !u!225 &4069812319832957209
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555871660362082672}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2102358040846436483
 GameObject:
   m_ObjectHideFlags: 0
