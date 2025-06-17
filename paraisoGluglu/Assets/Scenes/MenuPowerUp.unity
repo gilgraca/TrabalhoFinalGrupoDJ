@@ -982,7 +982,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tecla a precionar
+  m_text: Tecla a pressionar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 07bfb43e2c51d7b48b5628b9cd6cad52, type: 2}
   m_sharedMaterial: {fileID: -7122803833988728884, guid: 07bfb43e2c51d7b48b5628b9cd6cad52, type: 2}
@@ -2123,17 +2123,19 @@ MonoBehaviour:
   - 'https://gilgraca.github.io/cutscenes/Invencibilidade.mp4 '
   - 'https://gilgraca.github.io/cutscenes/Invisibilidade.mp4 '
   descricoes:
-  - "Lan\xE7a 3 penas dando assim mais dano ao inimigo."
-  - "Impuls\xE3o para a frente boa para fugir de inimigos proximos."
-  - Consegue saltar 2 vez.
-  - "N\xE3o recebe dano num curto periodo de tempo."
-  - "N\xE3o \xE9 detetado num curto periodo de tempo."
+  - "Lan\xE7a 3 penas ao mesmo tempo! \xC9 muito forte e acerta em v\xE1rios inimigos
+    de uma vez."
+  - "Um empurr\xE3o r\xE1pido para a frente! Ajuda a fugir ou a passar depressa pelos
+    perigos."
+  - "D\xE1 um segundo salto no ar! Perfeito para subir mais alto ou escapar de buracos."
+  - Ficas protegido durante alguns segundos! Nada te consegue magoar nesse tempo.
+  - "Ficas invis\xEDvel por um bocadinho! Os inimigos n\xE3o te conseguem ver."
   cooldowns:
-  - 1
-  - 2
-  - 3
-  - 4
-  - 5
+  - 5s
+  - 5s
+  - Sem CD
+  - 12s
+  - 15s
   teclas:
   - "Bot\xE3o Direito"
   - Shift
