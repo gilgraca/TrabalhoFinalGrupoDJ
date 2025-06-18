@@ -2140,8 +2140,8 @@ MonoBehaviour:
   - "Bot\xE3o Direito"
   - Shift
   - "Espa\xE7o 2x"
-  - X
-  - Z
+  - Q
+  - E
 --- !u!4 &1136358911
 Transform:
   m_ObjectHideFlags: 0

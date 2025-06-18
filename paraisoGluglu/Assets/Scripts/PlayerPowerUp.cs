@@ -111,13 +111,13 @@ public class PlayerPowerUp : MonoBehaviour
             AtivarDash();
         }
 
-        // Pressiona X para ativar invencibilidade temporária
-        if (podeInvencibilidade && Input.GetKeyDown(KeyCode.X) && !estaInvencivel)
+        // Pressiona Q para ativar invencibilidade temporária
+        if (podeInvencibilidade && Input.GetKeyDown(KeyCode.Q) && !estaInvencivel)
         {
             AtivarInvencibilidade();
         }
-        // Pressiona Z para ativar invisibilidade temporária
-        if (podeInvisibilidade && Input.GetKeyDown(KeyCode.Z) && !estaInvisivel)
+        // Pressiona E para ativar invisibilidade temporária
+        if (podeInvisibilidade && Input.GetKeyDown(KeyCode.E) && !estaInvisivel)
         {
             AtivarInvisibilidade();
         }
