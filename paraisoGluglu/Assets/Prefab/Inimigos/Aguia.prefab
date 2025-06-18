@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vida: 3
-  animator: {fileID: 0}
+  animator: {fileID: 4445541182113655370}
 --- !u!1 &6693572652297075246
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,6 +429,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e09c0e1b2501bf0448ce9e11043fa1b8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7662013092442152789}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e09c0e1b2501bf0448ce9e11043fa1b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4445541182113655370}
   m_SourcePrefab: {fileID: 100100000, guid: e09c0e1b2501bf0448ce9e11043fa1b8, type: 3}
 --- !u!4 &1597122077032665519 stripped
 Transform:
@@ -456,6 +459,7 @@ MonoBehaviour:
   cooldownAtaque: 5
   alturaAtaque: 1
   velocidadeAtaque: 4
+  animator: {fileID: 4445541182113655370}
 --- !u!114 &7202605945515012678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -543,3 +547,25 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -8089699231438940418, guid: e09c0e1b2501bf0448ce9e11043fa1b8, type: 3}
+--- !u!95 &4445541182113655370
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117200613850155797}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ec83a90390946634aba8fcd8ee1e2de5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
