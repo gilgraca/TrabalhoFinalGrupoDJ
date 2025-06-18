@@ -40,7 +40,7 @@ public class InimigoAereoPatrulha : MonoBehaviour
         if (direcao != Vector3.zero)
         {
             Quaternion rotacaoBase = Quaternion.LookRotation(direcao);
-            Quaternion rotacaoExtraZ = Quaternion.Euler(0f, 0f, 90f);
+            Quaternion rotacaoExtraZ = Quaternion.Euler(0f, -90f, -70f);
             Quaternion rotacaoFinal = rotacaoBase * rotacaoExtraZ;
             transform.rotation = Quaternion.Slerp(transform.rotation, rotacaoFinal, 10f * Time.deltaTime);
         }
