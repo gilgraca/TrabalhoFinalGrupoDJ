@@ -155,7 +155,21 @@ public class PlayerPowerUp : MonoBehaviour
         //Debug.Log("Dash dado");
 
         // Determina a direção do dash com base no input atual (Horizontal/Vertical)
-        Vector3 direcao = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
+        Vector3 input = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+
+        // Obtém a direção da câmara
+        Vector3 forward = Camera.main.transform.forward;
+        Vector3 right = Camera.main.transform.right;
+
+        // Remove o componente vertical
+        forward.y = 0;
+        right.y = 0;
+        forward.Normalize();
+        right.Normalize();
+
+        // Direção baseada na câmara
+        Vector3 direcao = (forward * input.z + right * input.x).normalized;
+
         // Se não houver input (jogador parado), dasha para a frente
         if (direcao == Vector3.zero)
             direcao = transform.forward;
