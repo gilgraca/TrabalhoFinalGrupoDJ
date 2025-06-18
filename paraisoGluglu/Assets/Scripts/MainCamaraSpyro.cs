@@ -44,6 +44,6 @@ public class MainCamaraSpyro : MonoBehaviour
         transform.LookAt(jogador);
 
         // LOG para testar posição e rotação
-        Debug.Log("Câmara pos: " + transform.position + " | Ângulo: " + anguloAtual);
+        // Debug.Log("Câmara pos: " + transform.position + " | Ângulo: " + anguloAtual);
     }
 }
