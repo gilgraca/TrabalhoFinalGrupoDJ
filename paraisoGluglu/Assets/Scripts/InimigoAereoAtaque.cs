@@ -19,6 +19,8 @@ public class InimigoAereoAtaque : MonoBehaviour
 
     private bool podeAtacar = true;
 
+    [SerializeField] private Animator animator;
+
     void Start()
     {
         GameObject objJogador = GameObject.FindGameObjectWithTag("Player");
@@ -45,11 +47,16 @@ public class InimigoAereoAtaque : MonoBehaviour
         if (distancia <= raioDetecao)
         {
             StartCoroutine(Atacar(jogador.position));
+                
         }
     }
 
     IEnumerator Atacar(Vector3 posJogador)
     {
+
+        animator.SetBool("Attacking", true);
+
+
         // Interrompe patrulha
         if (patrulha != null) patrulha.aAtacar = true;
 
@@ -72,7 +79,11 @@ public class InimigoAereoAtaque : MonoBehaviour
             transform.position = Vector3.Lerp(destino, partida, tempo);
             tempo += Time.deltaTime * velocidadeAtaque;
             yield return null;
+
         }
+
+        animator.SetBool("Attacking", false);
+
 
         if (patrulha != null) patrulha.aAtacar = false;
 
