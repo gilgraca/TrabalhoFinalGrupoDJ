@@ -31,11 +31,11 @@ public class HUDPowerUpToggle : MonoBehaviour
             frameSpAttack.SetActive(true);
 
         // Debug
-        Debug.Log("DoubleJump: " + GameManager.Instance.usarDoubleJump); 
-        Debug.Log("Invencível: " + GameManager.Instance.usarInvencibilidade);
-        Debug.Log("Invisível: " + GameManager.Instance.usarInvisibilidade);
-        Debug.Log("Dash: " + GameManager.Instance.usarDash);
-        Debug.Log("Especial: " + GameManager.Instance.usarAtaqueEspecial);
+        //Debug.Log("DoubleJump: " + GameManager.Instance.usarDoubleJump); 
+        //Debug.Log("Invencível: " + GameManager.Instance.usarInvencibilidade);
+        //Debug.Log("Invisível: " + GameManager.Instance.usarInvisibilidade);
+        //Debug.Log("Dash: " + GameManager.Instance.usarDash);
+        //Debug.Log("Especial: " + GameManager.Instance.usarAtaqueEspecial);
     }
 
 }

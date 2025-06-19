@@ -134,12 +134,12 @@ public class NivelTracker : MonoBehaviour
             ultimoToastManual = Time.time;
 
             // Log para testar
-            Debug.Log("Toast manual mostrado com cooldown.");
+            //Debug.Log("Toast manual mostrado com cooldown.");
         }
         else
         {
             // Log para testar
-            Debug.Log("Cooldown ativo: ainda não é possível mostrar toast.");
+            //Debug.Log("Cooldown ativo: ainda não é possível mostrar toast.");
         }
     }
 

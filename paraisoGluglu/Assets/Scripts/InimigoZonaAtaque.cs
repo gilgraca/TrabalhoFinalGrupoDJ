@@ -34,13 +34,13 @@ public class InimigoZonaAtaque : MonoBehaviour
                     rb.AddForce(direcao * forcaPushback, ForceMode.Impulse);
 
                     //Log para testes
-                    Debug.Log("Jogador levou dano + pushback");
+                    //Debug.Log("Jogador levou dano + pushback");
                 }
             }
             else
             {
                 //Log para testes
-                Debug.Log("Jogador tocado mas está invencível.");
+                //Debug.Log("Jogador tocado mas está invencível.");
             }
         }
     }

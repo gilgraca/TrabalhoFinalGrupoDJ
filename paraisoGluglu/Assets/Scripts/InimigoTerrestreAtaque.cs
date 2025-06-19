@@ -40,12 +40,12 @@ public class InimigoTerrestreAtaque : MonoBehaviour
             jogadorPowerUps = objJogador.GetComponent<PlayerPowerUp>();
 
             // Log de sucesso
-            Debug.Log("Jogador encontrado com sucesso.");
+            //Debug.Log("Jogador encontrado com sucesso.");
         }
         else
         {
             // Log de erro
-            Debug.LogError("Jogador com tag 'Player' não encontrado!");
+            //Debug.LogError("Jogador com tag 'Player' não encontrado!");
         }
     }
 
@@ -58,7 +58,7 @@ public class InimigoTerrestreAtaque : MonoBehaviour
         // Se o jogador está invisível, o inimigo ignora
         if (jogadorPowerUps != null && jogadorPowerUps.EstaInvisivel())
         {
-            Debug.Log("Jogador está invisível. Inimigo não reage.");
+            //Debug.Log("Jogador está invisível. Inimigo não reage.");
             return;
         }
 
@@ -66,7 +66,7 @@ public class InimigoTerrestreAtaque : MonoBehaviour
         float distancia = Vector3.Distance(transform.position, jogador.position);
 
         // Log de distância para debug
-        Debug.Log("Distância ao jogador: " + distancia);
+        //Debug.Log("Distância ao jogador: " + distancia);
 
         // Se estiver dentro da zona de deteção, persegue
         if (distancia <= distanciaDetecao)
@@ -86,7 +86,7 @@ public class InimigoTerrestreAtaque : MonoBehaviour
         rb.linearVelocity = direcao * velocidade;
 
         // Log para ver o que foi aplicado
-        Debug.Log("Rigidbody.linearVelocity aplicado: " + rb.linearVelocity);
+        //Debug.Log("Rigidbody.linearVelocity aplicado: " + rb.linearVelocity);
 
         // Se o modelo visual existir, gira-o para o jogador
         if (modeloVisual != null)
@@ -107,11 +107,11 @@ public class InimigoTerrestreAtaque : MonoBehaviour
                 modeloVisual.rotation = rotacaoAlvo * Quaternion.Euler(0f, 180f, 0f);
 
                 // Log de controlo
-                Debug.Log("ModeloVisual rodado com compensação de 180°.");
+                //Debug.Log("ModeloVisual rodado com compensação de 180°.");
 
 
                 // Log para confirmar
-                Debug.Log("ModeloVisual rodado instantaneamente para o jogador.");
+                //Debug.Log("ModeloVisual rodado instantaneamente para o jogador.");
             }
         }
     }

@@ -37,7 +37,7 @@ public class MenuPausa : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
-        Debug.Log("Jogo pausado — cursor visível");
+        //Debug.Log("Jogo pausado — cursor visível");
     }
 
     public void RetomarJogo()
@@ -55,7 +55,7 @@ public class MenuPausa : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 
-        Debug.Log("Jogo retomado — cursor escondido");
+        //Debug.Log("Jogo retomado — cursor escondido");
     }
 
 

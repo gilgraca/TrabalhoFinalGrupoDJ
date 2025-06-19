@@ -15,7 +15,7 @@ public class VideoPlayerURL : MonoBehaviour
         // Verifica se o VideoPlayer foi atribuído no Inspector
         if (videoPlayer == null)
         {
-            Debug.LogError("VideoPlayer não foi atribuído no Inspector!");
+            //Debug.LogError("VideoPlayer não foi atribuído no Inspector!");
             return;
         }
 
@@ -24,7 +24,7 @@ public class VideoPlayerURL : MonoBehaviour
 
         // Atribui o URL ao VideoPlayer
         videoPlayer.url = videoURL;
-        Debug.Log("URL atribuído ao VideoPlayer: " + videoURL);
+        //Debug.Log("URL atribuído ao VideoPlayer: " + videoURL);
 
         // Quando o vídeo estiver pronto, chama a função OnPrepared
         videoPlayer.prepareCompleted += OnPrepared;
@@ -34,19 +34,19 @@ public class VideoPlayerURL : MonoBehaviour
 
         // Começa a preparar o vídeo
         videoPlayer.Prepare();
-        Debug.Log("A preparar vídeo...");
+        //Debug.Log("A preparar vídeo...");
     }
 
     // Chamado quando o vídeo está pronto a ser reproduzido
     void OnPrepared(VideoPlayer vp)
     {
-        Debug.Log("Vídeo preparado. A iniciar reprodução...");
+        //Debug.Log("Vídeo preparado. A iniciar reprodução...");
         vp.Play();
     }
 
     // Chamado se houver erro
     void OnVideoError(VideoPlayer vp, string mensagem)
     {
-        Debug.LogError("Erro ao carregar vídeo: " + mensagem);
+        //Debug.LogError("Erro ao carregar vídeo: " + mensagem);
     }
 }

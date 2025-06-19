@@ -53,7 +53,7 @@ public class PowerUpHoverManager : MonoBehaviour
         teclaText.text = teclas[index];               // Mostra a tecla associada à habilidade
 
         // Log para testes
-        Debug.Log($"[Hover] Habilidade {index} | Vídeo: {videoURLs[index]} | Cooldown: {cooldowns[index]} | Tecla: {teclas[index]}");
+        //Debug.Log($"[Hover] Habilidade {index} | Vídeo: {videoURLs[index]} | Cooldown: {cooldowns[index]} | Tecla: {teclas[index]}");
     }
 
     // Chamada quando o rato sai do botão (mantém o último selecionado visível)

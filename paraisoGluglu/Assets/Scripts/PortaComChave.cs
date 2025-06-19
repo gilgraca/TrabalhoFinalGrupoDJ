@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class PortaComChaveAuto : MonoBehaviour
 {
-	public int idChaveNecessaria = 1;                  // ID da chave necessária
+	public int idChaveNecessaria = 1;                  // ID da chave necessï¿½ria
 	public Transform parteVisualDaPorta;               // Parte que gira
-	public Vector3 rotacaoAberta = new Vector3(0, 90, 0); // Rotação final da porta
+	public Vector3 rotacaoAberta = new Vector3(0, 90, 0); // Rotaï¿½ï¿½o final da porta
 	public float velocidadeAbertura = 2f;              // Velocidade da abertura
 
 	private bool aberta = false;
@@ -20,11 +20,11 @@ public class PortaComChaveAuto : MonoBehaviour
 			if (chavesScript != null && chavesScript.TemChave(idChaveNecessaria))
 			{
 				aberta = true;
-				Debug.Log("Porta aberta com sucesso.");
+				//Debug.Log("Porta aberta com sucesso.");
 			}
 			else
 			{
-				Debug.Log("Você precisa da chave correta.");
+				//Debug.Log("Vocï¿½ precisa da chave correta.");
 			}
 		}
 

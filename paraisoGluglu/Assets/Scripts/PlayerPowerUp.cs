@@ -352,7 +352,7 @@ public class PlayerPowerUp : MonoBehaviour
         estaInvencivelDano = true;
 
         // Debug para testes
-        Debug.Log("Jogador está invencível devido a dano!");
+        //Debug.Log("Jogador está invencível devido a dano!");
 
         float tempoPassado = 0f;
 
@@ -373,7 +373,7 @@ public class PlayerPowerUp : MonoBehaviour
         estaInvencivelDano = false;
 
         // Debug
-        Debug.Log("Invencibilidade de dano terminou.");
+        //Debug.Log("Invencibilidade de dano terminou.");
     }
 
     // Método auxiliar para verificar se está invencível por dano

@@ -31,7 +31,7 @@ public class MainMenu : MonoBehaviour
     public void MenuPrincipal()
     {
         // Debug para confirmar o nome da cena
-        Debug.Log("A carregar cena: " + menuprincipal);
+        //Debug.Log("A carregar cena: " + menuprincipal);
 
         // Retoma o tempo de jogo se estiver pausado
         Time.timeScale = 1f;
@@ -43,7 +43,7 @@ public class MainMenu : MonoBehaviour
     public void Creditos()
     {
         // Debug para confirmar o nome da cena
-        Debug.Log("A carregar cena: " + creditos);
+        //Debug.Log("A carregar cena: " + creditos);
 
         // Retoma o tempo de jogo se estiver pausado
         Time.timeScale = 1f;

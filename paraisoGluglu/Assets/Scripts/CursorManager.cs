@@ -13,14 +13,14 @@ public class CursorManager : MonoBehaviour
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
 
-            Debug.Log("Cursor visível e desbloqueado (menu).");
+            //Debug.Log("Cursor visível e desbloqueado (menu).");
         }
         else
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
 
-            Debug.Log("Cursor escondido e bloqueado (nível).");
+            //Debug.Log("Cursor escondido e bloqueado (nível).");
         }
     }
 }

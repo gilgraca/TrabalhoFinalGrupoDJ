@@ -25,6 +25,6 @@ public class FPSLimiter : MonoBehaviour
         Application.targetFrameRate = 60;
 
         // LOG para confirmar
-        Debug.Log("FPS limitado a 60 (global entre cenas)");
+        //Debug.Log("FPS limitado a 60 (global entre cenas)");
     }
 }
