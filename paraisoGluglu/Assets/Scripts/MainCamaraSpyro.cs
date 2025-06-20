@@ -2,48 +2,40 @@ using UnityEngine;
 
 public class MainCamaraSpyro : MonoBehaviour
 {
-    // Jogador a seguir
+    // Referência ao jogador
     public Transform jogador;
-    
+
     // Distância da câmara ao jogador
     public float distancia = 6.0f;
 
     // Altura da câmara em relação ao jogador
     public float altura = 3.0f;
 
-    // Velocidade de rotação da câmara com o rato
+    // Sensibilidade do rato
     public float sensibilidadeRato = 3.0f;
 
-    // Suavidade do movimento
-    public float suavidade = 5.0f;
-
-    // Ângulo atual da câmara (horizontal)
-    private float anguloAtual = 0.0f;
+    // Ângulo da câmara em relação ao jogador
+    private float anguloHorizontal = 0.0f;
 
     void LateUpdate()
     {
-        if (jogador == null) return;
+        // Bloqueia o movimento se estiver pausado ou jogador nulo
+        if (MenuPausa.jogoPausado || jogador == null) return;
 
-        // Lê movimento horizontal do rato (ou substitui por Input do analógico)
+        // Movimento do rato horizontal
         float movimentoRato = Input.GetAxis("Mouse X");
 
-        // Atualiza o ângulo com base no rato
-        anguloAtual += movimentoRato * sensibilidadeRato;
+        // Atualiza ângulo de rotação em torno do jogador
+        anguloHorizontal += movimentoRato * sensibilidadeRato;
 
-        // Calcula nova posição da câmara com base no ângulo
-        Quaternion rotacao = Quaternion.Euler(0, anguloAtual, 0);
-        Vector3 direcao = rotacao * Vector3.back;
+        // Calcula a posição da câmara a girar em torno do jogador
+        Vector3 offset = Quaternion.Euler(0, anguloHorizontal, 0) * new Vector3(0, 0, -distancia);
+        Vector3 posicaoDesejada = jogador.position + offset + Vector3.up * altura;
 
-        // Define posição desejada da câmara (atrás e acima do jogador)
-        Vector3 posicaoDesejada = jogador.position + direcao * distancia + Vector3.up * altura;
+        // Aplica diretamente a posição
+        transform.position = posicaoDesejada;
 
-        // Suaviza o movimento da câmara
-        transform.position = Vector3.Lerp(transform.position, posicaoDesejada, Time.deltaTime * suavidade);
-
-        // Aponta para o jogador
-        transform.LookAt(jogador);
-
-        // LOG para testar posição e rotação
-        // Debug.Log("Câmara pos: " + transform.position + " | Ângulo: " + anguloAtual);
+        // Aplica diretamente a rotação para olhar para o jogador (sem Slerp, sem LookAt)
+        transform.rotation = Quaternion.LookRotation(jogador.position - transform.position);
     }
 }

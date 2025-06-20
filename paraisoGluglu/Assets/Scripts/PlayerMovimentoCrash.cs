@@ -48,17 +48,13 @@ public class PlayerMovimentoCrash : MonoBehaviour
         saltosDisponiveis = saltosMaximos;
     }
 
-    void Update()
-    {// === MOVIMENTO E ROTAÇÃO DO JOGADOR ===
+    void FixedUpdate()
+    {
+        if (MenuPausa.jogoPausado) return;
 
-        // Captura o input horizontal (X) e vertical (Z)
         float inputX = Input.GetAxis("Horizontal");
         float inputZ = Input.GetAxis("Vertical");
-
-        // Cria um vetor de movimento com base no input
         Vector3 movimento = new Vector3(inputX, 0f, inputZ).normalized * velocidade;
-
-        // Aplica o movimento à velocidade do rigidbody (mantém a velocidade vertical atual)
         rb.linearVelocity = new Vector3(movimento.x, rb.linearVelocity.y, movimento.z);
         // Se houver movimento (input diferente de zero), roda o jogador suavemente nessa direção
         if (movimento != Vector3.zero)
@@ -70,11 +66,15 @@ public class PlayerMovimentoCrash : MonoBehaviour
             Quaternion rotacaoAlvo = Quaternion.LookRotation(direcaoAlvo);
 
             // Suaviza a rotação atual para a rotação alvo
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotacaoAlvo, Time.deltaTime * 10f); // 10f é a velocidade da rotação, ajusta se quiseres
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotacaoAlvo, Time.fixedDeltaTime * 10f); // 10f é a velocidade da rotação, ajusta se quiseres
 
             // Log para ver a rotação a cada frame
             //Debug.Log("Rotação suavizada para: " + transform.rotation.eulerAngles);
         }
+    }
+
+    void Update()
+    {// === MOVIMENTO E ROTAÇÃO DO JOGADOR ===
         // Detecção de chão com Raycast
         if (podeVerificarChao)
         {
