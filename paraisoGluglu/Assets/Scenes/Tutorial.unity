@@ -2280,6 +2280,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3200598866577394747, guid: a799ea09bb360e9449de66df4d809caf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4549975832699160078, guid: a799ea09bb360e9449de66df4d809caf, type: 3}
       propertyPath: m_Name
       value: HUD
