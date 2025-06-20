@@ -26,6 +26,9 @@ public class SceneManagement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // Impede que o trigger funcione se este script estiver desativado
+        if (!enabled) return;
+
         // Verifica se o objeto que colidiu tem o tag "Player"
         if (other.CompareTag("Player"))
         {
@@ -33,6 +36,7 @@ public class SceneManagement : MonoBehaviour
             CarregarProximaCena();
         }
     }
+
 
     // Ou versão com delay (ex: após fade out)
     public void CarregarCenaComDelay(float tempo)
