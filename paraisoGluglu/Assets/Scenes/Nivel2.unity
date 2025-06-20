@@ -375,6 +375,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChangeScene
       objectReference: {fileID: 0}
+    - target: {fileID: 1411524660970547469, guid: 84ecdcd3b78e05445860426c7705f270, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a005636dde77d254e9ab0eb5ce8cda7d, type: 2}
     - target: {fileID: 8201435785486082718, guid: 84ecdcd3b78e05445860426c7705f270, type: 3}
       propertyPath: m_LocalPosition.x
       value: -865.6
@@ -4978,6 +4982,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2011428802326946621, guid: a799ea09bb360e9449de66df4d809caf, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3200598866577394747, guid: a799ea09bb360e9449de66df4d809caf, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4549975832699160078, guid: a799ea09bb360e9449de66df4d809caf, type: 3}
