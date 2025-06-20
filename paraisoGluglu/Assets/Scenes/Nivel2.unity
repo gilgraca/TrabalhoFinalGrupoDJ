@@ -370,6 +370,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChangeScene
       objectReference: {fileID: 0}
+    - target: {fileID: 7497308155153835194, guid: 84ecdcd3b78e05445860426c7705f270, type: 3}
+      propertyPath: proximaCena
+      value: CutscenePlayer4
+      objectReference: {fileID: 0}
     - target: {fileID: 8201435785486082718, guid: 84ecdcd3b78e05445860426c7705f270, type: 3}
       propertyPath: m_LocalPosition.x
       value: -865.6
@@ -4767,6 +4771,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 52380855136103562, guid: a799ea09bb360e9449de66df4d809caf, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 52380855136103562, guid: a799ea09bb360e9449de66df4d809caf, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -4780,6 +4788,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2011428802326946621, guid: a799ea09bb360e9449de66df4d809caf, type: 3}
       propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2011428802326946621, guid: a799ea09bb360e9449de66df4d809caf, type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2011428802326946621, guid: a799ea09bb360e9449de66df4d809caf, type: 3}
@@ -4803,6 +4815,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5840838615101000872, guid: a799ea09bb360e9449de66df4d809caf, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5840838615101000872, guid: a799ea09bb360e9449de66df4d809caf, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -4816,6 +4832,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8224378611910351525, guid: a799ea09bb360e9449de66df4d809caf, type: 3}
       propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224378611910351525, guid: a799ea09bb360e9449de66df4d809caf, type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8224378611910351525, guid: a799ea09bb360e9449de66df4d809caf, type: 3}
