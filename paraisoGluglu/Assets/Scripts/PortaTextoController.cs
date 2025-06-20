@@ -15,7 +15,7 @@ public class PortaTextoController : MonoBehaviour
         if (texto != null)
         {
             texto.text = textoComChave;
-            Debug.Log("Texto da porta foi alterado.");
+            //Debug.Log("Texto da porta foi alterado.");
         }
     }
 }

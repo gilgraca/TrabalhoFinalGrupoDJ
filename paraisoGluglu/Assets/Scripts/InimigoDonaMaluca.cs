@@ -37,7 +37,7 @@ public class InimigoDonaMaluca : MonoBehaviour
         if (jogadorPowerUps.EstaInvisivel()) return;
 
         //LOG para confirmar que está a usar o NavMesh
-        Debug.Log("A usar NavMesh para perseguir o jogador");
+        //Debug.Log("A usar NavMesh para perseguir o jogador");
 
         // Define o destino como a posição do jogador
         agent.SetDestination(jogador.position);

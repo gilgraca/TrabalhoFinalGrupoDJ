@@ -27,8 +27,5 @@ public class MainCamaraScriptCrash : MonoBehaviour
 
         // Suaviza a rotação com Slerp
         transform.rotation = Quaternion.Slerp(transform.rotation, rotacaoDesejada, Time.deltaTime * suavidade);
-
-        // Log para debug
-        Debug.Log("CrashCâmara POS: " + transform.position + " | ROT: " + transform.rotation.eulerAngles);
     }
 }

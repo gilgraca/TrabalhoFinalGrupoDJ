@@ -50,7 +50,7 @@ public class Chave : MonoBehaviour
                 }
 
                 // Log para testes
-                Debug.Log("Chave apanhada e porta ativada!");
+                // Debug.Log("Chave apanhada e porta ativada!");
 
                 // Destroi esta chave do mundo
                 Destroy(gameObject);

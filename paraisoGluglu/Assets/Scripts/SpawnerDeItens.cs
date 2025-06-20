@@ -20,7 +20,7 @@ public class SpawnerDeItens : MonoBehaviour
         // Verifica se há posições definidas
         if (pontosDeSpawn.Length == 0)
         {
-            Debug.LogError("Nenhum ponto de spawn definido.");
+            //Debug.LogError("Nenhum ponto de spawn definido.");
             return;
         }
 

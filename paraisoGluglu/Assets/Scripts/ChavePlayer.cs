@@ -14,7 +14,7 @@ public class ChavePlayer : MonoBehaviour
         if (!chavesApanhadas.Contains(idChave))
         {
             chavesApanhadas.Add(idChave);
-            Debug.Log("Chave " + idChave + " apanhada.");
+            // Debug.Log("Chave " + idChave + " apanhada.");
         }
     }
 

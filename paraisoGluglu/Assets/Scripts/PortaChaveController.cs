@@ -22,7 +22,7 @@ public class PortaChaveController : MonoBehaviour
             if (sceneScript != null)
             {
                 sceneScript.enabled = false;
-                Debug.Log("SceneManagement.cs foi desativado no início.");
+                //Debug.Log("SceneManagement.cs foi desativado no início.");
             }
         }
     }
@@ -37,7 +37,7 @@ public class PortaChaveController : MonoBehaviour
             if (sceneScript != null)
             {
                 sceneScript.enabled = true;
-                Debug.Log("SceneManagement.cs foi ativado.");
+                //Debug.Log("SceneManagement.cs foi ativado.");
             }
 
             // Muda o texto se for necessário
@@ -46,7 +46,7 @@ public class PortaChaveController : MonoBehaviour
                 textoController.MudarTexto();
             }
 
-            Debug.Log("Porta ativada com a chave correta.");
+            //Debug.Log("Porta ativada com a chave correta.");
         }
     }
 }
