@@ -379,6 +379,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: a005636dde77d254e9ab0eb5ce8cda7d, type: 2}
+    - target: {fileID: 7497308155153835194, guid: 84ecdcd3b78e05445860426c7705f270, type: 3}
+      propertyPath: proximaCena
+      value: CutscenePlayer4
+      objectReference: {fileID: 0}
     - target: {fileID: 8201435785486082718, guid: 84ecdcd3b78e05445860426c7705f270, type: 3}
       propertyPath: m_LocalPosition.x
       value: -865.6
