@@ -39,6 +39,10 @@ public class PlayerMovimentoSpyro : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
+    // Inputs guardados para usar na física
+    private float inputX;
+    private float inputZ;
+
     void Start()
     {
         // Vai buscar o componente Rigidbody
@@ -52,43 +56,9 @@ public class PlayerMovimentoSpyro : MonoBehaviour
     {// === MOVIMENTO E ROTAÇÃO DO JOGADOR ===
 
         // Captura o input horizontal (X) e vertical (Z)
-        float inputX = Input.GetAxis("Horizontal");
-        float inputZ = Input.GetAxis("Vertical");
+        inputX = Input.GetAxis("Horizontal");
+        inputZ = Input.GetAxis("Vertical");
 
-        // Obtém a direção da câmara (sem inclinação vertical)
-        Vector3 forwardCam = Camera.main.transform.forward;
-        Vector3 rightCam = Camera.main.transform.right;
-
-        // Remove componente vertical (para não andar no ar)
-        forwardCam.y = 0f;
-        rightCam.y = 0f;
-
-        // Normaliza as direções para manter velocidade constante
-        forwardCam.Normalize();
-        rightCam.Normalize();
-
-        // Movimento relativo à câmara
-        Vector3 direcaoDesejada = forwardCam * inputZ + rightCam * inputX;
-        Vector3 movimento = direcaoDesejada.normalized * velocidade;
-
-
-        // Aplica o movimento à velocidade do rigidbody (mantém a velocidade vertical atual)
-        rb.linearVelocity = new Vector3(movimento.x, rb.linearVelocity.y, movimento.z);
-        // Se houver movimento (input diferente de zero), roda o jogador suavemente nessa direção
-        if (movimento != Vector3.zero)
-        {
-            // Direção alvo para onde o jogador deve olhar
-            Vector3 direcaoAlvo = direcaoDesejada;
-
-            // Calcula a rotação alvo com base na direção
-            Quaternion rotacaoAlvo = Quaternion.LookRotation(direcaoAlvo);
-
-            // Suaviza a rotação atual para a rotação alvo
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotacaoAlvo, Time.deltaTime * 10f); // 10f é a velocidade da rotação, ajusta se quiseres
-
-            // Log para ver a rotação a cada frame
-            //Debug.Log("Rotação suavizada para: " + transform.rotation.eulerAngles);
-        }
         // Detecção de chão com Raycast
         if (podeVerificarChao)
         {
@@ -162,6 +132,44 @@ public class PlayerMovimentoSpyro : MonoBehaviour
 
         // Define também a velocidade vertical (caso tenhas animações para saltar/cair)
         animator.SetFloat("verticalspeed", rb.linearVelocity.y);
+    }
+
+    void FixedUpdate()
+    {
+        // Obtém a direção da câmara (sem inclinação vertical)
+        Vector3 forwardCam = Camera.main.transform.forward;
+        Vector3 rightCam = Camera.main.transform.right;
+
+        // Remove componente vertical (para não andar no ar)
+        forwardCam.y = 0f;
+        rightCam.y = 0f;
+
+        // Normaliza as direções para manter velocidade constante
+        forwardCam.Normalize();
+        rightCam.Normalize();
+
+        // Movimento relativo à câmara
+        Vector3 direcaoDesejada = forwardCam * inputZ + rightCam * inputX;
+        Vector3 movimento = direcaoDesejada.normalized * velocidade;
+
+
+        // Aplica o movimento à velocidade do rigidbody (mantém a velocidade vertical atual)
+        rb.linearVelocity = new Vector3(movimento.x, rb.linearVelocity.y, movimento.z);
+        // Se houver movimento (input diferente de zero), roda o jogador suavemente nessa direção
+        if (movimento != Vector3.zero)
+        {
+            // Direção alvo para onde o jogador deve olhar
+            Vector3 direcaoAlvo = direcaoDesejada;
+
+            // Calcula a rotação alvo com base na direção
+            Quaternion rotacaoAlvo = Quaternion.LookRotation(direcaoAlvo);
+
+            // Suaviza a rotação atual para a rotação alvo
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotacaoAlvo, Time.deltaTime * 10f); // 10f é a velocidade da rotação, ajusta se quiseres
+
+            // Log para ver a rotação a cada frame
+            //Debug.Log("Rotação suavizada para: " + transform.rotation.eulerAngles);
+        }
     }
     // Retorna se o jogador está ou não no chão (para outros scripts)
     public bool EstaNoChao()
