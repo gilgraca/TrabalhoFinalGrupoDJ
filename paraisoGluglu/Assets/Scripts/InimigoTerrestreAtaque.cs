@@ -20,9 +20,6 @@ public class InimigoTerrestreAtaque : MonoBehaviour
     // Referência ao Rigidbody do inimigo
     private Rigidbody rb;
 
-    // Exposto no Inspector: onde está o modelo visual (o filho com o mesh)
-    [SerializeField] private Transform modeloVisual;
-
     // Método chamado no início
     void Start()
     {
@@ -88,31 +85,29 @@ public class InimigoTerrestreAtaque : MonoBehaviour
         // Log para ver o que foi aplicado
         //Debug.Log("Rigidbody.linearVelocity aplicado: " + rb.linearVelocity);
 
-        // Se o modelo visual existir, gira-o para o jogador
-        if (modeloVisual != null)
-        {
+        
+  
             // Direção horizontal do inimigo para o jogador
             Vector3 lookDirection = jogador.position - transform.position;
             lookDirection.y = 0f;
 
-            // Se houver direção válida
-            if (lookDirection != Vector3.zero)
-            {
-                // Rotação desejada para olhar para o jogador
-                Quaternion rotacaoAlvo = Quaternion.LookRotation(lookDirection);
 
-                // rotacaoAlvo *= Quaternion.Euler(0f, 180f, 0f);
-
-                // Roda o modelo 180 graus no Y para compensar o rabo virado
-                modeloVisual.rotation = rotacaoAlvo * Quaternion.Euler(0f, 180f, 0f);
-
-                // Log de controlo
-                //Debug.Log("ModeloVisual rodado com compensação de 180°.");
+            // Rotação desejada para olhar para o jogador
+            Quaternion rotacaoAlvo = Quaternion.LookRotation(lookDirection);
 
 
-                // Log para confirmar
-                //Debug.Log("ModeloVisual rodado instantaneamente para o jogador.");
-            }
-        }
+            // Roda o modelo 180 graus no Y para compensar o rabo virado
+            transform.rotation = rotacaoAlvo * Quaternion.Euler(0f, 180f, 0f);
+
+            // Log de controlo
+            //Debug.Log("ModeloVisual rodado com compensação de 180°.");
+
+
+            // Log para confirmar
+            //Debug.Log("ModeloVisual rodado instantaneamente para o jogador.");
+
+        
+
+        
     }
 }

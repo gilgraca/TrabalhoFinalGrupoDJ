@@ -54,11 +54,11 @@ public class InimigoTerrestrePatrulha : MonoBehaviour
         // Roda o inimigo para o ponto
         if (direcao != Vector3.zero)
         {
-            Quaternion rotacao = Quaternion.LookRotation(direcao);
+            Quaternion rotacao = Quaternion.LookRotation(direcao) * Quaternion.Euler(0f, 180f,0f);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotacao, Time.deltaTime * 5f);
         }
 
-        if (Vector3.Distance(transform.position, destino.position) < 0.2f)
+        if (Vector3.Distance(transform.position, destino.position) < .8f)
         {
             StartCoroutine(EsperarAntesDeAvancar());
         }
