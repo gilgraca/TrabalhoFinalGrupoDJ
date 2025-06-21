@@ -15,6 +15,9 @@ public class SpawnerDeItens : MonoBehaviour
     // ID da chave a ser usada
     public int idChave = 1;
 
+    // Offset para a altura da chave
+    [SerializeField] private float alturaOffsetChave = 0.5f;
+
     void Start()
     {
         // Verifica se há posições definidas
@@ -32,7 +35,11 @@ public class SpawnerDeItens : MonoBehaviour
             // Se for o índice sorteado, mete a chave
             if (i == indiceChave)
             {
-                GameObject chave = Instantiate(chavePrefab, pontosDeSpawn[i].position, Quaternion.identity);
+                // Calcula posição um pouco acima do chão
+                Vector3 posicaoComOffset = pontosDeSpawn[i].position + Vector3.up * alturaOffsetChave;
+
+                // Instancia a chave nessa nova posição
+                GameObject chave = Instantiate(chavePrefab, posicaoComOffset, Quaternion.identity);
 
                 // Passa o ID da chave ao script Porta
                 Chave portaScript = chave.GetComponent<Chave>();
