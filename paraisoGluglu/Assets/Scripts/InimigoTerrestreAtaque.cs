@@ -20,6 +20,9 @@ public class InimigoTerrestreAtaque : MonoBehaviour
     // Referência ao Rigidbody do inimigo
     private Rigidbody rb;
 
+    [SerializeField] private Animator animator;
+
+
     // Método chamado no início
     void Start()
     {
@@ -68,12 +71,18 @@ public class InimigoTerrestreAtaque : MonoBehaviour
         // Se estiver dentro da zona de deteção, persegue
         if (distancia <= distanciaDetecao)
         {
-            PerseguirJogador();
+            PerseguirJogador(distancia);
         }
+
+        // Isto assegura que o valor é sempre positivo e correto para animações de andar/parar
+        float velocidadeHorizontal = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z).magnitude;
+
+        // Define o valor da "speed" no Animator com base na velocidade horizontal total
+        animator.SetFloat("Speed", velocidadeHorizontal);
     }
 
     // Método que move o inimigo em direção ao jogador
-    void PerseguirJogador()
+    void PerseguirJogador(float distancia)
     {
         // Calcula a direção horizontal para o jogador
         Vector3 direcao = (jogador.position - transform.position).normalized;
@@ -85,8 +94,6 @@ public class InimigoTerrestreAtaque : MonoBehaviour
         // Log para ver o que foi aplicado
         //Debug.Log("Rigidbody.linearVelocity aplicado: " + rb.linearVelocity);
 
-        
-  
             // Direção horizontal do inimigo para o jogador
             Vector3 lookDirection = jogador.position - transform.position;
             lookDirection.y = 0f;
@@ -106,8 +113,9 @@ public class InimigoTerrestreAtaque : MonoBehaviour
             // Log para confirmar
             //Debug.Log("ModeloVisual rodado instantaneamente para o jogador.");
 
-        
+            if(distancia< 6f) if (animator) animator.SetTrigger("Attack");
 
-        
+
+
     }
 }
