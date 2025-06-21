@@ -194,6 +194,12 @@ public class PlayerPowerUp : MonoBehaviour
 
         //Debug.Log("Dash disponível");
     }
+    // Getter para saber se está a dashar (usado no movimento)
+    public bool EstaADashar()
+    {
+        return estaADashar;
+    }
+
     public void AtivarInvencibilidade()
     {
         // Verifica se já está invencível ou se está em cooldown

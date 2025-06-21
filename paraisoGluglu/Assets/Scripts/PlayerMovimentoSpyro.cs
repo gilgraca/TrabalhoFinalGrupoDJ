@@ -152,9 +152,23 @@ public class PlayerMovimentoSpyro : MonoBehaviour
         Vector3 direcaoDesejada = forwardCam * inputZ + rightCam * inputX;
         Vector3 movimento = direcaoDesejada.normalized * velocidade;
 
-
         // Aplica o movimento à velocidade do rigidbody (mantém a velocidade vertical atual)
-        rb.linearVelocity = new Vector3(movimento.x, rb.linearVelocity.y, movimento.z);
+        // Só aplica movimento normal se não estiver a fazer dash
+        PlayerPowerUp powerUp = GetComponent<PlayerPowerUp>();
+        if (powerUp == null || !powerUp.EstaADashar())
+        {
+            // Aplica o movimento à velocidade do Rigidbody
+            rb.linearVelocity = new Vector3(movimento.x, rb.linearVelocity.y, movimento.z);
+
+            // Log para confirmar que está a aplicar o movimento normal
+            Debug.Log("Movimento normal aplicado: " + movimento);
+        }
+        else
+        {
+            // Log para confirmar que o dash está ativo e ignora o movimento normal
+            Debug.Log("A ignorar movimento normal porque está a dashar.");
+        }
+
         // Se houver movimento (input diferente de zero), roda o jogador suavemente nessa direção
         if (movimento != Vector3.zero)
         {
