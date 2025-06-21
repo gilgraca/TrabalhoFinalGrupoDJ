@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 // Script reutilizável para gerir vida e dano de qualquer inimigo
 public class InimigoVida : MonoBehaviour
@@ -11,7 +12,7 @@ public class InimigoVida : MonoBehaviour
     {
         // Reduz a vida
         vida -= dano;
-        animator.SetTrigger("Damaged");
+        if(animator) animator.SetTrigger("Damaged");
 
         // LOG para testar o dano recebido
         //Debug.Log($"{gameObject.name} levou {dano} de dano. Vida restante: {vida}");
@@ -21,13 +22,20 @@ public class InimigoVida : MonoBehaviour
         {
             // LOG de morte
             //Debug.Log($"{gameObject.name} morreu!");
-            
+
             // Destroi o inimigo
             // Falta animação de morte
-            Destroy(gameObject);
+            if (animator) animator.SetTrigger("Died");
+            StartCoroutine(DestruirAposTempo(2f));
         }
-    }
 
+
+    }
+    IEnumerator DestruirAposTempo(float tempo)
+    {
+        yield return new WaitForSeconds(tempo);
+        Destroy(gameObject);
+    }
     // Método auxiliar para saber se o inimigo ainda está vivo
     public bool EstaVivo()
     {
