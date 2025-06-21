@@ -12,6 +12,16 @@ public class PortaChaveController : MonoBehaviour
     // ID da chave necessária
     public int idChaveNecessaria = 1;
 
+    // Material quando a porta está ativa
+    [SerializeField] private Material materialDisponivel;
+
+    // Material quando a porta está inativa
+    [SerializeField] private Material materialIndisponivel;
+
+    // Objeto que tem o renderer do indicador
+    [SerializeField] private Renderer indicadorRenderer;
+
+
     void Start()
     {
         // Se existir a porta
@@ -24,6 +34,10 @@ public class PortaChaveController : MonoBehaviour
                 sceneScript.enabled = false;
                 //Debug.Log("SceneManagement.cs foi desativado no início.");
             }
+        }
+        if (indicadorRenderer != null && materialIndisponivel != null)
+        {
+            indicadorRenderer.material = materialIndisponivel;
         }
     }
 
@@ -45,6 +59,8 @@ public class PortaChaveController : MonoBehaviour
             {
                 textoController.MudarTexto();
             }
+
+            indicadorRenderer.material = materialDisponivel;
 
             //Debug.Log("Porta ativada com a chave correta.");
         }
