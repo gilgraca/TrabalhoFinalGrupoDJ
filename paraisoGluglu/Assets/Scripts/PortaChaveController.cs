@@ -21,6 +21,8 @@ public class PortaChaveController : MonoBehaviour
     // Objeto que tem o renderer do indicador
     [SerializeField] private Renderer indicadorRenderer;
 
+    // Referência ao GameObject do ícone da chave no HUD
+    [SerializeField] private GameObject keyHUD;
 
     void Start()
     {
@@ -38,6 +40,10 @@ public class PortaChaveController : MonoBehaviour
         if (indicadorRenderer != null && materialIndisponivel != null)
         {
             indicadorRenderer.material = materialIndisponivel;
+        }
+        if (keyHUD != null)
+        {
+            keyHUD.SetActive(false); // Desativa o ícone da chave no início
         }
     }
 
@@ -61,6 +67,12 @@ public class PortaChaveController : MonoBehaviour
             }
 
             indicadorRenderer.material = materialDisponivel;
+
+            if (keyHUD != null)
+            {
+                keyHUD.SetActive(true); // Ativa o HUD da chave
+                Debug.Log("HUD da chave ativado.");
+            }
 
             //Debug.Log("Porta ativada com a chave correta.");
         }

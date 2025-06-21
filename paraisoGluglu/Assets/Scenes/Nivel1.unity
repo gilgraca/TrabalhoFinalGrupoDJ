@@ -3543,6 +3543,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193404970}
   m_Mesh: {fileID: 4356252935627708071, guid: 914e26c773673014a80d972d24d6abb9, type: 3}
+--- !u!1 &195153418 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3200598866577394747, guid: a799ea09bb360e9449de66df4d809caf, type: 3}
+  m_PrefabInstance: {fileID: 515372730}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &196332307
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25601,6 +25606,7 @@ MonoBehaviour:
   materialDisponivel: {fileID: 2100000, guid: a005636dde77d254e9ab0eb5ce8cda7d, type: 2}
   materialIndisponivel: {fileID: 2100000, guid: 150603c95ae82bb4a9364677de3f13c1, type: 2}
   indicadorRenderer: {fileID: 605908883}
+  keyHUD: {fileID: 195153418}
 --- !u!4 &1588364468
 Transform:
   m_ObjectHideFlags: 0
