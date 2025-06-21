@@ -51,4 +51,8 @@ public class MainMenu : MonoBehaviour
         // Carrega a cena pelo nome
         SceneManager.LoadScene(creditos);
     }
+    public void SairDoJogo()
+    {
+        Application.Quit();
+    }
 }

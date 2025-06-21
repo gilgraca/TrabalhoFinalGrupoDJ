@@ -601,7 +601,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1095181781341937224, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1095181781341937224, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
       propertyPath: suavizacaoRotacao
@@ -613,7 +613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1912494435207170601, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2569704439073490124, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
       propertyPath: ataqueNormalCooldownUI
@@ -1742,7 +1742,7 @@ PrefabInstance:
       objectReference: {fileID: 1631217477}
     - target: {fileID: 4181755837890727694, guid: 44721e1da47798f43a945a0183e6249b, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4288345752227368646, guid: 44721e1da47798f43a945a0183e6249b, type: 3}
       propertyPath: jogador
@@ -1750,7 +1750,7 @@ PrefabInstance:
       objectReference: {fileID: 1631217477}
     - target: {fileID: 4288345752227368646, guid: 44721e1da47798f43a945a0183e6249b, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4288345752227368646, guid: 44721e1da47798f43a945a0183e6249b, type: 3}
       propertyPath: suavidadeRotacao
