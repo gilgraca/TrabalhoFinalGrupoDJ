@@ -74,11 +74,6 @@ public class InimigoTerrestreAtaque : MonoBehaviour
             PerseguirJogador(distancia);
         }
 
-        // Isto assegura que o valor é sempre positivo e correto para animações de andar/parar
-        float velocidadeHorizontal = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z).magnitude;
-
-        // Define o valor da "speed" no Animator com base na velocidade horizontal total
-        animator.SetFloat("Speed", velocidadeHorizontal);
     }
 
     // Método que move o inimigo em direção ao jogador

@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vida: 3
-  animator: {fileID: 0}
+  animator: {fileID: 2046309546896783307}
 --- !u!114 &7170311389487744758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,7 +439,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 26dbecbf346f78f4eb8eebfebb8a7f6c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0

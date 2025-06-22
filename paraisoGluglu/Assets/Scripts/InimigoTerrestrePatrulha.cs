@@ -55,10 +55,10 @@ public class InimigoTerrestrePatrulha : MonoBehaviour
         if (direcao != Vector3.zero)
         {
             Quaternion rotacao = Quaternion.LookRotation(direcao) * Quaternion.Euler(0f, 180f,0f);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotacao, Time.deltaTime * 5f);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotacao, Time.deltaTime * 6f);
         }
 
-        if (Vector3.Distance(transform.position, destino.position) < .8f)
+        if (Vector3.Distance(transform.position, destino.position) < 1.3f)
         {
             StartCoroutine(EsperarAntesDeAvancar());
         }
