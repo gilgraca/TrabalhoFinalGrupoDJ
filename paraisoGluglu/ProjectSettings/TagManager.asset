@@ -13,6 +13,7 @@ TagManager:
   - ChangeScene
   - Key
   - DamageRespawn
+  - DonaMaluca
   layers:
   - Default
   - TransparentFX

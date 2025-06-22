@@ -917,7 +917,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1482878040570689760, guid: 1279e726d2b09334ca77abe228aa5a47, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1827525843}
   m_SourcePrefab: {fileID: 100100000, guid: 1279e726d2b09334ca77abe228aa5a47, type: 3}
 --- !u!1 &28463251
 GameObject:
@@ -2755,7 +2758,7 @@ GameObject:
   - component: {fileID: 146047116}
   - component: {fileID: 146047115}
   - component: {fileID: 146047114}
-  - component: {fileID: 146047118}
+  - component: {fileID: 146047119}
   m_Layer: 0
   m_Name: HouseDoor_01_LOD0 (9)
   m_TagString: Caixa
@@ -2868,18 +2871,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 146047112}
   m_Mesh: {fileID: -7408364419616361824, guid: b4270f43d7c790c44847a6b451b2bc45, type: 3}
---- !u!114 &146047118
-MonoBehaviour:
+--- !u!208 &146047119
+NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 146047112}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 740fa89be0f148e4cb7d4dfc7cf10029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.48700002, y: 1.042, z: 0.18}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.48700002, y: 1.042, z: 0.054}
+  m_TimeToStationary: 0.5
 --- !u!1 &152836643
 GameObject:
   m_ObjectHideFlags: 0
@@ -6659,7 +6666,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2404902693598078277, guid: a985a00bdafbb024480b8510632406a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.499386
+      value: -25.1
       objectReference: {fileID: 0}
     - target: {fileID: 2404902693598078277, guid: a985a00bdafbb024480b8510632406a7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6667,7 +6674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2404902693598078277, guid: a985a00bdafbb024480b8510632406a7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.907601
+      value: 23.56
       objectReference: {fileID: 0}
     - target: {fileID: 2404902693598078277, guid: a985a00bdafbb024480b8510632406a7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7832,7 +7839,7 @@ Transform:
   m_GameObject: {fileID: 484738379}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.7560005, y: 2.766, z: -28.943}
+  m_LocalPosition: {x: 1.97, y: 2.766, z: -41.14}
   m_LocalScale: {x: 0.25754, y: 0.25754, z: 0.25754}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8599,7 +8606,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1482878040570689760, guid: 1279e726d2b09334ca77abe228aa5a47, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1908162663}
   m_SourcePrefab: {fileID: 100100000, guid: 1279e726d2b09334ca77abe228aa5a47, type: 3}
 --- !u!1 &527019067
 GameObject:
@@ -8736,27 +8746,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5216626980452067822, guid: 3e715039d0b44624bae1d7bc1137ae6c, type: 3}
---- !u!1 &529328913 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3032117643365285887, guid: a985a00bdafbb024480b8510632406a7, type: 3}
-  m_PrefabInstance: {fileID: 1345564906}
-  m_PrefabAsset: {fileID: 0}
---- !u!208 &529328919
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 529328913}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.010000001, y: 0.010000001, z: 0.010000001}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0.010000001}
-  m_TimeToStationary: 0.5
 --- !u!1001 &531496646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9406,7 +9395,7 @@ GameObject:
   - component: {fileID: 570444752}
   - component: {fileID: 570444751}
   - component: {fileID: 570444750}
-  - component: {fileID: 570444755}
+  - component: {fileID: 570444756}
   m_Layer: 0
   m_Name: HouseDoor_01_LOD0 (8)
   m_TagString: Caixa
@@ -9519,18 +9508,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 175018487}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &570444755
-MonoBehaviour:
+--- !u!208 &570444756
+NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 570444749}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 740fa89be0f148e4cb7d4dfc7cf10029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.48700002, y: 1.042, z: 0.18}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.48700002, y: 1.042, z: 0.054}
+  m_TimeToStationary: 0.5
 --- !u!4 &587504856 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2296815006206992986, guid: 1279e726d2b09334ca77abe228aa5a47, type: 3}
@@ -10615,7 +10608,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 972261633070753599, guid: 25301affd8ec4504c9565ad48413f7f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 734516796}
   m_SourcePrefab: {fileID: 100100000, guid: 25301affd8ec4504c9565ad48413f7f0, type: 3}
 --- !u!1 &647175363
 GameObject:
@@ -12174,6 +12170,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6138375337819731167, guid: 528a0e588f6fa5447928329240509219, type: 3}
   m_PrefabInstance: {fileID: 1558861777}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &734516792 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 972261633070753599, guid: 25301affd8ec4504c9565ad48413f7f0, type: 3}
+  m_PrefabInstance: {fileID: 646042215}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &734516796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734516792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &735312214
 GameObject:
   m_ObjectHideFlags: 0
@@ -13863,6 +13884,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6155284427039436249, guid: 539264233b4d43c4f9f9a003a5ac9461, type: 3}
       insertIndex: -1
       addedObject: {fileID: 828982069}
+    - targetCorrespondingSourceObject: {fileID: 6155284427039436249, guid: 539264233b4d43c4f9f9a003a5ac9461, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 828982073}
+    - targetCorrespondingSourceObject: {fileID: 6155284427039436249, guid: 539264233b4d43c4f9f9a003a5ac9461, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 828982072}
   m_SourcePrefab: {fileID: 100100000, guid: 539264233b4d43c4f9f9a003a5ac9461, type: 3}
 --- !u!1 &828982068 stripped
 GameObject:
@@ -13891,6 +13918,46 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2374825348312693295, guid: 9adc57be3775c9d489879ae3e9a854c3, type: 3}
+--- !u!114 &828982072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828982068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
+--- !u!114 &828982073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828982068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &839830152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14705,7 +14772,7 @@ GameObject:
   - component: {fileID: 875931583}
   - component: {fileID: 875931582}
   - component: {fileID: 875931585}
-  - component: {fileID: 875931586}
+  - component: {fileID: 875931587}
   m_Layer: 0
   m_Name: HouseDoor_01_LOD1 (1)
   m_TagString: Caixa
@@ -14818,18 +14885,22 @@ MonoBehaviour:
   quantidadeTabuas: 5
   forcaExplosao: 300
   raioExplosao: 2
---- !u!114 &875931586
-MonoBehaviour:
+--- !u!208 &875931587
+NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875931580}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 740fa89be0f148e4cb7d4dfc7cf10029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.48700002, y: 1.042, z: 0.18}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.48800004, y: 1.039, z: 0.054}
+  m_TimeToStationary: 0.5
 --- !u!1 &883209041 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4dcb36ac532bd174ab2cbdee16df10f5, type: 3}
@@ -15687,7 +15758,7 @@ Transform:
   m_GameObject: {fileID: 948564152}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.6501045, y: 2.766, z: -5.8}
+  m_LocalPosition: {x: -3.02, y: 2.766, z: 4.32}
   m_LocalScale: {x: 0.25754, y: 0.25754, z: 0.25754}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18693,7 +18764,6 @@ GameObject:
   - component: {fileID: 1098782347}
   - component: {fileID: 1098782350}
   - component: {fileID: 1098782351}
-  - component: {fileID: 1098782352}
   - component: {fileID: 1098782353}
   m_Layer: 0
   m_Name: HouseDoor_01_LOD0 (5)
@@ -18823,18 +18893,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.48700002, y: 1.042, z: 0.054}
   m_TimeToStationary: 0.5
---- !u!114 &1098782352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1098782345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 740fa89be0f148e4cb7d4dfc7cf10029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1098782353
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22033,7 +22091,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2404902693598078277, guid: a985a00bdafbb024480b8510632406a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -26.660378
+      value: -20.34
       objectReference: {fileID: 0}
     - target: {fileID: 2404902693598078277, guid: a985a00bdafbb024480b8510632406a7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22041,7 +22099,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2404902693598078277, guid: a985a00bdafbb024480b8510632406a7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.488754
+      value: -21.66
       objectReference: {fileID: 0}
     - target: {fileID: 2404902693598078277, guid: a985a00bdafbb024480b8510632406a7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -22075,17 +22133,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Caixa
       objectReference: {fileID: 0}
-    - target: {fileID: 3032117643365285887, guid: a985a00bdafbb024480b8510632406a7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3032117643365285887, guid: a985a00bdafbb024480b8510632406a7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 529328919}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a985a00bdafbb024480b8510632406a7, type: 3}
 --- !u!1 &1357718373
 GameObject:
@@ -22101,7 +22152,6 @@ GameObject:
   - component: {fileID: 1357718375}
   - component: {fileID: 1357718378}
   - component: {fileID: 1357718379}
-  - component: {fileID: 1357718380}
   - component: {fileID: 1357718381}
   m_Layer: 0
   m_Name: HouseDoor_01_LOD0 (2)
@@ -22231,18 +22281,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.48700002, y: 1.042, z: 0.054}
   m_TimeToStationary: 0.5
---- !u!114 &1357718380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1357718373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 740fa89be0f148e4cb7d4dfc7cf10029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1357718381
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24589,7 +24627,6 @@ GameObject:
   - component: {fileID: 1466761458}
   - component: {fileID: 1466761461}
   - component: {fileID: 1466761462}
-  - component: {fileID: 1466761463}
   - component: {fileID: 1466761464}
   m_Layer: 0
   m_Name: HouseDoor_01_LOD0 (4)
@@ -24719,18 +24756,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: -0.48700002, y: 1.042, z: 0.054}
   m_TimeToStationary: 0.5
---- !u!114 &1466761463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1466761456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 740fa89be0f148e4cb7d4dfc7cf10029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1466761464
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25153,7 +25178,6 @@ GameObject:
   - component: {fileID: 1520408462}
   - component: {fileID: 1520408465}
   - component: {fileID: 1520408466}
-  - component: {fileID: 1520408467}
   - component: {fileID: 1520408468}
   m_Layer: 0
   m_Name: HouseDoor_01_LOD0 (7)
@@ -25283,18 +25307,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.48700002, y: 1.042, z: 0.054}
   m_TimeToStationary: 0.5
---- !u!114 &1520408467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1520408460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 740fa89be0f148e4cb7d4dfc7cf10029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1520408468
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27396,6 +27408,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2374208925842125461, guid: 19f98b67cdb1a3d46bfb3831f327594e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4026439928434233795, guid: 19f98b67cdb1a3d46bfb3831f327594e, type: 3}
       propertyPath: m_Name
       value: DONA 1
@@ -28872,9 +28888,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7348502550784928872, guid: bd74d0bee1f3c4449a3fb1e9eb32965d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1646369926}
-    - targetCorrespondingSourceObject: {fileID: 5293861009278670029, guid: bd74d0bee1f3c4449a3fb1e9eb32965d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1646369931}
     - targetCorrespondingSourceObject: {fileID: 5258030673550839010, guid: bd74d0bee1f3c4449a3fb1e9eb32965d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 284214557}
@@ -28893,11 +28906,6 @@ Transform:
 --- !u!1 &1646369922 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2077081744191447788, guid: bd74d0bee1f3c4449a3fb1e9eb32965d, type: 3}
-  m_PrefabInstance: {fileID: 1646369920}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1646369923 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5293861009278670029, guid: bd74d0bee1f3c4449a3fb1e9eb32965d, type: 3}
   m_PrefabInstance: {fileID: 1646369920}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1646369924 stripped
@@ -28996,18 +29004,6 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
---- !u!114 &1646369931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1646369923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 740fa89be0f148e4cb7d4dfc7cf10029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1649532759
 GameObject:
   m_ObjectHideFlags: 0
@@ -29204,9 +29200,9 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.1
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 89415234db8e9a748863390bbe5eecd4, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: d24a4083f9d9ec049abbb42d76b938d4, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &1651343116 stripped
 GameObject:
@@ -29737,7 +29733,6 @@ GameObject:
   - component: {fileID: 1674602138}
   - component: {fileID: 1674602141}
   - component: {fileID: 1674602142}
-  - component: {fileID: 1674602143}
   - component: {fileID: 1674602144}
   m_Layer: 0
   m_Name: HouseDoor_01_LOD0 (3)
@@ -29867,18 +29862,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.48700002, y: 1.042, z: 0.054}
   m_TimeToStationary: 0.5
---- !u!114 &1674602143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1674602136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 740fa89be0f148e4cb7d4dfc7cf10029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1674602144
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32648,7 +32631,6 @@ GameObject:
   - component: {fileID: 1810110474}
   - component: {fileID: 1810110477}
   - component: {fileID: 1810110478}
-  - component: {fileID: 1810110479}
   - component: {fileID: 1810110480}
   m_Layer: 0
   m_Name: HouseDoor_01_LOD0 (6)
@@ -32778,18 +32760,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.48700002, y: 1.042, z: 0.054}
   m_TimeToStationary: 0.5
---- !u!114 &1810110479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810110472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 740fa89be0f148e4cb7d4dfc7cf10029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1810110480
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32919,6 +32889,31 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1819907822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
+--- !u!1 &1827525839 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1482878040570689760, guid: 1279e726d2b09334ca77abe228aa5a47, type: 3}
+  m_PrefabInstance: {fileID: 28122212}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1827525843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827525839}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
@@ -34107,6 +34102,31 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 528a0e588f6fa5447928329240509219, type: 3}
+--- !u!1 &1908162659 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1482878040570689760, guid: 1279e726d2b09334ca77abe228aa5a47, type: 3}
+  m_PrefabInstance: {fileID: 521677693}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1908162663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908162659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1909280193
 GameObject:
   m_ObjectHideFlags: 0
@@ -36976,7 +36996,7 @@ GameObject:
   - component: {fileID: 2084263743}
   - component: {fileID: 2084263742}
   - component: {fileID: 2084263741}
-  - component: {fileID: 2084263745}
+  - component: {fileID: 2084263746}
   m_Layer: 0
   m_Name: HouseDoor_01_LOD0 (8)
   m_TagString: Caixa
@@ -37089,18 +37109,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084263739}
   m_Mesh: {fileID: -7408364419616361824, guid: b4270f43d7c790c44847a6b451b2bc45, type: 3}
---- !u!114 &2084263745
-MonoBehaviour:
+--- !u!208 &2084263746
+NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084263739}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 740fa89be0f148e4cb7d4dfc7cf10029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.48700002, y: 1.042, z: 0.18}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.48700002, y: 1.042, z: 0.054}
+  m_TimeToStationary: 0.5
 --- !u!1 &2095275624
 GameObject:
   m_ObjectHideFlags: 0

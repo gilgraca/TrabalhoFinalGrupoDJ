@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -273,8 +273,8 @@ MonoBehaviour:
     y: 0
     width: 456
     height: 933
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 76}
+  m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -391,7 +391,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 79
+    y: 24
     width: 350
     height: 500
   m_SerializedDataModeController:
@@ -410,21 +410,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 28eeffffd0eeffff18f1ffff4cf1ffff80f2ffff80faffff08fbffffe2b100002ab600003cb60000
+      m_ExpandedIDs: e8e5ffff64f9ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: "Ch\xE3o"
-        m_OriginalName: "Ch\xE3o"
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 46652
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
         m_ClientGUIView: {fileID: 8}
@@ -456,8 +456,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 351
-    y: 79
+    x: 352
+    y: 24
     width: 1111
     height: 500
   m_SerializedDataModeController:
@@ -1078,11 +1078,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.056227446, y: 0.7239178, z: -0.05942024, w: 0.6850186}
     speed: 2
-    m_Value: {x: 0.056316525, y: 0.72288954, z: -0.059335843, w: 0.6861038}
+    m_Value: {x: 0.056227442, y: 0.7239178, z: -0.05942024, w: 0.6850186}
   m_Size:
-    m_Target: 14.07869
+    m_Target: 18.30012
     speed: 2
-    m_Value: 14.07869
+    m_Value: 18.30012
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1138,7 +1138,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 605
+    y: 550
     width: 1463
     height: 381
   m_SerializedDataModeController:
@@ -1163,7 +1163,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scenes
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1173,16 +1173,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\gilfg\Desktop\TDM\DJ\TrabalhoFinalGrupoDJ\paraisoGluglu
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 31}
-    m_SelectedIDs: 74cf0000
-    m_LastClickedID: 53108
-    m_ExpandedIDs: 0000000074cf000076cf000078cf00007acf00007ccf00007ecf0000
+    scrollPos: {x: 0, y: 91}
+    m_SelectedIDs: 8ed20000
+    m_LastClickedID: 53902
+    m_ExpandedIDs: 0000000018b800001ab800001cb800001eb8000020b8000022b80000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1211,7 +1211,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000074cf000076cf000078cf00007acf00007ccf00007ecf0000
+    m_ExpandedIDs: 0000000018b800001ab800001cb800001eb8000020b8000022b80000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1326,8 +1326,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1464
-    y: 79
+    x: 1465
+    y: 24
     width: 455
     height: 907
   m_SerializedDataModeController:
