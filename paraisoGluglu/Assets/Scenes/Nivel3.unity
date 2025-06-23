@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.5622641, g: 0.44875038, b: 0.44875038, a: 1}
   m_FogMode: 2
   m_FogDensity: 0.15
@@ -2723,9 +2723,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 352fef705381a9949b5e0e1ebebbcd91, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1411684626}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 352fef705381a9949b5e0e1ebebbcd91, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1411684627}
     - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: 352fef705381a9949b5e0e1ebebbcd91, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2014837356}
@@ -5083,7 +5080,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1918829138}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1382379510 stripped
 Transform:
@@ -9294,3 +9291,4 @@ SceneRoots:
   - {fileID: 2114239460}
   - {fileID: 1565424567}
   - {fileID: 1966646227}
+  - {fileID: 1366726486}
