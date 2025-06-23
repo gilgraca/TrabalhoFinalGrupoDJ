@@ -391,7 +391,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 24
+    y: 79
     width: 349
     height: 500
   m_SerializedDataModeController:
@@ -410,7 +410,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 54bdffff9ac8ffffcad2ffff26d4fffff0dcffffeef8ffff78bf00009abf0000
+      m_ExpandedIDs: 6c54ffff8454ffff4c57ffff6457ffff8c57ffffb861ffffe061ffffec6effff146fffff1a7effff427effffc481fffff281ffff1a82ffff5e82ffff8682ffffb682ffffd282ffff0e83ffffa8afffffaeafffff1ec0ffff6ec6ffff3adbffff5af9ffff44b0000012c1000094c10000ccc10000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -456,8 +456,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 351
-    y: 24
+    x: 350
+    y: 79
     width: 1112
     height: 500
   m_SerializedDataModeController:
@@ -1028,9 +1028,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 300.96143, y: -2.286418, z: -313.80106}
+    m_Target: {x: 221.4664, y: -81.214, z: 83.90659}
     speed: 2
-    m_Value: {x: 300.96143, y: -2.286418, z: -313.80106}
+    m_Value: {x: 221.4664, y: -81.214, z: 83.90659}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1076,13 +1076,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.13717598, y: -0.8177253, z: 0.21788087, w: -0.51482517}
+    m_Target: {x: -0.19598942, y: 0.03587281, z: -0.007175882, w: -0.979933}
     speed: 2
-    m_Value: {x: 0.13717598, y: 0.8177253, z: -0.21788086, w: 0.51482517}
+    m_Value: {x: -0.19599812, y: 0.034402546, z: -0.006881825, w: -0.9799765}
   m_Size:
-    m_Target: 3.2365785
+    m_Target: 138.14845
     speed: 2
-    m_Value: 3.2365785
+    m_Value: 144.65807
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1138,7 +1138,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 550
+    y: 605
     width: 1463
     height: 381
   m_SerializedDataModeController:
@@ -1179,10 +1179,10 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 211}
-    m_SelectedIDs: 0abc0000
-    m_LastClickedID: 48138
-    m_ExpandedIDs: 00000000d6b40000d8b40000dab40000dcb40000deb40000e0b40000e2b40000
+    scrollPos: {x: 0, y: 271}
+    m_SelectedIDs: 56bb0000
+    m_LastClickedID: 47958
+    m_ExpandedIDs: 000000007eba000080ba000082ba000084ba000086ba000088ba00008aba0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1211,7 +1211,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d6b40000d8b40000dab40000dcb40000deb40000e0b40000e2b40000
+    m_ExpandedIDs: 000000007eba000080ba000082ba000084ba000086ba000088ba00008aba0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1326,8 +1326,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1465
-    y: 24
+    x: 1464
+    y: 79
     width: 455
     height: 907
   m_SerializedDataModeController:
@@ -1348,7 +1348,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 1698
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -1395,7 +1395,7 @@ MonoBehaviour:
   m_SerializedViewValues:
   - C:\Users\gilfg\Desktop\TDM\DJ\TrabalhoFinalGrupoDJ\paraisoGluglu\Library\PlayModeViewStates\9aea9b48b8ceb1d489d93e27fabfb60b
   m_PlayModeViewName: GameView
-  m_ShowGizmos: 1
+  m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
   m_TargetSize: {x: 1920, y: 1080}
@@ -1405,7 +1405,7 @@ MonoBehaviour:
   m_EnterPlayModeBehavior: 0
   m_UseMipMap: 0
   m_VSyncEnabled: 0
-  m_Gizmos: 1
+  m_Gizmos: 0
   m_Stats: 0
   m_SelectedSizes: 03000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
