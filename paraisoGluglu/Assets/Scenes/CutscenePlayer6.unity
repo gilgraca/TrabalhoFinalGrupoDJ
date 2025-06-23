@@ -361,8 +361,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f73df5719af6e547bf2f25859029345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  proximaCena: Nivel1
-  duracaoCutscene: 20
+  proximaCena: Complete
+  duracaoCutscene: 38
   tempoPressionadoNecessario: 2
   barraProgresso: {fileID: 3401914}
   usarLoading: 1
