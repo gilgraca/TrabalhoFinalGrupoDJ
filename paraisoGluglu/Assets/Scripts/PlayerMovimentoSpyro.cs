@@ -132,6 +132,9 @@ public class PlayerMovimentoSpyro : MonoBehaviour
 
         // Define também a velocidade vertical (caso tenhas animações para saltar/cair)
         animator.SetFloat("verticalspeed", rb.linearVelocity.y);
+
+        // Define se o jogador está no chão (útil para evitar bugs de salto)
+        animator.SetBool("estaNoChao", estaNoChao);
     }
 
     void FixedUpdate()
