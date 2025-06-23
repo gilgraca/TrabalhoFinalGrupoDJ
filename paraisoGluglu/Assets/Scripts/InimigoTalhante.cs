@@ -12,9 +12,6 @@ public class InimigoTalhante : MonoBehaviour
     public Transform pontoDisparo;   // Ponto onde o machado é lançado
     public float intervaloMachado = 3f; // Intervalo entre lançamentos (editável no Inspector)
 
-    // Controlo do tempo de disparo
-    private float tempoProximoMachado;
-
     // NavMesh para seguir o jogador
     private NavMeshAgent agent;
 
@@ -42,7 +39,6 @@ public class InimigoTalhante : MonoBehaviour
 
         // Define o tempo inicial
         timerPerseguir = tempoPerseguir;
-        tempoProximoMachado = Time.time;
     }
 
     void Update()
@@ -55,7 +51,7 @@ public class InimigoTalhante : MonoBehaviour
         {
             timerParado -= Time.deltaTime;
             //LOG para testes
-            Debug.Log("Talhante está parado. Tempo restante: " + timerParado);
+            //Debug.Log("Talhante está parado. Tempo restante: " + timerParado);
 
             // Quando tempo parado acabar OU levou dano, volta a perseguir
             if (timerParado <= 0 || levouDano)
@@ -63,7 +59,7 @@ public class InimigoTalhante : MonoBehaviour
                 estaParado = false;
                 levouDano = false;
                 timerPerseguir = tempoPerseguir;
-                Debug.Log("Talhante voltou a perseguir!");
+                //Debug.Log("Talhante voltou a perseguir!");
             }
 
             // Não faz mais nada enquanto está parado
@@ -74,7 +70,7 @@ public class InimigoTalhante : MonoBehaviour
         agent.SetDestination(jogador.position);
 
         //LOG para testes
-        Debug.Log("Talhante a seguir jogador. Tempo restante: " + timerPerseguir);
+        //Debug.Log("Talhante a seguir jogador. Tempo restante: " + timerPerseguir);
 
         // Reduz tempo de perseguição
         timerPerseguir -= Time.deltaTime;
@@ -85,42 +81,16 @@ public class InimigoTalhante : MonoBehaviour
             estaParado = true;
             timerParado = tempoParado;
             agent.ResetPath();
-            Debug.Log("Talhante parou!");
-        }
-
-        // Disparo de machado
-        if (Time.time >= tempoProximoMachado)
-        {
-            AtirarMachado();
-            tempoProximoMachado = Time.time + intervaloMachado;
+            //Debug.Log("Talhante parou!");
         }
     }
 
-    // Método para atirar o machado
-    void AtirarMachado()
-    {
-        if (prefabMachado == null || pontoDisparo == null) return;
-
-        // Instancia o machado e dá-lhe força
-        GameObject machado = Instantiate(prefabMachado, pontoDisparo.position, Quaternion.identity);
-
-        // Calcula direção para o jogador
-        Vector3 direcao = (jogador.position - pontoDisparo.position).normalized;
-
-        // Adiciona força ao machado
-        Rigidbody rb = machado.GetComponent<Rigidbody>();
-        if (rb != null)
-            rb.AddForce(direcao * 10f, ForceMode.Impulse); // Podes ajustar esta força
-
-        //LOG para testes
-        Debug.Log("Machado lançado!");
-    }
 
     // Este método deve ser chamado quando o inimigo leva dano
     public void LevarDano()
     {
         //LOG para testes
-        Debug.Log("Talhante levou dano!");
+        //Debug.Log("Talhante levou dano!");
 
         // Se estava parado, força a voltar a perseguir
         if (estaParado)
