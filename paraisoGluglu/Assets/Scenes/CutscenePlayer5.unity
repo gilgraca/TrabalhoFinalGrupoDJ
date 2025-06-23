@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a0cfd3819ebccd4abd81740d1481c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  proximaCena: Complete
+  proximaCena: Nivel3
   usarLoading: 1
 --- !u!1001 &733941220
 PrefabInstance:
