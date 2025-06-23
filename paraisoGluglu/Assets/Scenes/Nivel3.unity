@@ -233,6 +233,7 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2400726010487326993, guid: 1ec36065a76169441bd0e9ed42709309, type: 3}
+      propertyPath: m_Name
       value: Peru Pendurado (6)
       objectReference: {fileID: 0}
     - target: {fileID: 3314301195737575652, guid: 1ec36065a76169441bd0e9ed42709309, type: 3}
