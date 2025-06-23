@@ -11,7 +11,7 @@ public class PlayerPowerUp : MonoBehaviour
     // Se já usou o salto extra nesta sequência de saltos
     private bool jaUsouDoubleJump = false;
     // Força aplicada no salto extra
-    [SerializeField] private float forcaSaltoExtra = 6f;
+    [SerializeField] public float forcaSaltoExtra = 6f;
 
     // Referência ao PlayerMovimento (para saber se está no chão)
     private PlayerMovimentoCrash playerMovimento;
@@ -89,21 +89,6 @@ public class PlayerPowerUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // DOUBLE JUMP com tecla espaço (se permitido e ainda não usado)
-        if (Input.GetKeyDown(KeyCode.Space) && podeDoubleJump && !jaUsouDoubleJump)
-        {
-            // Só ativa se o jogador NÃO está no chão
-            if (playerMovimento != null && !playerMovimento.EstaNoChao())
-            {
-                // Aplica impulso vertical com força personalizada
-                rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
-                rb.AddForce(Vector3.up * forcaSaltoExtra, ForceMode.Impulse);
-
-                jaUsouDoubleJump = true;
-
-                //Debug.Log("DOUBLE JUMP ativado!");
-            }
-        }
         // DASH (Shift)
         // DASH (Shift) — só se o jogador tiver o power-up e estiver disponível
         if (podeDash && Input.GetKeyDown(KeyCode.LeftShift) && dashDisponivel && !estaADashar)

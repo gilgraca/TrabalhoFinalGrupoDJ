@@ -98,21 +98,43 @@ public class PlayerMovimentoSpyro : MonoBehaviour
             }
         }
 
-        // Salto (se ainda houver saltos disponíveis)
+        // Se carregar no espaço e ainda tiver saltos disponíveis
         if (Input.GetKeyDown(KeyCode.Space) && saltosDisponiveis > 0)
         {
-            // Anula a velocidade vertical antes de aplicar força de salto
+            // Vai buscar o powerup (se existir)
+
+            // Limpa a velocidade vertical antes de saltar (para saltos consistentes)
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
-            rb.AddForce(Vector3.up * forcaSalto, ForceMode.Impulse);
+
+            // Verifica se tem o power-up e está a usar o salto extra
+            if (powerUp != null && powerUp.PodeDoubleJump() && saltosDisponiveis == 1)
+            {
+                // Aplica a força do double jump
+                rb.AddForce(Vector3.up * powerUp.forcaSaltoExtra, ForceMode.Impulse);
+
+                // Debug para confirmar o salto duplo
+                Debug.Log("DOUBLE JUMP com força: " + powerUp.forcaSaltoExtra);
+            }
+            else
+            {
+                // Aplica o salto normal
+                rb.AddForce(Vector3.up * forcaSalto, ForceMode.Impulse);
+
+                // Debug para confirmar o salto base
+                Debug.Log("SALTO BASE com força: " + forcaSalto);
+            }
+
+            // Reduz os saltos disponíveis
             saltosDisponiveis--;
+
+            // Marca que já saltou
             jaSaltou = true;
-            // Impede a deteção de chão temporariamente
+
+            // Impede verificação de chão temporariamente para evitar reset acidental
             podeVerificarChao = false;
             Invoke("AtivarDeteccaoChao", 0.2f);
-
-            //Debug.Log("Saltos disponíveis: " + saltosDisponiveis);
-
         }
+
         // Pulo variável (se largar a tecla a meio do salto, corta altura)
         if (Input.GetKeyUp(KeyCode.Space) && rb.linearVelocity.y > 0)
         {
