@@ -544,6 +544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 3
   animator: {fileID: 2347020697063554392}
+  materialVermelhoFlash: {fileID: 2100000, guid: 372de763fbb735c42ae1739e334bc7b0, type: 2}
 --- !u!114 &476205346784304222
 MonoBehaviour:
   m_ObjectHideFlags: 0
