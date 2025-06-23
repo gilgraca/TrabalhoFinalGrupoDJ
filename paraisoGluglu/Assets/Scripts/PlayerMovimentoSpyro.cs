@@ -113,7 +113,7 @@ public class PlayerMovimentoSpyro : MonoBehaviour
                 rb.AddForce(Vector3.up * powerUp.forcaSaltoExtra, ForceMode.Impulse);
 
                 // Debug para confirmar o salto duplo
-                Debug.Log("DOUBLE JUMP com força: " + powerUp.forcaSaltoExtra);
+                //Debug.Log("DOUBLE JUMP com força: " + powerUp.forcaSaltoExtra);
             }
             else
             {
@@ -121,7 +121,7 @@ public class PlayerMovimentoSpyro : MonoBehaviour
                 rb.AddForce(Vector3.up * forcaSalto, ForceMode.Impulse);
 
                 // Debug para confirmar o salto base
-                Debug.Log("SALTO BASE com força: " + forcaSalto);
+                //Debug.Log("SALTO BASE com força: " + forcaSalto);
             }
 
             // Reduz os saltos disponíveis

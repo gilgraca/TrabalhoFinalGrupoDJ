@@ -128,20 +128,39 @@ public class PlayerMovimentoCrash : MonoBehaviour
         }
 
         // Salto (se ainda houver saltos disponíveis)
+        // Se carregar na tecla espaço e ainda tiver saltos disponíveis
         if (Input.GetKeyDown(KeyCode.Space) && saltosDisponiveis > 0)
         {
-            // Anula a velocidade vertical antes de aplicar força de salto
+            // Anula a velocidade vertical atual (para salto mais consistente)
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
-            rb.AddForce(Vector3.up * forcaSalto, ForceMode.Impulse);
+
+            // Se tiver o power-up ativo e estiver no segundo salto (ou seja, no ar)
+            if (powerUp != null && powerUp.PodeDoubleJump() && saltosDisponiveis == 1)
+            {
+                // Aplica o salto extra com a força vinda do power-up
+                rb.AddForce(Vector3.up * powerUp.forcaSaltoExtra, ForceMode.Impulse);
+
+                //Debug.Log("DOUBLE JUMP Crash com força: " + powerUp.GetForcaSaltoExtra());
+            }
+            else
+            {
+                // Aplica o salto normal
+                rb.AddForce(Vector3.up * forcaSalto, ForceMode.Impulse);
+
+                //Debug.Log("SALTO BASE Crash com força: " + forcaSalto);
+            }
+
+            // Reduz o número de saltos restantes
             saltosDisponiveis--;
+
+            // Marca que já saltou
             jaSaltou = true;
+
             // Impede a deteção de chão temporariamente
             podeVerificarChao = false;
             Invoke("AtivarDeteccaoChao", 0.2f);
-
-            //Debug.Log("Saltos disponíveis: " + saltosDisponiveis);
-
         }
+
         // Pulo variável (se largar a tecla a meio do salto, corta altura)
         if (Input.GetKeyUp(KeyCode.Space) && rb.linearVelocity.y > 0)
         {
