@@ -305,13 +305,13 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ea898a1674e8a7748bfd2febdadc6dc1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2781999873882184793}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ea898a1674e8a7748bfd2febdadc6dc1, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 7848682296655831617}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ea898a1674e8a7748bfd2febdadc6dc1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2374208925842125461}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ea898a1674e8a7748bfd2febdadc6dc1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2781999873882184793}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ea898a1674e8a7748bfd2febdadc6dc1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6986796253327667964}
@@ -329,28 +329,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ea898a1674e8a7748bfd2febdadc6dc1, type: 3}
   m_PrefabInstance: {fileID: 4260862755189861522}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &2781999873882184793
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4026439928434233795}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2a8a6d7bb7fffd140b08785402b90f5b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &7848682296655831617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,6 +358,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanciaAtaque: 1.5
   tempoEntreAtaques: 2
+--- !u!95 &2781999873882184793
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4026439928434233795}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2a8a6d7bb7fffd140b08785402b90f5b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!54 &6986796253327667964
 Rigidbody:
   m_ObjectHideFlags: 0
