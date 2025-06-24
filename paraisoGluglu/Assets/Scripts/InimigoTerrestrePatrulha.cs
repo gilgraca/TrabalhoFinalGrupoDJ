@@ -20,6 +20,8 @@ public class InimigoTerrestrePatrulha : MonoBehaviour
     private PlayerPowerUp jogadorPowerUps;
     private Rigidbody rb;
 
+    [SerializeField] private bool precisaInverter = true;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -54,7 +56,8 @@ public class InimigoTerrestrePatrulha : MonoBehaviour
         // Roda o inimigo para o ponto
         if (direcao != Vector3.zero)
         {
-            Quaternion rotacao = Quaternion.LookRotation(direcao) * Quaternion.Euler(0f, 180f,0f);
+            Quaternion rotacao = Quaternion.LookRotation(direcao);
+            if(precisaInverter) rotacao = rotacao * Quaternion.Euler(0f, 180f,0f);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotacao, Time.deltaTime * 6f);
         }
 
