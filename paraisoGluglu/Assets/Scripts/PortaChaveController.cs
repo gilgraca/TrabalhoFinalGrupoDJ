@@ -1,5 +1,6 @@
 // Importa o necessário
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PortaChaveController : MonoBehaviour
 {
@@ -43,7 +44,7 @@ public class PortaChaveController : MonoBehaviour
         }
         if (keyHUD != null)
         {
-            keyHUD.SetActive(false); // Desativa o ícone da chave no início
+            keyHUD.GetComponent<Image>().color = new Color(1f, 1f, 1f, .24f); // Desativa o ícone da chave no início
         }
     }
 
@@ -70,8 +71,8 @@ public class PortaChaveController : MonoBehaviour
 
             if (keyHUD != null)
             {
-                keyHUD.SetActive(true); // Ativa o HUD da chave
-                Debug.Log("HUD da chave ativado.");
+                keyHUD.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f); // Ativa o HUD da chave
+                //Debug.Log("HUD da chave ativado.");
             }
 
             //Debug.Log("Porta ativada com a chave correta.");

@@ -28,7 +28,7 @@ public class SpawnerDeItens : MonoBehaviour
         }
 
         // Escolhe aleatoriamente onde vai aparecer a chave
-        int indiceChave = Random.Range(0, pontosDeSpawn.Length);
+        int indiceChave = Random.Range(4, pontosDeSpawn.Length);
 
         for (int i = 0; i < pontosDeSpawn.Length; i++)
         {
