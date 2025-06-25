@@ -22,6 +22,8 @@ public class InimigoTerrestreAtaque : MonoBehaviour
 
     [SerializeField] private Animator animator;
 
+    [SerializeField] private bool precisaInverter = true;
+
 
     // Método chamado no início
     void Start()
@@ -97,9 +99,9 @@ public class InimigoTerrestreAtaque : MonoBehaviour
             // Rotação desejada para olhar para o jogador
             Quaternion rotacaoAlvo = Quaternion.LookRotation(lookDirection);
 
-
+            transform.rotation = rotacaoAlvo;
             // Roda o modelo 180 graus no Y para compensar o rabo virado
-            transform.rotation = rotacaoAlvo * Quaternion.Euler(0f, 180f, 0f);
+            if (precisaInverter) transform.rotation = rotacaoAlvo * Quaternion.Euler(0f, 180f, 0f);
 
             // Log de controlo
             //Debug.Log("ModeloVisual rodado com compensação de 180°.");
