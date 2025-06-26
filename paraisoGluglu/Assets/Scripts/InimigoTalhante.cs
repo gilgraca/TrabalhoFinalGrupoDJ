@@ -1,3 +1,4 @@
+// Bibliotecas necessárias
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -11,6 +12,8 @@ public class InimigoTalhante : MonoBehaviour
     public GameObject prefabMachado; // Machado que será instanciado
     public Transform pontoDisparo;   // Ponto onde o machado é lançado
     public float intervaloMachado = 3f; // Intervalo entre lançamentos (editável no Inspector)
+
+    private float timerMachado; // Timer para controlar intervalo de disparo
 
     // NavMesh para seguir o jogador
     private NavMeshAgent agent;
@@ -37,62 +40,68 @@ public class InimigoTalhante : MonoBehaviour
         // Inicia o NavMesh
         agent = GetComponent<NavMeshAgent>();
 
-        // Define o tempo inicial
+        // Define os timers iniciais
         timerPerseguir = tempoPerseguir;
+        timerMachado = intervaloMachado;
     }
 
     void Update()
     {
-        // Se não tiver jogador, não faz nada
         if (jogador == null) return;
 
-        // Se estiver parado...
+        // === TIMER DO MACHADO SEMPRE A CONTAR ===
+        timerMachado -= Time.deltaTime;
+
+        // Se for tempo de lançar
+        if (timerMachado <= 0f)
+        {
+            AtirarMachado();
+            timerMachado = intervaloMachado;
+        }
+
+        // === CONTROLO DE ESTADOS ===
         if (estaParado)
         {
             timerParado -= Time.deltaTime;
-            //LOG para testes
-            //Debug.Log("Talhante está parado. Tempo restante: " + timerParado);
 
-            // Quando tempo parado acabar OU levou dano, volta a perseguir
             if (timerParado <= 0 || levouDano)
             {
                 estaParado = false;
                 levouDano = false;
                 timerPerseguir = tempoPerseguir;
-                //Debug.Log("Talhante voltou a perseguir!");
             }
 
-            // Não faz mais nada enquanto está parado
-            return;
+            return; // ainda parado, não persegue
         }
 
-        // Perseguir jogador
+        // Persegue o jogador
         agent.SetDestination(jogador.position);
 
-        //LOG para testes
-        //Debug.Log("Talhante a seguir jogador. Tempo restante: " + timerPerseguir);
-
-        // Reduz tempo de perseguição
+        // Reduz o tempo de perseguição
         timerPerseguir -= Time.deltaTime;
 
-        // Se tempo acabar, pára
         if (timerPerseguir <= 0)
         {
             estaParado = true;
             timerParado = tempoParado;
             agent.ResetPath();
-            //Debug.Log("Talhante parou!");
         }
     }
 
+    // Método para lançar o machado
+    private void AtirarMachado()
+    {
+        // Instancia o machado na orientação do ponto de disparo
+        Instantiate(prefabMachado, pontoDisparo.position, pontoDisparo.rotation);
 
-    // Este método deve ser chamado quando o inimigo leva dano
+        // LOG
+        Debug.Log("Machado instanciado.");
+    }
+
+
+    // Método chamado quando o inimigo leva dano
     public void LevarDano()
     {
-        //LOG para testes
-        //Debug.Log("Talhante levou dano!");
-
-        // Se estava parado, força a voltar a perseguir
         if (estaParado)
         {
             levouDano = true;

@@ -10074,6 +10074,10 @@ PrefabInstance:
       propertyPath: prefabMachado
       value: 
       objectReference: {fileID: 4857462612570315937, guid: b7c52874e5c41f84baf6189e21d80c95, type: 3}
+    - target: {fileID: 438803581171125217, guid: b88b71d295ff2ee43a7436016c38e36a, type: 3}
+      propertyPath: intervaloMachado
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1868577135108429181, guid: b88b71d295ff2ee43a7436016c38e36a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 294.52
@@ -10116,15 +10120,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2800816121804894567, guid: b88b71d295ff2ee43a7436016c38e36a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.06
+      value: 0.31
       objectReference: {fileID: 0}
     - target: {fileID: 2800816121804894567, guid: b88b71d295ff2ee43a7436016c38e36a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.21
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325137071267315505, guid: b88b71d295ff2ee43a7436016c38e36a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4346427139113335535, guid: b88b71d295ff2ee43a7436016c38e36a, type: 3}
       propertyPath: m_Name
       value: Talhante
+      objectReference: {fileID: 0}
+    - target: {fileID: 5499292038707502594, guid: b88b71d295ff2ee43a7436016c38e36a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356443826873568627, guid: b88b71d295ff2ee43a7436016c38e36a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8494065810014214632, guid: b88b71d295ff2ee43a7436016c38e36a, type: 3}
       propertyPath: m_LocalScale.x
@@ -10143,7 +10159,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5499292038707502594, guid: b88b71d295ff2ee43a7436016c38e36a, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b88b71d295ff2ee43a7436016c38e36a, type: 3}
