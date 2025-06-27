@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1868577135108429181}
-  - component: {fileID: 7411963175739463874}
   m_Layer: 0
   m_Name: Talhante
   m_TagString: InimigoTerrestre
@@ -34,21 +33,6 @@ Transform:
   - {fileID: 8494065810014214632}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7411963175739463874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4346427139113335535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eef5300db326674fb15173d98710a97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vida: 3
-  animator: {fileID: 0}
-  materialVermelhoFlash: {fileID: 2100000, guid: 372de763fbb735c42ae1739e334bc7b0, type: 2}
 --- !u!1 &5499292038707502594
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,13 +260,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9013804889889044566}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
   m_LocalPosition: {x: 0, y: -0.7800002, z: 0.76501465}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8494065810014214632}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
 --- !u!1001 &8244475343051521539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -354,6 +338,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6cc5b17ba5160814f943437b80ca2b19, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2530914278920834405}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6cc5b17ba5160814f943437b80ca2b19, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4251188017107073960}
   m_SourcePrefab: {fileID: 100100000, guid: 6cc5b17ba5160814f943437b80ca2b19, type: 3}
 --- !u!4 &8494065810014214632 stripped
 Transform:
@@ -447,3 +434,18 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &4251188017107073960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9127436852683359058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eef5300db326674fb15173d98710a97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: 3
+  animator: {fileID: 0}
+  materialVermelhoFlash: {fileID: 2100000, guid: 372de763fbb735c42ae1739e334bc7b0, type: 2}

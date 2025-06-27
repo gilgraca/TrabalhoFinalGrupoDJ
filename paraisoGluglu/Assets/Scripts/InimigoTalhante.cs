@@ -1,6 +1,7 @@
 // Bibliotecas necessárias
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Animations;
 
 public class InimigoTalhante : MonoBehaviour
 {
@@ -91,8 +92,13 @@ public class InimigoTalhante : MonoBehaviour
     // Método para lançar o machado
     private void AtirarMachado()
     {
+        // Calcula a direção do machado para o jogador
+        Vector3 direcao = (jogador.position - pontoDisparo.position).normalized;
+
+        // Cria a rotação para olhar para o jogador
+        Quaternion rotacao = Quaternion.LookRotation(direcao);
         // Instancia o machado na orientação do ponto de disparo
-        Instantiate(prefabMachado, pontoDisparo.position, pontoDisparo.rotation);
+        Instantiate(prefabMachado, pontoDisparo.position, rotacao);
 
         // LOG
         Debug.Log("Machado instanciado.");

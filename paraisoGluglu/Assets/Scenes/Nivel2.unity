@@ -3857,14 +3857,29 @@ PrefabInstance:
       propertyPath: jogador
       value: 
       objectReference: {fileID: 1631217477}
+    - target: {fileID: 2472881768596398847, guid: 9e3665f9383aeec419b9eee5e856a5fd, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1806839504}
     - target: {fileID: 4346427139113335535, guid: 9e3665f9383aeec419b9eee5e856a5fd, type: 3}
       propertyPath: m_Name
       value: Guaxinim
       objectReference: {fileID: 0}
+    - target: {fileID: 5887503190416616961, guid: 9e3665f9383aeec419b9eee5e856a5fd, type: 3}
+      propertyPath: jogador
+      value: 
+      objectReference: {fileID: 1631217477}
+    - target: {fileID: 5887503190416616961, guid: 9e3665f9383aeec419b9eee5e856a5fd, type: 3}
+      propertyPath: distanciaAtaque
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 843909473115139724, guid: 9e3665f9383aeec419b9eee5e856a5fd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1806839504}
   m_SourcePrefab: {fileID: 100100000, guid: 9e3665f9383aeec419b9eee5e856a5fd, type: 3}
 --- !u!4 &862106623 stripped
 Transform:
@@ -7983,6 +7998,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 87fd9e0692104024f8873078b4e29f42, type: 3}
   m_PrefabInstance: {fileID: 1792245260}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1806839502 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 843909473115139724, guid: 9e3665f9383aeec419b9eee5e856a5fd, type: 3}
+  m_PrefabInstance: {fileID: 855278445}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1806839504
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806839502}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2554984b715ff3246bfd36c6833ea5d8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1820396842
 GameObject:
   m_ObjectHideFlags: 0

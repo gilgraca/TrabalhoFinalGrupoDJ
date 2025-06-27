@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class InimigoGuaxinim : MonoBehaviour
 {
-    public Transform jogador;
+    private Transform jogador;
     public Transform pontoEspera;
     public float velocidade = 3f;
     public float velocidadeAtaque = 6f;
@@ -14,10 +14,18 @@ public class InimigoGuaxinim : MonoBehaviour
 
     private GameObject zonaAtaque;
     private Vector3 destinoAtaque;
+    private Animator animator;
 
     void Start()
     {
+        // Procura o jogador por tag
+        GameObject objJogador = GameObject.FindGameObjectWithTag("Player");
+        if (objJogador != null)
+            jogador = objJogador.transform;
+
         zonaAtaque = transform.Find("ZonaDano")?.gameObject;
+
+        animator = GetComponent<Animator>();
 
         if (zonaAtaque != null)
             zonaAtaque.SetActive(false);
@@ -73,6 +81,12 @@ public class InimigoGuaxinim : MonoBehaviour
                 Vector3 direcaoJogador = (destinoAtaque - transform.position).normalized;
                 transform.forward = new Vector3(direcaoJogador.x, 0, direcaoJogador.z);
                 transform.position = Vector3.MoveTowards(transform.position, destinoAtaque, velocidadeAtaque * Time.deltaTime);
+
+                float distJogador = Vector3.Distance(transform.position, jogador.position);
+                if (distJogador <= 3f && animator != null)
+                {
+                    animator.SetTrigger("Attack");
+                }
 
                 float distDestino = Vector3.Distance(transform.position, destinoAtaque);
                 if (distDestino <= 0.1f)
