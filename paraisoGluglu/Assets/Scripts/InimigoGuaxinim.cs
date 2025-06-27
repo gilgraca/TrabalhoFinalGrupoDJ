@@ -71,7 +71,7 @@ public class InimigoGuaxinim : MonoBehaviour
 
             case Estado.Atacar:
                 //Debug.Log("[Guaxinim] No estado: ATACAR");
-
+                animator.SetFloat("Speed", 1);
                 if (zonaAtaque != null && !zonaAtaque.activeInHierarchy)
                 {
                     zonaAtaque.SetActive(true);
@@ -98,6 +98,7 @@ public class InimigoGuaxinim : MonoBehaviour
                 break;
 
             case Estado.Voltar:
+
                 //Debug.Log("[Guaxinim] No estado: VOLTAR");
 
                 if (zonaAtaque != null && zonaAtaque.activeInHierarchy)
@@ -125,6 +126,8 @@ public class InimigoGuaxinim : MonoBehaviour
                     //Debug.Log("[Guaxinim] Chegou ao ponto de espera. Vai ESPERAR novamente.");
                     estadoAtual = Estado.Esperar;
                     podeAtacar = true;
+                    animator.SetFloat("Speed", 0);
+
                 }
                 break;
         }

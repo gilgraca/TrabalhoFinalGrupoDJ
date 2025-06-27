@@ -284,7 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proximaCena: CutscenePlayer2 1
-  duracaoCutscene: 19
+  duracaoCutscene: 20
   tempoPressionadoNecessario: 2
   barraProgresso: {fileID: 1105056067}
   usarLoading: 0

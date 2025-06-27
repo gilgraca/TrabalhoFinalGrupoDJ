@@ -362,7 +362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proximaCena: Nivel2
-  duracaoCutscene: 20
+  duracaoCutscene: 39
   tempoPressionadoNecessario: 2
   barraProgresso: {fileID: 3401914}
   usarLoading: 1
