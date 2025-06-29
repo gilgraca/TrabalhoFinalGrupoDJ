@@ -10073,7 +10073,7 @@ PrefabInstance:
     - target: {fileID: 438803581171125217, guid: b88b71d295ff2ee43a7436016c38e36a, type: 3}
       propertyPath: prefabMachado
       value: 
-      objectReference: {fileID: 4857462612570315937, guid: b7c52874e5c41f84baf6189e21d80c95, type: 3}
+      objectReference: {fileID: 2612470560836087815, guid: cc4e8d00f9a889c4789b7bb986f54c11, type: 3}
     - target: {fileID: 438803581171125217, guid: b88b71d295ff2ee43a7436016c38e36a, type: 3}
       propertyPath: intervaloMachado
       value: 1

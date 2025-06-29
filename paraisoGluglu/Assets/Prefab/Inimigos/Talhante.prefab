@@ -364,7 +364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e126a193bc0e9444b600a3692d88a69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabMachado: {fileID: 4857462612570315937, guid: b7c52874e5c41f84baf6189e21d80c95, type: 3}
+  prefabMachado: {fileID: 2612470560836087815, guid: cc4e8d00f9a889c4789b7bb986f54c11, type: 3}
   pontoDisparo: {fileID: 2800816121804894567}
   intervaloMachado: 3
   tempoPerseguir: 10
