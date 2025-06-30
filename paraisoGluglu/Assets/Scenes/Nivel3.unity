@@ -10110,10 +10110,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4325137071267315505, guid: b88b71d295ff2ee43a7436016c38e36a, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4346427139113335535, guid: b88b71d295ff2ee43a7436016c38e36a, type: 3}
       propertyPath: m_Name
       value: Talhante
