@@ -104,8 +104,7 @@ public class InimigoTalhante : MonoBehaviour
         // Instancia o machado na orientação do ponto de disparo
         Instantiate(prefabMachado, pontoDisparo.position, rotacao);
 
-        // LOG
-        Debug.Log("Machado instanciado.");
+        //Debug.Log("Machado instanciado.");
     }
 
 

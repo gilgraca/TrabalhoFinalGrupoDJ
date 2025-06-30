@@ -25,7 +25,7 @@ public class MachadoDano : MonoBehaviour
         rb.linearVelocity = transform.forward * velocidade;
 
         // LOG para confirmar
-        Debug.Log("Machado lançado com velocidade: " + rb.linearVelocity.magnitude);
+        //Debug.Log("Machado lançado com velocidade: " + rb.linearVelocity.magnitude);
 
         // Auto-destroy
         Destroy(gameObject, tempoDestruir);
@@ -48,7 +48,7 @@ public class MachadoDano : MonoBehaviour
                 vida.LevarDano(dano);
 
                 // LOG
-                Debug.Log("Jogador atingido pelo machado. Dano: " + dano);
+                //Debug.Log("Jogador atingido pelo machado. Dano: " + dano);
             }
 
             // Destroi o machado após impacto

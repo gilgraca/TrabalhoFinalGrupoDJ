@@ -28,7 +28,7 @@ public class SpawnerDeItens : MonoBehaviour
         }
 
         // Escolhe aleatoriamente onde vai aparecer a chave
-        int indiceChave = Random.Range(5, pontosDeSpawn.Length); //os primerios 5 milhos são no corredor
+        int indiceChave = Random.Range(6, pontosDeSpawn.Length); //os primerios 5 milhos são no corredor
 
         for (int i = 0; i < pontosDeSpawn.Length; i++)
         {

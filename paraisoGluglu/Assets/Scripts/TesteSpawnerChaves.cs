@@ -16,11 +16,11 @@ public class TesteSpawnChaves : MonoBehaviour
 
     void Update()
     {
-        // Verifica se a tecla C foi carregada
-        if (Input.GetKeyDown(KeyCode.C))
+        // Verifica se a tecla P foi carregada
+        if (Input.GetKeyDown(KeyCode.P))
         {
             // Log para confirmar que o input funcionou
-            Debug.Log("Tecla C pressionada: a transformar todos os Corn em chaves.");
+            //Debug.Log("Tecla P pressionada: a transformar todos os Corn em chaves.");
 
             // Procura todos os objetos com a tag "Corn"
             GameObject[] milhos = GameObject.FindGameObjectsWithTag(tagMilho);
@@ -41,7 +41,7 @@ public class TesteSpawnChaves : MonoBehaviour
                 Instantiate(chavePrefab, posicao, Quaternion.identity);
 
                 // Log para ver onde foi colocada cada chave
-                Debug.Log("Chave colocada em: " + posicao);
+                //Debug.Log("Chave colocada em: " + posicao);
             }
         }
     }

@@ -44,11 +44,11 @@ public class RiverDamage : MonoBehaviour
                     }
 
                     //Log para testes
-                    Debug.Log("Jogador caiu na água e foi teleportado.");
+                    //Debug.Log("Jogador caiu na água e foi teleportado.");
                 }
                 else
                 {
-                    Debug.LogWarning("Nenhum ponto de respawn com tag 'Respawn' encontrado!");
+                    //Debug.LogWarning("Nenhum ponto de respawn com tag 'Respawn' encontrado!");
                 }
             }
         }

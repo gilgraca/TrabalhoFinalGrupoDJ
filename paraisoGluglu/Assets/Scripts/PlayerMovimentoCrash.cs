@@ -62,12 +62,12 @@ public class PlayerMovimentoCrash : MonoBehaviour
             rb.linearVelocity = new Vector3(movimento.x, rb.linearVelocity.y, movimento.z);
 
             // Log para confirmar que está a aplicar o movimento normal
-            Debug.Log("Movimento normal aplicado: " + movimento);
+            //Debug.Log("Movimento normal aplicado: " + movimento);
         }
         else
         {
             // Log para confirmar que o dash está ativo e ignora o movimento normal
-            Debug.Log("A ignorar movimento normal porque está a dashar.");
+            //Debug.Log("A ignorar movimento normal porque está a dashar.");
         }
         // Se houver movimento (input diferente de zero), roda o jogador suavemente nessa direção
         if (movimento != Vector3.zero)

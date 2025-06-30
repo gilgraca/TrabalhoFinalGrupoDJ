@@ -45,13 +45,13 @@ public class InimigoZonaAtaque : MonoBehaviour
                     rb.AddForce(impulsoFinal, ForceMode.Impulse);
 
                     // Debug para confirmar que aplicou impulso
-                    Debug.Log("Jogador levou dano e foi empurrado.");
+                    //Debug.Log("Jogador levou dano e foi empurrado.");
                 }
             }
             else
             {
                 // Debug se estiver invencível
-                Debug.Log("Jogador tocado mas está invencível.");
+                //Debug.Log("Jogador tocado mas está invencível.");
             }
         }
     }

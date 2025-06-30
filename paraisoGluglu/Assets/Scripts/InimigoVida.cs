@@ -123,7 +123,7 @@ public class InimigoVida : MonoBehaviour
             yield return new WaitForSeconds(intervalo);
         }
 
-        Debug.Log("Inimigo piscou vermelho com troca de materiais.");
+        //Debug.Log("Inimigo piscou vermelho com troca de materiais.");
     }
 
 }
