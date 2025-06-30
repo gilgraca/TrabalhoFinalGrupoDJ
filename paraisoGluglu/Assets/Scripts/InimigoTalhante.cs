@@ -50,14 +50,18 @@ public class InimigoTalhante : MonoBehaviour
     {
         if (jogador == null) return;
 
-        // === TIMER DO MACHADO SEMPRE A CONTAR ===
-        timerMachado -= Time.deltaTime;
-
-        // Se for tempo de lançar
-        if (timerMachado <= 0f)
+        // Só conta o tempo do machado se não estiver parado
+        if (!estaParado)
         {
-            AtirarMachado();
-            timerMachado = intervaloMachado;
+            // Decrementa o timer do machado
+            timerMachado -= Time.deltaTime;
+
+            // Se o tempo chegou a zero, atira o machado
+            if (timerMachado <= 0f)
+            {
+                AtirarMachado();
+                timerMachado = intervaloMachado;
+            }
         }
 
         // === CONTROLO DE ESTADOS ===
