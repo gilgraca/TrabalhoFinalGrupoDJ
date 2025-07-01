@@ -26649,6 +26649,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 515372732}
     - target: {fileID: 7265634185341131841, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
+      propertyPath: forcaDash
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7265634185341131841, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
       propertyPath: dashCooldownUI
       value: 
       objectReference: {fileID: 515372739}
