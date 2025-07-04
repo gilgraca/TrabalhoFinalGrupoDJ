@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paraíso GluGlu - Official Game Website</title>
+    <meta name="description"
+        content="Embark on the ultimate adventure in Epic Quest: Legends Awakened. Master ancient powers, forge alliances, and shape the destiny of kingdoms in this epic RPG experience.">
+    <meta property="og:title" content="Epic Quest: Legends Awakened - Official Game Website">
+    <meta property="og:description"
+        content="Experience next-generation gaming with cutting-edge features designed to immerse you in an unforgettable adventure.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logoW.png" alt="Paraíso Gluglu logo" class="logo-image">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#features">Funcionalidades</a></li>
+                <li><a href="#gallery">Galeria</a></li>
+                <li><a href="#requirements">Requisitos</a></li>
+                <li><a href="#download" class="btn">Joga agora!</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="float">
+                <img alt="Paraíso Gluglu logo" src="logoColor.png">
+            </div>
+            <p class="hero-subtitle">
+
+            </p>
+            <div class="hero-buttons">
+                <a href="#download" class="btn">
+                    Jogar
+                </a>
+                <a href="https://www.youtube.com/@ParaísoGluglu" class="btn btn-outline" target="_blank">
+                    Ver Trailer
+                </a>
+            </div>
+            <!-- <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number" style="color: var(--gaming-cyan)">4.9/5</div>
+                    <div class="stat-label">User Rating</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" style="color: var(--gaming-amber)">2M+</div>
+                    <div class="stat-label">Players</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" style="color: var(--gaming-purple)">50+</div>
+                    <div class="stat-label">Awards</div>
+                </div>
+            </div>
+        -->
+        </div>
+        <div class="scroll-indicator">
+            <span style="color: var(--gaming-purple); font-size: 2rem; cursor: pointer;"
+                onclick="scrollToSection('download')">⬇️</span>
+        </div>
+    </section>
+    <section id="download" class="section download">
+        <div class="download-bg"></div>
+        <div class="container download-content">
+            <h2 class="section-title">
+                <span class="gradient-text">Joga aqui!</span>
+            </h2>
+            <div class="game-iframe">
+                <iframe src="build/index.html" frameborder="0" allowfullscreen>
+                </iframe>
+            </div>
+            <a href="#" class="btn" style="margin-top:1rem;">Transfere para Windows</a>
+        </div>
+    </section>
+    <!-- Features Section -->
+    <section id="features" class="section features">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="gradient-text">Funcionalidades do Jogo</span>
+            </h2>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon" style="color: var(--gaming-purple)">🪄</span>
+                    <h3 class="feature-title">Poderes Mágicos</h3>
+                    <p class="feature-description">
+                        Com a magia do Chapéu, podes utilizar poderes para te ajudarem na tua jornada.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon" style="color: var(--gaming-purple)">😁</span>
+                    <h3 class="feature-title">Visual Cativante</h3>
+                    <p class="feature-description">
+                        Desfruta de gráficos deslumbrantes e um estilo artístico único, com visual cartoon divertido e
+                        engraçado que torna cada momento ainda mais envolvente e memorável.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon" style="color: var(--gaming-purple)">📽️</span>
+                    <h3 class="feature-title">Cutscenes Animadas</h3>
+                    <p class="feature-description">
+                        Desfruta de cutscenes animadas que trazem a história à vida com personagens cativantes e
+                        momentos emocionantes.
+                    </p>
+                </div>
+                <!-- <div class="feature-card">
+                    <span class="feature-icon" style="color: var(--gaming-cyan)">👥</span>
+                    <h3 class="feature-title">Multiplayer Co-op</h3>
+                    <p class="feature-description">
+                        Join forces with friends in epic 4-player co-op adventures. Coordinate strategies and combine powers for ultimate victory.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon" style="color: var(--gaming-amber)">🌍</span>
+                    <h3 class="feature-title">Open World</h3>
+                    <p class="feature-description">
+                        Explore vast kingdoms spanning 200+ square kilometers. Discover hidden treasures, secret dungeons, and ancient mysteries.
+                    </p>
+                </div> 
+
+                <div class="feature-card">
+                    <span class="feature-icon" style="color: var(--gaming-cyan)">⚙️</span>
+                    <h3 class="feature-title">Character Customization</h3>
+                    <p class="feature-description">
+                        Create unique heroes with deep customization options. Choose from 12 classes and countless skill
+                        combinations.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon" style="color: var(--gaming-amber)">⚡</span>
+                    <h3 class="feature-title">Boss Battles</h3>
+                    <p class="feature-description">
+                        Face legendary creatures in spectacular boss encounters. Each battle requires unique strategies
+                        and rewards rare loot.
+                    </p>
+                </div>-->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="gradient-text">Galeria</span>
+            </h2>
+            <p class="section-subtitle">
+                Visuais vibrantes e divertidos dão vida ao Paraíso GluGlu, com um estilo cartoon que torna cada cenário
+                ainda mais encantador e envolvente.
+            </p>
+
+            <!-- <img src="16-9.png"
+                alt="Epic dragon battle scene" class="featured-image" onclick="openModal(this.src)">
+
+            <div class="gallery-grid">
+                <div class="gallery-item"
+                    onclick="openModal(piru lito.png)">
+                    <img src="piru lito.png"
+                        alt="Enchanted forest landscape">
+                </div>
+                <div class="gallery-item"
+                    onclick="openModal('DonaMaluca.png')">
+                    <img src="DonaMaluca.png"
+                        alt="Ancient temple ruins">
+                </div>
+                <div class="gallery-item"
+                    onclick="openModal('Talhante.png')">
+                    <img src="Talhante.png"
+                        alt="Epic battle scene">
+                </div>
+                <div class="gallery-item"
+                    onclick="openModal('lvl1.png')">
+                    <img src="lvl1.png"
+                        alt="Majestic mountain peaks">
+                </div>
+                <div class="gallery-item"
+                    onclick="openModal('lvl2.png')">
+                    <img src="lvl2.png"
+                        alt="Hero character showcase">
+                </div>
+                <div class="gallery-item"
+                    onclick="openModal('lvl3.png')">
+                    <img src="lvl3.png"
+                        alt="Mystical castle environment">
+                </div>-->
+            </div>
+        </div>
+    </section>
+
+    <!-- Requirements Section -->
+    <section id="requirements" class="section requirements">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="gradient-text">Requisitos do Sistema</span>
+            </h2>
+            <p class="section-subtitle">
+                Garante que o teu sistema esteja pronto para a experiência de jogo definitiva com os nossos requisitos
+                de
+                desempenho otimizados.
+            </p>
+
+            <div class="requirements-grid">
+                <div class="requirements-card">
+                    <div class="req-header">
+                        <span style="color: var(--gaming-amber); font-size: 2rem;">💻</span>
+                        <h3>Requisitos Mínimos</h3>
+                    </div>
+                    <ul class="req-list">
+                        <li class="req-item">
+                            <span class="req-label">Sistema Operativo:</span>
+                            <span class="req-value">Windows 7</span>
+                        </li>
+                        <li class="req-item">
+                            <span class="req-label">CPU:</span>
+                            <span class="req-value">Intel Core i3-4130 / AMD FX-6300</span>
+                        </li>
+                        <li class="req-item">
+                            <span class="req-label">Memória RAM:</span>
+                            <span class="req-value">4 GB RAM</span>
+                        </li>
+                        <li class="req-item">
+                            <span class="req-label">Placa Gráfica:</span>
+                            <span class="req-value"> NVIDIA GT 710 / AMD Radeon HD 6450</span>
+                        </li>
+                        <li class="req-item">
+                            <span class="req-label">DirectX:</span>
+                            <span class="req-value">Versão 10</span>
+                        </li>
+                        <li class="req-item">
+                            <span class="req-label">Armazenamento:</span>
+                            <span class="req-value">200 MB</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="requirements-card recommended">
+                    <div class="req-header">
+                        <span style="color: var(--gaming-purple); font-size: 2rem;">⭐</span>
+                        <h3>Requisitos Recomendados</h3>
+                    </div>
+                    <ul class="req-list">
+                        <li class="req-item">
+                            <span class="req-label">Sistema Operativo:</span>
+                            <span class="req-value">Windows 10 64-bit</span>
+                        </li>
+                        <li class="req-item">
+                            <span class="req-label">CPU:</span>
+                            <span class="req-value">Intel Core i5-10400 / AMD Ryzen 5 3600</span>
+                        </li>
+                        <li class="req-item">
+                            <span class="req-label">Memória RAM:</span>
+                            <span class="req-value">8 GB RAM</span>
+                        </li>
+                        <li class="req-item">
+                            <span class="req-label">Placa Gráfica:</span>
+                            <span class="req-value">NVIDIA GTX 1050 / AMD Radeon RX 560</span>
+                        </li>
+                        <li class="req-item">
+                            <span class="req-label">DirectX:</span>
+                            <span class="req-value">Versão 11</span>
+                        </li>
+                        <li class="req-item">
+                            <span class="req-label">Armazenamento:</span>
+                            <span class="req-value">250MB </span>
+                        </li>
+                    </ul>
+                    <div
+                        style="margin-top: 1.5rem; padding: 1rem; background: rgba(139, 92, 246, 0.2); border-radius: 0.5rem;">
+                        <p style="color: var(--gaming-purple); font-weight: 500;">
+                            Recomendado para jogar em 4K a 60+ FPS
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem; text-align: center;">
+                <h3 style="margin-bottom: 2rem;">Available Platforms</h3>
+                <div class="platforms">
+                    <div class="platform">
+                        <img alt="Windows" src="windows.png">
+                    </div>
+                    <div class="platform">
+                        <img alt="Web, WebGL" src="webgl.png">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <!--  <section id="download" class="section download">
+        <div class="download-bg"></div>
+        <div class="container download-content">
+            <h2 class="section-title">
+                <span class="gradient-text">Joga aqui!</span>
+            </h2>
+            <div>
+                <iframe src="https://itch.io/embed/3653845" width="552" height="167" frameborder="0"><a href="https://gilgraca.itch.io/testesparaisogluglu">TestesParaisoGluGlu by gilgraca</a></iframe>
+            </div>
+            
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="pricing-title" style="color: var(--gaming-cyan)">Free Trial</h3>
+                    <div class="pricing-price">FREE</div>
+                    <p class="pricing-description">Play the first 3 hours completely free. No credit card required.</p>
+                    <ul class="pricing-features">
+                        <li><span style="color: var(--gaming-cyan)">✓</span> Full tutorial access</li>
+                        <li><span style="color: var(--gaming-cyan)">✓</span> Character creation</li>
+                        <li><span style="color: var(--gaming-cyan)">✓</span> 3 hours of gameplay</li>
+                    </ul>
+                    <button class="btn" style="background: var(--gaming-cyan); width: 100%;">Download Free
+                        Trial</button>
+                </div>
+
+                <div class="pricing-card popular">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <h3 class="pricing-title" style="color: var(--gaming-purple)">Standard Edition</h3>
+                    <div class="pricing-price">$49.99</div>
+                    <p class="pricing-description">The complete Epic Quest experience with all core content.</p>
+                    <ul class="pricing-features">
+                        <li><span style="color: var(--gaming-purple)">✓</span> Full game access</li>
+                        <li><span style="color: var(--gaming-purple)">✓</span> 60+ hour campaign</li>
+                        <li><span style="color: var(--gaming-purple)">✓</span> Multiplayer co-op</li>
+                        <li><span style="color: var(--gaming-purple)">✓</span> Regular updates</li>
+                    </ul>
+                    <button class="btn" style="width: 100%;">Buy Now</button>
+                </div>
+
+                <div class="pricing-card">
+                    <h3 class="pricing-title" style="color: var(--gaming-amber)">Deluxe Edition</h3>
+                    <div class="pricing-price">$79.99</div>
+                    <p class="pricing-description">Premium experience with exclusive content and early access.</p>
+                    <ul class="pricing-features">
+                        <li><span style="color: var(--gaming-amber)">✓</span> Everything in Standard</li>
+                        <li><span style="color: var(--gaming-amber)">✓</span> Season Pass (DLC)</li>
+                        <li><span style="color: var(--gaming-amber)">✓</span> Exclusive cosmetics</li>
+                        <li><span style="color: var(--gaming-amber)">✓</span> 3 days early access</li>
+                    </ul>
+                    <button class="btn"
+                        style="background: var(--gaming-amber); color: var(--gaming-dark); width: 100%;">Buy
+                        Deluxe</button>
+                </div>
+            </div>
+-->
+    <!-- 
+            <div class="newsletter">
+                <h3 style="margin-bottom: 1.5rem; text-align: center;" class="gradient-text">Stay Connected</h3>
+                <p style="text-align: center; color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Get the latest news, updates, and exclusive content delivered to your inbox.
+                </p>
+                <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+                <div class="social-links">
+                    <span class="social-link">💬</span>
+                    <span class="social-link">🐦</span>
+                    <span class="social-link">📺</span>
+                    <span class="social-link">🎮</span>
+                    <span class="social-link">📱</span>
+                </div>
+            </div>
+            -->
+    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                        <img src="logoW.png" alt="Paraíso Gluglu logo" class="footer-logo" style="width: 16rem;">
+                    </div>
+                    <p style="color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
+                       A louca fuga de um peru consciente em busca da liberdade!
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Game</h4>
+                    <ul class="footer-links">
+                        <li><a href="#features">Funcionalidades</a></li>
+                        <li><a href="#gallery">Galeria</a></li>
+                        <li><a href="#requirements">Requisitos</a></li>
+                        <li><a href="#download">Joga</a></li>
+                        <li><a href="secret.html">Apanhei todos os milhos</a></li>
+                    </ul>
+                </div>
+
+                <!--
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Bug Reports</a></li>
+                        <li><a href="#">Community Forums</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">EULA</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>-->
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Magic Hat Studios.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for image gallery -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <img id="modalImage" src="" alt="Gallery image">
+    </div>
+
+
+
+    <script>
+        // Smooth scrolling for navigation links
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Navigation click handlers
+        document.querySelectorAll('.nav-links a, .footer-links a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = link.getAttribute('href');
+                if (target.startsWith('#')) {
+                    scrollToSection(target.substring(1));
+                }
+                else if (target.startsWith('http')) {
+                    window.open(target, '_blank');
+                }
+                else window.open(target);
+            });
+        });
+
+        // Hero buttons
+        document.querySelectorAll('.hero-buttons a').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = button.getAttribute('href');
+                if (target.startsWith('#')) {
+                    scrollToSection(target.substring(1));
+                }
+                else if (target.startsWith('http')) {
+                    window.open(target, '_blank');
+                }
+            });
+        });
+
+        // Image modal functionality
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = imageSrc;
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+        }
+
+
+
+
+        // Mobile menu (basic implementation)
+        document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
+            alert('Mobile menu functionality can be implemented here');
+        });
+
+
+
+
+        // Add parallax effect to hero background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroBackground = document.querySelector('.hero-bg');
+            if (heroBackground) {
+                heroBackground.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Animate elements on scroll (intersection observer)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        /*
+                // Apply animation to feature cards and other elements
+                document.addEventListener('DOMContentLoaded', () => {
+                    const animateElements = document.querySelectorAll('.feature-card, .pricing-card, .requirements-card');
+                    animateElements.forEach(el => {
+                        el.style.opacity = '0';
+                        el.style.transform = 'translateY(50px)';
+                        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                        observer.observe(el);
+                    });
+                });*/
+    </script>
+</body>
+
+</html>

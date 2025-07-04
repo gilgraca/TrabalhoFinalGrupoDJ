@@ -1,5 +1,6 @@
 // Script responsável por gerir a vida do jogador (sem invencibilidade)
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerVida : MonoBehaviour
 {
@@ -57,7 +58,7 @@ public class PlayerVida : MonoBehaviour
     // Método que desativa o jogador quando morre
     private void Morrer()
     {
-        gameObject.SetActive(false);
+        SceneManager.LoadScene("GameOver");
     }
 
     // Método auxiliar para recuperar a vida atual externamente

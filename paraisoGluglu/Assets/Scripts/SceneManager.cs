@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GerenciadorDeCenas : MonoBehaviour
+public class SceneManagement : MonoBehaviour
 {
     // Próxima cena a carregar
     [SerializeField] private string proximaCena;
@@ -26,6 +26,9 @@ public class GerenciadorDeCenas : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // Impede que o trigger funcione se este script estiver desativado
+        if (!enabled) return;
+
         // Verifica se o objeto que colidiu tem o tag "Player"
         if (other.CompareTag("Player"))
         {
@@ -33,6 +36,7 @@ public class GerenciadorDeCenas : MonoBehaviour
             CarregarProximaCena();
         }
     }
+
 
     // Ou versão com delay (ex: após fade out)
     public void CarregarCenaComDelay(float tempo)

@@ -1,37 +1,60 @@
+// Importa o necessário
 using UnityEngine;
 
 public class Chave : MonoBehaviour
 {
-	public int idChave = 1; // ID da chave (definido no Inspetor)
-	public float amplitude = 0.25f;
-	public float velocidade = 2f;
+    // ID da chave (para expandir no futuro se tiveres várias portas)
+    public int idChave = 1;
 
-	private Vector3 posInicial;
+    // Animação de flutuação da chave (opcional)
+    public float amplitude = 0.25f;
+    public float velocidade = 2f;
 
-	void Start()
-	{
-		posInicial = transform.position;
-	}
+    // Guarda a posição inicial para animar
+    private Vector3 posInicial;
 
-	void Update()
-	{
-		// Movimento de flutua��o + rota��o
-		float novaY = Mathf.Sin(Time.time * velocidade) * amplitude;
-		transform.position = new Vector3(posInicial.x, posInicial.y + novaY, posInicial.z);
-		transform.Rotate(Vector3.up * 90f * Time.deltaTime);
-	}
+    void Start()
+    {
+        // Guarda a posição base da chave
+        posInicial = transform.position;
+    }
 
-	void OnTriggerEnter(Collider other)
-	{
-		if (other.CompareTag("Player"))
-		{
-			Chaves chavesScript = other.GetComponent<Chaves>();
-			if (chavesScript != null)
-			{
-				chavesScript.AdicionarChave(idChave);
-				Destroy(gameObject); // Remove a chave ap�s pegar
-			}
-		}
-	}
+    void Update()
+    {
+        // Faz a chave flutuar suavemente
+        float novaY = Mathf.Sin(Time.time * velocidade) * amplitude;
+        transform.position = new Vector3(posInicial.x, posInicial.y + novaY, posInicial.z);
+
+        // Faz a chave rodar
+        transform.Rotate(Vector3.up * 90f * Time.deltaTime);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        // Se o jogador tocar na chave
+        if (other.CompareTag("Player"))
+        {
+            // Vai buscar o script "Chaves" no jogador
+            ChavePlayer chavesScript = other.GetComponent<ChavePlayer>();
+
+            if (chavesScript != null)
+            {
+                // Regista a chave apanhada
+                chavesScript.AdicionarChave(idChave);
+
+                // Ativa a porta na cena
+                PortaChaveController porta = FindFirstObjectByType<PortaChaveController>();
+                if (porta != null)
+                {
+                    porta.TentarAbrirPorta(idChave);
+                }
+
+                // Log para testes
+                // Debug.Log("Chave apanhada e porta ativada!");
+
+                // Destroi esta chave do mundo
+                Destroy(gameObject);
+            }
+        }
+    }
 }
-

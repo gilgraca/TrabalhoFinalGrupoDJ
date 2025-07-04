@@ -11,10 +11,10 @@ public class PlayerPowerUp : MonoBehaviour
     // Se já usou o salto extra nesta sequência de saltos
     private bool jaUsouDoubleJump = false;
     // Força aplicada no salto extra
-    [SerializeField] private float forcaSaltoExtra = 6f;
+    [SerializeField] public float forcaSaltoExtra = 6f;
 
     // Referência ao PlayerMovimento (para saber se está no chão)
-    private PlayerMovimento playerMovimento;
+    private PlayerMovimentoCrash playerMovimento;
 
     // DASH
     [SerializeField] private bool podeDash = false;
@@ -77,7 +77,7 @@ public class PlayerPowerUp : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         meuRenderer = GetComponentInChildren<Renderer>();
-        playerMovimento = GetComponent<PlayerMovimento>();
+        playerMovimento = GetComponent<PlayerMovimentoCrash>();
 
         // Carrega os estados dos power-ups guardados no GameManager
         podeDash = GameManager.Instance.usarDash;
@@ -89,21 +89,6 @@ public class PlayerPowerUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // DOUBLE JUMP com tecla espaço (se permitido e ainda não usado)
-        if (Input.GetKeyDown(KeyCode.Space) && podeDoubleJump && !jaUsouDoubleJump)
-        {
-            // Só ativa se o jogador NÃO está no chão
-            if (playerMovimento != null && !playerMovimento.EstaNoChao())
-            {
-                // Aplica impulso vertical com força personalizada
-                rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
-                rb.AddForce(Vector3.up * forcaSaltoExtra, ForceMode.Impulse);
-
-                jaUsouDoubleJump = true;
-
-                //Debug.Log("DOUBLE JUMP ativado!");
-            }
-        }
         // DASH (Shift)
         // DASH (Shift) — só se o jogador tiver o power-up e estiver disponível
         if (podeDash && Input.GetKeyDown(KeyCode.LeftShift) && dashDisponivel && !estaADashar)
@@ -111,13 +96,13 @@ public class PlayerPowerUp : MonoBehaviour
             AtivarDash();
         }
 
-        // Pressiona X para ativar invencibilidade temporária
-        if (podeInvencibilidade && Input.GetKeyDown(KeyCode.X) && !estaInvencivel)
+        // Pressiona Q para ativar invencibilidade temporária
+        if (podeInvencibilidade && Input.GetKeyDown(KeyCode.Q) && !estaInvencivel)
         {
             AtivarInvencibilidade();
         }
-        // Pressiona Z para ativar invisibilidade temporária
-        if (podeInvisibilidade && Input.GetKeyDown(KeyCode.Z) && !estaInvisivel)
+        // Pressiona E para ativar invisibilidade temporária
+        if (podeInvisibilidade && Input.GetKeyDown(KeyCode.E) && !estaInvisivel)
         {
             AtivarInvisibilidade();
         }
@@ -155,7 +140,21 @@ public class PlayerPowerUp : MonoBehaviour
         //Debug.Log("Dash dado");
 
         // Determina a direção do dash com base no input atual (Horizontal/Vertical)
-        Vector3 direcao = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
+        Vector3 input = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+
+        // Obtém a direção da câmara
+        Vector3 forward = Camera.main.transform.forward;
+        Vector3 right = Camera.main.transform.right;
+
+        // Remove o componente vertical
+        forward.y = 0;
+        right.y = 0;
+        forward.Normalize();
+        right.Normalize();
+
+        // Direção baseada na câmara
+        Vector3 direcao = (forward * input.z + right * input.x).normalized;
+
         // Se não houver input (jogador parado), dasha para a frente
         if (direcao == Vector3.zero)
             direcao = transform.forward;
@@ -180,6 +179,12 @@ public class PlayerPowerUp : MonoBehaviour
 
         //Debug.Log("Dash disponível");
     }
+    // Getter para saber se está a dashar (usado no movimento)
+    public bool EstaADashar()
+    {
+        return estaADashar;
+    }
+
     public void AtivarInvencibilidade()
     {
         // Verifica se já está invencível ou se está em cooldown
@@ -338,7 +343,7 @@ public class PlayerPowerUp : MonoBehaviour
         estaInvencivelDano = true;
 
         // Debug para testes
-        Debug.Log("Jogador está invencível devido a dano!");
+        //Debug.Log("Jogador está invencível devido a dano!");
 
         float tempoPassado = 0f;
 
@@ -359,7 +364,7 @@ public class PlayerPowerUp : MonoBehaviour
         estaInvencivelDano = false;
 
         // Debug
-        Debug.Log("Invencibilidade de dano terminou.");
+        //Debug.Log("Invencibilidade de dano terminou.");
     }
 
     // Método auxiliar para verificar se está invencível por dano

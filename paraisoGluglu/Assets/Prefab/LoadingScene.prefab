@@ -118,7 +118,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   painelLoading: {fileID: 311987865507669734}
   textoPressioneTecla: {fileID: 2724961244390515177}
-  videoPlayer: {fileID: 878775989575932202}
 --- !u!1 &5503997692121123676
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,8 +292,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Pressiona qualquer tecla para continuar...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 07bfb43e2c51d7b48b5628b9cd6cad52, type: 2}
+  m_sharedMaterial: {fileID: -7122803833988728884, guid: 07bfb43e2c51d7b48b5628b9cd6cad52, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -356,7 +355,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -486.0101, w: 0}
+  m_margin: {x: -86.22754, y: 0, z: -486.0101, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

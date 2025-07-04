@@ -37,7 +37,7 @@ public class InimigoDonaMaluca : MonoBehaviour
         if (jogadorPowerUps.EstaInvisivel()) return;
 
         //LOG para confirmar que está a usar o NavMesh
-        Debug.Log("A usar NavMesh para perseguir o jogador");
+        //Debug.Log("A usar NavMesh para perseguir o jogador");
 
         // Define o destino como a posição do jogador
         agent.SetDestination(jogador.position);
@@ -61,14 +61,14 @@ public class InimigoDonaMaluca : MonoBehaviour
 
         if (powerUps != null && (powerUps.EstaInvencivel() || powerUps.EstaInvencivelPorDano()))
         {
-            Debug.Log("Jogador invencível.");
+            //Debug.Log("Jogador invencível.");
             return;
         }
 
         if (vida != null)
         {
             vida.LevarDano(1);
-            Debug.Log("Jogador levou dano do ataque do inimigo.");
+            //Debug.Log("Jogador levou dano do ataque do inimigo.");
         }
 
         Rigidbody rb = jogador.GetComponent<Rigidbody>();
@@ -76,7 +76,7 @@ public class InimigoDonaMaluca : MonoBehaviour
         {
             Vector3 direcao = (jogador.position - transform.position).normalized;
             rb.AddForce(direcao * 5f, ForceMode.Impulse);
-            Debug.Log("Empurrão aplicado.");
+            //Debug.Log("Empurrão aplicado.");
         }
     }
     // Método chamado ao entrar em contacto com colisores marcados como Trigger
@@ -86,7 +86,7 @@ public class InimigoDonaMaluca : MonoBehaviour
         if (other.CompareTag("Caixa"))
         {
             // LOG para testes
-            Debug.Log("Inimigo colidiu com caixa");
+            //Debug.Log("Inimigo colidiu com caixa");
 
             // Acede ao script de destruição da caixa
             DestruirCaixa caixa = other.GetComponent<DestruirCaixa>();
@@ -98,7 +98,7 @@ public class InimigoDonaMaluca : MonoBehaviour
             else
             {
                 // Se o script não estiver presente, remove diretamente o objeto
-                Debug.LogWarning("A caixa não tinha o script DestruirCaixa!");
+                //Debug.LogWarning("A caixa não tinha o script DestruirCaixa!");
                 Destroy(other.gameObject);
             }
         }

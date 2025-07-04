@@ -12,6 +12,8 @@ TagManager:
   - Caixa
   - ChangeScene
   - Key
+  - DamageRespawn
+  - DonaMaluca
   layers:
   - Default
   - TransparentFX
