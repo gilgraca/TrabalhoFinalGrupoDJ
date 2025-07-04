@@ -6015,8 +6015,8 @@ MonoBehaviour:
   podeDoubleJump: 0
   forcaSaltoExtra: 6
   podeDash: 0
-  forcaDash: 12
-  tempoDash: 0.2
+  forcaDash: 25
+  tempoDash: 1
   cooldownDash: 5
   podeInvencibilidade: 0
   duracaoInvencivel: 2

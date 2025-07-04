@@ -26650,7 +26650,7 @@ PrefabInstance:
       objectReference: {fileID: 515372732}
     - target: {fileID: 7265634185341131841, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
       propertyPath: forcaDash
-      value: 20
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7265634185341131841, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
       propertyPath: dashCooldownUI
@@ -35717,7 +35717,7 @@ Transform:
   m_GameObject: {fileID: 2016279314}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.556923, y: 2.766, z: -6.994195}
+  m_LocalPosition: {x: -9.556923, y: 4.33, z: -6.994195}
   m_LocalScale: {x: 0.25754, y: 0.25754, z: 0.25754}
   m_ConstrainProportionsScale: 0
   m_Children: []

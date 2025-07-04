@@ -686,7 +686,7 @@ PrefabInstance:
       objectReference: {fileID: 1600359270}
     - target: {fileID: 7265634185341131841, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
       propertyPath: forcaDash
-      value: 20
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7265634185341131841, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
       propertyPath: tempoDash
