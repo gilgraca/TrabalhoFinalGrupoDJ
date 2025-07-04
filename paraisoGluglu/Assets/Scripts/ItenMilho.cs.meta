@@ -1,2 +1,12 @@
 fileFormatVersion: 2
 guid: 45d837011f711e64bb221983c446c992
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - somColeta: {fileID: 8300000, guid: 995d26d234cdc82449ce2edc092e5e9f, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

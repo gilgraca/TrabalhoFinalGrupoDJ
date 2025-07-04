@@ -123,6 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dano: 1
   forcaPushback: 5
+  somAtaque: {fileID: 8300000, guid: 7ada6a527b935d14da7a0827b5d3040e, type: 3}
 --- !u!1 &2705706270445629208
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,91 +1,90 @@
-// Script responsável por gerir a vida do jogador (sem invencibilidade)
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerVida : MonoBehaviour
 {
-    // Itens do HUD que representam a vida (ex: corações ou penas)
-    [SerializeField] private GameObject[] hp_items;
+	[Header("HUD de Vida")]
+	[SerializeField] private GameObject[] hp_items;
+	[SerializeField] private int vidaMaxima = 5;
+	private int vidaAtual;
 
-    // Vida máxima do jogador
-    [SerializeField] private int vidaMaxima = 5;
-    // Vida atual
-    private int vidaAtual;
+	[Header("Som ao levar dano")]
+	[SerializeField] private AudioClip somDano;
+	private AudioSource audioSource;
 
-    // Referência ao script PlayerPowerUps (para ativar invencibilidade)
-    private PlayerPowerUp powerUps;
+	private PlayerPowerUp powerUps;
 
+	void Start()
+	{
+		powerUps = GetComponent<PlayerPowerUp>();
 
-    void Start()
-    {
-        // Começa com a vida cheia
-        vidaAtual = vidaMaxima;
+		// Carrega a vida do GameManager, se existir
+		if (GameManager.Instance != null)
+		{
+			vidaAtual = Mathf.Clamp(GameManager.Instance.vidaJogador, 0, vidaMaxima);
+		}
+		else
+		{
+			vidaAtual = vidaMaxima;
+			Debug.LogWarning("GameManager.Instance está nulo. A usar vida máxima por defeito.");
+		}
 
-        // Vai buscar o componente Player no mesmo GameObject
-        powerUps = GetComponent<PlayerPowerUp>();
-    }
+		SetVida(vidaAtual); // Atualiza o HUD
 
-    // Método chamado quando o jogador leva dano
-    public void LevarDano(int dano)
-    {
-        // Reduz a vida
-        vidaAtual -= dano;
+		// Garante que tem um AudioSource
+		audioSource = GetComponent<AudioSource>();
+		if (audioSource == null)
+			audioSource = gameObject.AddComponent<AudioSource>();
 
-        // Atualiza também o GameManager
-        GameManager.Instance.vidaJogador = vidaAtual;
+		audioSource.playOnAwake = false;
+		audioSource.spatialBlend = 0f;
+	}
 
-        // Atualiza o HUD
-        if (vidaAtual >= 0 && vidaAtual < hp_items.Length)
-        {
-            hp_items[vidaAtual].SetActive(false);
-        }
+	public void LevarDano(int dano)
+	{
+		if (dano <= 0) return;
 
-        //Debug.Log("Jogador levou " + dano + " de dano. Vida atual: " + vidaAtual);
+		vidaAtual -= dano;
 
-        // Ativa apenas a invencibilidade de dano
-        if (powerUps != null && !powerUps.EstaInvencivelPorDano())
-        {
-            StartCoroutine(powerUps.InvencivelPorDano());
-        }
+		// Atualiza o GameManager, se estiver disponível
+		if (GameManager.Instance != null)
+			GameManager.Instance.vidaJogador = vidaAtual;
 
-        // Se a vida chegar a 0 ou menos, morre
-        if (vidaAtual <= 0)
-        {
-            Morrer();
-        }
-    }
+		// Toca som de dano
+		if (somDano != null && audioSource != null)
+		{
+			audioSource.PlayOneShot(somDano);
+			//Debug.Log("Som de dano tocado.");
+		}
 
-    // Método que desativa o jogador quando morre
-    private void Morrer()
-    {
-        SceneManager.LoadScene("GameOver");
-    }
+		// Desativa um item de vida no HUD
+		if (vidaAtual >= 0 && vidaAtual < hp_items.Length)
+			hp_items[vidaAtual].SetActive(false);
 
-    // Método auxiliar para recuperar a vida atual externamente
-    public int VidaAtual()
-    {
-        return vidaAtual;
-    }
+		// Ativa invencibilidade temporária se aplicável
+		if (powerUps != null && !powerUps.EstaInvencivelPorDano())
+			StartCoroutine(powerUps.InvencivelPorDano());
 
-    // Método auxiliar para recuperar a vida máxima externamente
-    public int VidaMaxima()
-    {
-        return vidaMaxima;
-    }
-    // Método para definir a vida atual do jogador a partir de um valor externo
-    public void SetVida(int novaVida)
-    {
-        // Garante que o valor não ultrapassa os limites
-        vidaAtual = Mathf.Clamp(novaVida, 0, vidaMaxima);
+		if (vidaAtual <= 0)
+			Morrer();
+	}
 
-        // Atualiza o HUD para refletir a nova vida
-        for (int i = 0; i < hp_items.Length; i++)
-        {
-            // Ativa os itens de vida até ao valor atual
-            hp_items[i].SetActive(i < vidaAtual);
-        }
+	private void Morrer()
+	{
+		SceneManager.LoadScene("GameOver");
+	}
 
-        //Debug.Log("Vida do jogador definida para: " + vidaAtual);
-    }
+	public int VidaAtual() => vidaAtual;
 
+	public int VidaMaxima() => vidaMaxima;
+
+	public void SetVida(int novaVida)
+	{
+		vidaAtual = Mathf.Clamp(novaVida, 0, vidaMaxima);
+
+		for (int i = 0; i < hp_items.Length; i++)
+		{
+			hp_items[i].SetActive(i < vidaAtual);
+		}
+	}
 }

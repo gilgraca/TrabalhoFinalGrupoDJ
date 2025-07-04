@@ -3,49 +3,58 @@ using UnityEngine;
 // Script para a destruição da caixa
 public class DestruirCaixa : MonoBehaviour
 {
-    // Prefab da tábua que vai saltar
-    public GameObject tabuaPrefab;
+	// Prefab da tábua que vai saltar
+	public GameObject tabuaPrefab;
 
-    // Quantidade de tábuas que vão saltar
-    public int quantidadeTabuas = 5;
+	// Quantidade de tábuas que vão saltar
+	public int quantidadeTabuas = 5;
 
-    // Força da explosão que empurra as tábuas
-    public float forcaExplosao = 300f;
+	// Força da explosão que empurra as tábuas
+	public float forcaExplosao = 300f;
 
-    // Raio da explosão
-    public float raioExplosao = 2f;
+	// Raio da explosão
+	public float raioExplosao = 2f;
 
-    // Método chamado para destruir a caixa
-    public void QuebrarCaixa()
-    {
-        // LOG
-        //Debug.Log("Caixa destruída!");
+	// Som da destruição
+	[SerializeField] private AudioClip somDestruicao;
+	private AudioSource audioSource;
 
-        // Cria tábuas no mesmo local
-        for (int i = 0; i < quantidadeTabuas; i++)
-        {
-            // Gera posição aleatória perto da caixa
-            Vector3 pos = transform.position + Random.insideUnitSphere * 0.5f;
+	void Start()
+	{
+		// Obtém ou adiciona um AudioSource
+		audioSource = GetComponent<AudioSource>();
+		if (audioSource == null)
+		{
+			audioSource = gameObject.AddComponent<AudioSource>();
+		}
 
-            // Cria a tábua
-            GameObject tabua = Instantiate(tabuaPrefab, pos, Random.rotation);
+		audioSource.playOnAwake = false;
+		audioSource.spatialBlend = 1f; // Som 3D (opcional)
+	}
 
-            // Obtém o Rigidbody e ativa
-            Rigidbody rb = tabua.GetComponent<Rigidbody>();
-            
-            // Garante que o Rigidbody está ativo
-            rb.isKinematic = false;
+	// Método chamado para destruir a caixa
+	public void QuebrarCaixa()
+	{
+		// Toca o som da caixa quebrando
+		if (somDestruicao != null && audioSource != null)
+		{
+			audioSource.PlayOneShot(somDestruicao);
+		}
 
-            // Aplica força de explosão
-            rb.AddExplosionForce(forcaExplosao, transform.position, raioExplosao);
+		// Cria tábuas no mesmo local
+		for (int i = 0; i < quantidadeTabuas; i++)
+		{
+			Vector3 pos = transform.position + Random.insideUnitSphere * 0.5f;
+			GameObject tabua = Instantiate(tabuaPrefab, pos, Random.rotation);
 
-            // Destroi a tábua após 3 segundos
-            Destroy(tabua, 3f);
+			Rigidbody rb = tabua.GetComponent<Rigidbody>();
+			rb.isKinematic = false;
+			rb.AddExplosionForce(forcaExplosao, transform.position, raioExplosao);
 
-            // LOG para verificar destruição futura
-            //Debug.Log("Tábua criada e será destruída em 3 segundos.");
-        }
-        // Destroi o objeto da caixa
-        Destroy(gameObject);
-    }
+			Destroy(tabua, 3f);
+		}
+
+		// Destroi a caixa após o som tocar
+		Destroy(gameObject, (somDestruicao != null) ? somDestruicao.length : 0f);
+	}
 }

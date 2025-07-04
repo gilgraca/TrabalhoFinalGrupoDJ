@@ -41,6 +41,32 @@ public class InimigoTalhante : MonoBehaviour
         // Inicia o NavMesh
         agent = GetComponent<NavMeshAgent>();
 
+        // === DEBUG NAVMESH ===
+        // Mostra se o componente foi encontrado
+        Debug.Log("[TALHANTE] NavMeshAgent encontrado? " + (agent != null));
+
+        // Verifica se o talhante está sobre a NavMesh
+        if (agent != null)
+        {
+            Debug.Log("[TALHANTE] Está na NavMesh? " + agent.isOnNavMesh);
+
+            if (!agent.isOnNavMesh)
+            {
+                Debug.LogWarning("[TALHANTE] Fora da NavMesh. A tentar recolocar...");
+
+                // Tenta encontrar posição próxima válida na NavMesh
+                if (NavMesh.SamplePosition(transform.position, out NavMeshHit hit, 5f, NavMesh.AllAreas))
+                {
+                    Debug.Log("[TALHANTE] Encontrada posição próxima na NavMesh: " + hit.position);
+                    agent.Warp(hit.position);
+                }
+                else
+                {
+                    Debug.LogError("[TALHANTE] Não encontrou nenhuma posição válida na NavMesh.");
+                }
+            }
+        }
+
         // Define os timers iniciais
         timerPerseguir = tempoPerseguir;
         timerMachado = intervaloMachado;

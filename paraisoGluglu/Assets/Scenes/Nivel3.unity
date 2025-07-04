@@ -3423,10 +3423,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 240337819421209737, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: ba6466c0db2d12649a51ba73749902d3, type: 3}
+    - target: {fileID: 240337819421209737, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ba6466c0db2d12649a51ba73749902d3, type: 3}
     - target: {fileID: 1095181781341937224, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1095181781341937224, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
+      propertyPath: somDePulo
+      value: 
+      objectReference: {fileID: 8300000, guid: 24d1f897d4e97b44394ddc889e712488, type: 3}
     - target: {fileID: 1095181781341937224, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
       propertyPath: forcaSalto
       value: 11
@@ -3436,17 +3448,49 @@ PrefabInstance:
       value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1095181781341937224, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 783975902}
+    - target: {fileID: 1095181781341937224, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
       propertyPath: suavizacaoRotacao
       value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095181781341937224, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
+      propertyPath: sonsPassos.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1095181781341937224, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
       propertyPath: velocidadeRotacaoSuave
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1095181781341937224, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
+      propertyPath: 'sonsPassos.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: ba6466c0db2d12649a51ba73749902d3, type: 3}
     - target: {fileID: 1912494435207170601, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2569704439073490124, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
+      propertyPath: somShift
+      value: 
+      objectReference: {fileID: 8300000, guid: 4193cc4624d762f499bf593f6fd6048e, type: 3}
+    - target: {fileID: 2569704439073490124, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
+      propertyPath: somTeclaE
+      value: 
+      objectReference: {fileID: 8300000, guid: d20da7c5f736ee045afa19cc2f47599b, type: 3}
+    - target: {fileID: 2569704439073490124, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
+      propertyPath: somTeclaQ
+      value: 
+      objectReference: {fileID: 8300000, guid: c3e008b6f62395c4c825194c37c645a7, type: 3}
+    - target: {fileID: 2569704439073490124, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
+      propertyPath: somAtaqueBasico
+      value: 
+      objectReference: {fileID: 8300000, guid: a7864de3d6791dd45a64835506f42512, type: 3}
+    - target: {fileID: 2569704439073490124, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
+      propertyPath: somAtaqueEspecial
+      value: 
+      objectReference: {fileID: 8300000, guid: 8b66f0d6229441f4f8377687791a0630, type: 3}
     - target: {fileID: 2569704439073490124, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
       propertyPath: ataqueNormalCooldownUI
       value: 
@@ -3508,6 +3552,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3378804944662451099, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
+      propertyPath: somDano
+      value: 
+      objectReference: {fileID: 8300000, guid: 6964e62f3f266f74baa87d3055dabe0b, type: 3}
+    - target: {fileID: 3378804944662451099, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
       propertyPath: 'hp_items.Array.data[0]'
       value: 
       objectReference: {fileID: 1600359274}
@@ -3527,14 +3575,6 @@ PrefabInstance:
       propertyPath: 'hp_items.Array.data[4]'
       value: 
       objectReference: {fileID: 1600359270}
-    - target: {fileID: 7265634185341131841, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
-      propertyPath: forcaDash
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7265634185341131841, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
-      propertyPath: tempoDash
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7265634185341131841, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
       propertyPath: dashCooldownUI
       value: 
@@ -5132,6 +5172,11 @@ Transform:
   - {fileID: 2039963159}
   m_Father: {fileID: 1534129289}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &783975902 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 240337819421209737, guid: 9e605a0738dc0ea4698e3ece29e7925b, type: 3}
+  m_PrefabInstance: {fileID: 553514786}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &791188203
 GameObject:
   m_ObjectHideFlags: 0
@@ -7358,11 +7403,11 @@ PrefabInstance:
     - target: {fileID: 5848711581681788942, guid: 44721e1da47798f43a945a0183e6249b, type: 3}
       propertyPath: m_Resource
       value: 
-      objectReference: {fileID: 8300000, guid: 16c929a5b120fa440ae290e2e831c9d4, type: 3}
+      objectReference: {fileID: 8300000, guid: f6dadc49e919f4244a3b9e2720f673eb, type: 3}
     - target: {fileID: 5848711581681788942, guid: 44721e1da47798f43a945a0183e6249b, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 16c929a5b120fa440ae290e2e831c9d4, type: 3}
+      objectReference: {fileID: 8300000, guid: f6dadc49e919f4244a3b9e2720f673eb, type: 3}
     - target: {fileID: 5848711581681788942, guid: 44721e1da47798f43a945a0183e6249b, type: 3}
       propertyPath: DopplerLevel
       value: 0
@@ -10188,6 +10233,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 438803581171125217, guid: b88b71d295ff2ee43a7436016c38e36a, type: 3}
+      propertyPath: somDano
+      value: 
+      objectReference: {fileID: 8300000, guid: 432ca60cfadaf00478043cec54e9f163, type: 3}
+    - target: {fileID: 438803581171125217, guid: b88b71d295ff2ee43a7436016c38e36a, type: 3}
+      propertyPath: somMachado
+      value: 
+      objectReference: {fileID: 8300000, guid: c7c15cd34e2dab64ea02b1a633d5c97c, type: 3}
     - target: {fileID: 1868577135108429181, guid: b88b71d295ff2ee43a7436016c38e36a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 294.52

@@ -1,60 +1,63 @@
-// Importa o necessário
 using UnityEngine;
 
 public class Chave : MonoBehaviour
 {
-    // ID da chave (para expandir no futuro se tiveres várias portas)
-    public int idChave = 1;
+	public int idChave = 1;
+	public float amplitude = 0.25f;
+	public float velocidade = 2f;
+	private Vector3 posInicial;
 
-    // Animação de flutuação da chave (opcional)
-    public float amplitude = 0.25f;
-    public float velocidade = 2f;
+	[SerializeField] private AudioClip somColetaChave;
+	private AudioSource audioSource;
 
-    // Guarda a posição inicial para animar
-    private Vector3 posInicial;
+	private bool foiColetada = false;
 
-    void Start()
-    {
-        // Guarda a posição base da chave
-        posInicial = transform.position;
-    }
+	void Start()
+	{
+		posInicial = transform.position;
 
-    void Update()
-    {
-        // Faz a chave flutuar suavemente
-        float novaY = Mathf.Sin(Time.time * velocidade) * amplitude;
-        transform.position = new Vector3(posInicial.x, posInicial.y + novaY, posInicial.z);
+		audioSource = GetComponent<AudioSource>();
+		if (audioSource == null)
+			audioSource = gameObject.AddComponent<AudioSource>();
 
-        // Faz a chave rodar
-        transform.Rotate(Vector3.up * 90f * Time.deltaTime);
-    }
+		audioSource.playOnAwake = false;
+		audioSource.spatialBlend = 0f;
+	}
 
-    void OnTriggerEnter(Collider other)
-    {
-        // Se o jogador tocar na chave
-        if (other.CompareTag("Player"))
-        {
-            // Vai buscar o script "Chaves" no jogador
-            ChavePlayer chavesScript = other.GetComponent<ChavePlayer>();
+	void Update()
+	{
+		float novaY = Mathf.Sin(Time.time * velocidade) * amplitude;
+		transform.position = new Vector3(posInicial.x, posInicial.y + novaY, posInicial.z);
+		transform.Rotate(Vector3.up * 90f * Time.deltaTime);
+	}
 
-            if (chavesScript != null)
-            {
-                // Regista a chave apanhada
-                chavesScript.AdicionarChave(idChave);
+	void OnTriggerEnter(Collider other)
+	{
+		if (foiColetada) return;
 
-                // Ativa a porta na cena
-                PortaChaveController porta = FindFirstObjectByType<PortaChaveController>();
-                if (porta != null)
-                {
-                    porta.TentarAbrirPorta(idChave);
-                }
+		if (other.CompareTag("Player"))
+		{
+			foiColetada = true;
 
-                // Log para testes
-                // Debug.Log("Chave apanhada e porta ativada!");
+			// Adiciona a chave ao jogador (opcional, se usar sistema de chaves)
+			ChavePlayer chavesScript = other.GetComponent<ChavePlayer>();
+			if (chavesScript != null)
+				chavesScript.AdicionarChave(idChave);
 
-                // Destroi esta chave do mundo
-                Destroy(gameObject);
-            }
-        }
-    }
+			// Ativa a porta diretamente
+			PortaChaveController porta = FindFirstObjectByType<PortaChaveController>();
+			if (porta != null)
+				porta.TentarAbrirPorta(); // Sem necessidade de encostar
+
+			// Toca som da chave
+			if (somColetaChave != null && audioSource != null)
+				audioSource.PlayOneShot(somColetaChave);
+
+			// Esconde o modelo
+			GetComponentInChildren<MeshRenderer>().enabled = false;
+
+			// Destroi após o som
+			Destroy(gameObject, somColetaChave != null ? somColetaChave.length : 0f);
+		}
+	}
 }

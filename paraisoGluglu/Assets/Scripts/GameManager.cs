@@ -3,45 +3,41 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // Instância global acessível de qualquer script
-    public static GameManager Instance;
-    // Nome da cena do menu principal
-    public string menu;
+	public static GameManager Instance;
 
-    // Número de vidas do jogador
-    // --- DADOS DO JOGADOR ---
+	public string menu;
 
-    // Vida atual
-    public int vidaJogador = 5;
+	// Dados do jogador
+	public int vidaJogador = 5;
+	public int milhoTotal = 0;
 
-    // Quantidade de milhos recolhidos
-    public int milhoTotal = 0;
+	public bool usarDoubleJump = false;
+	public bool usarDash = false;
+	public bool usarInvencibilidade = false;
+	public bool usarInvisibilidade = false;
+	public bool usarAtaqueEspecial = false;
 
-    // Power-ups ativos
-    public bool usarDoubleJump = false;
-    public bool usarDash = false;
-    public bool usarInvencibilidade = false;
-    public bool usarInvisibilidade = false;
-    public bool usarAtaqueEspecial = false;
+	void Awake()
+	{
+		if (Instance == null)
+		{
+			Instance = this;
+			DontDestroyOnLoad(gameObject);
 
-    void Awake()
-    {
-        // Se ainda não há GameManager, define este e mantém entre cenas
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject); // Mantém mesmo ao carregar outra cena
-        }
-        else
-        {
-            Destroy(gameObject); // Evita duplicados
-        }
-    }
-    // Sai do jogo atual para o menu principal
-    public void SairParaMenu()
-    {
-        Time.timeScale = 1f;
-        Destroy(GameManager.Instance.gameObject);
-        SceneManager.LoadScene(menu);
-    }
+			// Garante valor de vida válido ao iniciar o jogo
+			if (vidaJogador <= 0)
+				vidaJogador = 5;
+		}
+		else
+		{
+			Destroy(gameObject);
+		}
+	}
+
+	public void SairParaMenu()
+	{
+		Time.timeScale = 1f;
+		Destroy(GameManager.Instance.gameObject);
+		SceneManager.LoadScene(menu);
+	}
 }

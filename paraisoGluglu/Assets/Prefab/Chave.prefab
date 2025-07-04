@@ -147,6 +147,7 @@ MonoBehaviour:
   idChave: 1
   amplitude: 0.25
   velocidade: 2
+  somApanharChave: {fileID: 8300000, guid: dea26f3d654d31840b5aea4934dd86b1, type: 3}
 --- !u!1 &1398573061251912456
 GameObject:
   m_ObjectHideFlags: 0

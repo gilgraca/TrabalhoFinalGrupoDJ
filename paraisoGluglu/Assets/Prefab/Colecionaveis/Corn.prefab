@@ -125,4 +125,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointToAdd: 1
   rotationSpeed: {x: 0, y: 100, z: 0}
-  cooldownToastManual: 10
+  somColeta: {fileID: 8300000, guid: 995d26d234cdc82449ce2edc092e5e9f, type: 3}
