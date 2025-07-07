@@ -2,70 +2,62 @@ using UnityEngine;
 
 public class MenuPausa : MonoBehaviour
 {
-    [SerializeField] private GameObject menuPausa;
-    public static bool jogoPausado = false;
+	[SerializeField] private GameObject menuPausa;
+	public static bool jogoPausado = false;
 
-    void Start()
-    {
-        if (menuPausa != null)
-            menuPausa.SetActive(false);
-    }
+	void Start()
+	{
+		if (menuPausa != null)
+			menuPausa.SetActive(false);
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (jogoPausado)
-                RetomarJogo();
-            else
-                PausarJogo();
-        }
-    }
+		// Garante que o som começa ligado
+		AudioListener.volume = 1f;
+	}
 
-    public void PausarJogo()
-    {
-        // Pausa o tempo do jogo
-        Time.timeScale = 0f;
+	void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			if (jogoPausado)
+				RetomarJogo();
+			else
+				PausarJogo();
+		}
+	}
 
-        // Ativa o menu de pausa
-        menuPausa.SetActive(true);
+	public void PausarJogo()
+	{
+		Time.timeScale = 0f;
+		menuPausa.SetActive(true);
+		jogoPausado = true;
 
-        // Marca o jogo como pausado
-        jogoPausado = true;
+		// Mute do som
+		AudioListener.volume = 0f;
 
-        // Mostra o cursor para navegar no menu
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+		Cursor.visible = true;
+		Cursor.lockState = CursorLockMode.None;
+	}
 
-        //Debug.Log("Jogo pausado — cursor visível");
-    }
+	public void RetomarJogo()
+	{
+		Time.timeScale = 1f;
+		menuPausa.SetActive(false);
+		jogoPausado = false;
 
-    public void RetomarJogo()
-    {
-        // Retoma o tempo do jogo
-        Time.timeScale = 1f;
+		// Som volta
+		AudioListener.volume = 1f;
 
-        // Esconde o menu de pausa
-        menuPausa.SetActive(false);
+		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;
+	}
 
-        // Marca o jogo como não pausado
-        jogoPausado = false;
+	public void AlternarPausa()
+	{
+		if (menuPausa == null) return;
 
-        // Esconde o cursor e bloqueia-o para o centro do ecrã
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-
-        //Debug.Log("Jogo retomado — cursor escondido");
-    }
-
-
-    public void AlternarPausa()
-    {
-        if (menuPausa == null) return;
-
-        if (Time.timeScale > 0f)
-            PausarJogo();
-        else
-            RetomarJogo();
-    }
+		if (Time.timeScale > 0f)
+			PausarJogo();
+		else
+			RetomarJogo();
+	}
 }

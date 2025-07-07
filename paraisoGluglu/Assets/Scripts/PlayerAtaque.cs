@@ -1,188 +1,219 @@
-// Cria e gere os ataques do jogador
 using System.Collections;
 using UnityEngine;
 
 public class PlayerAtaque : MonoBehaviour
 {
-    // PREFAB da pena
-    [SerializeField] private GameObject prefabPena;
+	[Header("Ataques")]
+	[SerializeField] private GameObject prefabPena;
+	[SerializeField] private Transform pontoDisparo;
+	[SerializeField] private Transform disparo1;
+	[SerializeField] private Transform disparo2;
 
-    // Posição do disparo normal
-    [SerializeField] private Transform pontoDisparo;
+	[Header("Cooldowns")]
+	[SerializeField] private float cooldownAtaqueBasico = 0.5f;
+	[SerializeField] private float cooldownAtaqueEspecial = 1f;
+	[SerializeField] private float tempoCooldownTeclas = 10f;
 
-    // Disparos laterais para o ataque especial
-    [SerializeField] private Transform disparo1;
-    [SerializeField] private Transform disparo2;
+	[Header("Habilidades Ativas")]
+	[SerializeField] private bool podeAtaqueEspecial = false;
 
-    // Cooldown do ataque especial
-    [SerializeField] private float cooldownAtaqueEspecial = 1f;
+	private bool ataqueBasicoDisponivel = true;
+	private bool ataqueEspecialDisponivel = true;
 
-    // Flag se está disponível ou não
-    private bool ataqueEspecialDisponivel = true;
-    // Se o jogador tem o power-up para usar ataque especial
-    [SerializeField] private bool podeAtaqueEspecial = false;
+	[Header("Referências")]
+	[SerializeField] private Animator animator;
+	[SerializeField] private PowerUpCooldownUI ataqueEspecialCooldownUI;
+	[SerializeField] private PowerUpCooldownUI ataqueNormalCooldownUI;
 
-    // Animações
-    [SerializeField] private Animator animator;
+	[Header("Áudio")]
+	[SerializeField] private AudioClip somAtaqueBasico;
+	[SerializeField] private AudioClip somAtaqueEspecial;
+	[SerializeField] private AudioClip somShift;
+	[SerializeField] private AudioClip somTeclaE;
+	[SerializeField] private AudioClip somTeclaQ;
 
-    [SerializeField] private PowerUpCooldownUI ataqueEspecialCooldownUI;
-    // Tempo de cooldown do ataque básico
-    [SerializeField] private float cooldownAtaqueBasico = 0.5f;
+	private AudioSource audioSource;
+	private PlayerPowerUp powerUp;
 
-    // Flag que indica se o ataque básico pode ser usado
-    private bool ataqueBasicoDisponivel = true;
-    [SerializeField] private PowerUpCooldownUI ataqueNormalCooldownUI;
+	private float tempoProximoUsoShift = 0f;
+	private float tempoProximoUsoE = 0f;
+	private float tempoProximoUsoQ = 0f;
 
-    void Start()
-    {
-        // Carrega o estado do ataque especial guardado no GameManager
-        podeAtaqueEspecial = GameManager.Instance.usarAtaqueEspecial;
-    }
+	void Start()
+	{
+		audioSource = GetComponent<AudioSource>();
+		if (audioSource == null)
+			audioSource = gameObject.AddComponent<AudioSource>();
 
-    void Update()
-    {
-        // Impede ataques se o jogo estiver pausado
-        if (MenuPausa.jogoPausado) return;
+		audioSource.playOnAwake = false;
+		audioSource.spatialBlend = 0f;
 
-        // Disparo normal com botão esquerdo
-        if (Input.GetMouseButtonDown(0) && ataqueBasicoDisponivel)
-        {
-            // Marca como indisponível
-            ataqueBasicoDisponivel = false;
+		powerUp = GetComponent<PlayerPowerUp>();
+		podeAtaqueEspecial = GameManager.Instance.usarAtaqueEspecial;
+	}
 
-            // Direção à frente
-            Vector3 direcaoDisparo = transform.forward;
+	void Update()
+	{
+		if (MenuPausa.jogoPausado) return;
 
-            // Calcula a rotação para apontar na direção desejada
-            Quaternion rotacaoDirecao = Quaternion.LookRotation(direcaoDisparo);
+		// === Ataque Básico ===
+		if (Input.GetMouseButtonDown(0) && ataqueBasicoDisponivel)
+			AtacarBasico();
 
-            // Garante que o X seja sempre 90°
-            Quaternion rotacaoFinal = Quaternion.Euler(90f, rotacaoDirecao.eulerAngles.y, rotacaoDirecao.eulerAngles.z);
+		// === Ataque Especial ===
+		if (Input.GetMouseButtonDown(1) && podeAtaqueEspecial && ataqueEspecialDisponivel)
+			AtivarAtaqueEspecial();
 
-            // Cria a pena na posição base
-            GameObject novaPena = Instantiate(prefabPena, pontoDisparo.position, rotacaoFinal);
+		// === Dash com Shift ===
+		if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time >= tempoProximoUsoShift)
+		{
+			if (powerUp != null && powerUp.PodeDash() && !powerUp.EstaADashar())
+			{
+				if (RealizarDash())
+				{
+					TocarSom(somShift);
+					tempoProximoUsoShift = Time.time + tempoCooldownTeclas;
+				}
+			}
+		}
 
+		// === Invisibilidade com E ===
+		if (Input.GetKeyDown(KeyCode.E) && Time.time >= tempoProximoUsoE)
+		{
+			if (powerUp != null && powerUp.PodeInvisibilidade() && !powerUp.EstaInvisivel())
+			{
+				if (AtivarPoderE())
+				{
+					TocarSom(somTeclaE);
+					tempoProximoUsoE = Time.time + tempoCooldownTeclas;
+				}
+			}
+		}
 
-            // Define a direção
-            novaPena.GetComponent<PenaAtaque>().DefinirDirecao(direcaoDisparo);
+		// === Invencibilidade com Q ===
+		if (Input.GetKeyDown(KeyCode.Q) && Time.time >= tempoProximoUsoQ)
+		{
+			if (powerUp != null && powerUp.PodeInvencibilidade() && !powerUp.EstaInvencivel())
+			{
+				if (AtivarPoderQ())
+				{
+					TocarSom(somTeclaQ);
+					tempoProximoUsoQ = Time.time + tempoCooldownTeclas;
+				}
+			}
+		}
+	}
 
-            // Animação
-            animator.SetBool("isAttacking", true);
-            StartCoroutine(DesativarBool("isAttacking", 0.5f));
+	private void AtacarBasico()
+	{
+		ataqueBasicoDisponivel = false;
 
-            // Inicia cooldown visual
-            if (ataqueNormalCooldownUI != null)
-                ataqueNormalCooldownUI.IniciarCooldown(cooldownAtaqueBasico);
+		Vector3 direcaoDisparo = transform.forward;
+		Quaternion rotacaoFinal = Quaternion.Euler(90f, Quaternion.LookRotation(direcaoDisparo).eulerAngles.y, 0f);
 
-            // Inicia cooldown funcional
-            StartCoroutine(ReporCooldownAtaqueBasico());
-        }
+		GameObject novaPena = Instantiate(prefabPena, pontoDisparo.position, rotacaoFinal);
+		novaPena.GetComponent<PenaAtaque>().DefinirDirecao(direcaoDisparo);
 
-        // Disparo especial com botão direito
-        if (podeAtaqueEspecial && Input.GetMouseButtonDown(1) && ataqueEspecialDisponivel)
+		animator.SetBool("isAttacking", true);
+		StartCoroutine(DesativarBool("isAttacking", 0.5f));
 
-        {
-            AtivarAtaqueEspecial(); // Usa novo sistema com cooldown
-        }
-    }
+		TocarSom(somAtaqueBasico);
 
-    // Corrotina para repor o cooldown do ataque básico
-    private IEnumerator ReporCooldownAtaqueBasico()
-    {
-        // Espera o tempo definido
-        yield return new WaitForSeconds(cooldownAtaqueBasico);
+		if (ataqueNormalCooldownUI != null)
+			ataqueNormalCooldownUI.IniciarCooldown(cooldownAtaqueBasico);
 
-        // Torna o ataque básico novamente disponível
-        ataqueBasicoDisponivel = true;
+		StartCoroutine(ReporCooldownAtaqueBasico());
+	}
 
-        // Log para testes
-        //Debug.Log("Ataque básico disponível novamente!");
-    }
+	private IEnumerator ReporCooldownAtaqueBasico()
+	{
+		yield return new WaitForSeconds(cooldownAtaqueBasico);
+		ataqueBasicoDisponivel = true;
+	}
 
+	private void AtivarAtaqueEspecial()
+	{
+		if (!ataqueEspecialDisponivel) return;
 
-    // Método para ativar o ataque especial
-    private void AtivarAtaqueEspecial()
-    {
-        // Se não está disponível, sai
-        if (!ataqueEspecialDisponivel) return;
+		ataqueEspecialDisponivel = false;
 
-        // Marca como indisponível
-        ataqueEspecialDisponivel = false;
+		Vector3 direcao = transform.forward;
+		CriarPena(disparo1.position, direcao);
+		CriarPena(pontoDisparo.position, direcao);
+		CriarPena(disparo2.position, direcao);
 
-        // Direção do disparo
-        Vector3 direcao = transform.forward;
+		animator.SetBool("isSpAttack", true);
+		StartCoroutine(DesativarBool("isSpAttack", 0.5f));
 
-        // Disparo em 3 posições
-        CriarPena(disparo1.position, direcao);
-        CriarPena(pontoDisparo.position, direcao);
-        CriarPena(disparo2.position, direcao);
+		TocarSom(somAtaqueEspecial);
 
-        // Animação
-        animator.SetBool("isSpAttack", true);
-        // Desativa a animação após um tempo
-        StartCoroutine(DesativarBool("isSpAttack", 0.5f));
+		if (ataqueEspecialCooldownUI != null)
+			ataqueEspecialCooldownUI.IniciarCooldown(cooldownAtaqueEspecial);
 
-        // Inicia o cooldown
-        StartCoroutine(ReporCooldownAtaqueEspecial());
+		StartCoroutine(ReporCooldownAtaqueEspecial());
+	}
 
-        // Cooldown visual do ataque especial
-        if (ataqueEspecialCooldownUI != null)
-            ataqueEspecialCooldownUI.IniciarCooldown(cooldownAtaqueEspecial);
+	private IEnumerator ReporCooldownAtaqueEspecial()
+	{
+		yield return new WaitForSeconds(cooldownAtaqueEspecial);
+		ataqueEspecialDisponivel = true;
+	}
 
-    }
+	private IEnumerator DesativarBool(string nomeBool, float tempo)
+	{
+		yield return new WaitForSeconds(tempo);
+		animator.SetBool(nomeBool, false);
+	}
 
-    // Desativa o bool após um tempo
-    private IEnumerator DesativarBool(string nomeBool, float tempo)
-    {
-        yield return new WaitForSeconds(tempo);
-        animator.SetBool(nomeBool, false);
-    }
+	private void CriarPena(Vector3 posicao, Vector3 direcao)
+	{
+		GameObject novaPena = Instantiate(prefabPena, posicao, Quaternion.identity);
+		PenaAtaque pena = novaPena.GetComponent<PenaAtaque>();
+		if (pena != null)
+			pena.DefinirDirecao(direcao);
+	}
 
+	private void TocarSom(AudioClip clip)
+	{
+		if (audioSource != null && clip != null)
+			audioSource.PlayOneShot(clip);
+	}
 
-    // Corrotina para o cooldown
-    private IEnumerator ReporCooldownAtaqueEspecial()
-    {
-        // Espera o tempo
-        yield return new WaitForSeconds(cooldownAtaqueEspecial);
+	// Habilidades customizadas
+	private bool RealizarDash()
+	{
+		// Aqui entra tua lógica real de dash
+		return true;
+	}
 
-        // Ativa de novo
-        ataqueEspecialDisponivel = true;
-        //Debug.Log("Ataque especial disponível novamente!");
-    }
+	private bool AtivarPoderE()
+	{
+		// Aqui entra tua lógica real do poder E
+		return true;
+	}
 
-    // Cria uma pena a partir de uma posição e direção
-    private void CriarPena(Vector3 posicao, Vector3 direcao)
-    {
-        GameObject novaPena = Instantiate(prefabPena, posicao, Quaternion.identity);
-        PenaAtaque penaScript = novaPena.GetComponent<PenaAtaque>();
-        if (penaScript != null)
-        {
-            penaScript.DefinirDirecao(direcao);
-        }
-    }
+	private bool AtivarPoderQ()
+	{
+		// Aqui entra tua lógica real do poder Q
+		return true;
+	}
 
-    // Interação física com caixas
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.CompareTag("Caixa"))
-        {
-            Vector3 normal = collision.contacts[0].normal;
+	private void OnCollisionEnter(Collision collision)
+	{
+		if (collision.collider.CompareTag("Caixa"))
+		{
+			Vector3 normal = collision.contacts[0].normal;
+			if (Vector3.Dot(normal, Vector3.up) > 0.5f)
+			{
+				DestruirCaixa caixa = collision.collider.GetComponent<DestruirCaixa>();
+				if (caixa != null)
+					caixa.QuebrarCaixa();
+			}
+		}
+	}
 
-            if (Vector3.Dot(normal, Vector3.up) > 0.5f)
-            {
-                DestruirCaixa caixaScript = collision.collider.GetComponent<DestruirCaixa>();
-
-                if (caixaScript != null)
-                {
-                    caixaScript.QuebrarCaixa();
-                }
-            }
-        }
-    }
-    // Permite ativar ou desativar o ataque especial via menu
-    public void SetAtaqueEspecial(bool estado)
-    {
-        podeAtaqueEspecial = estado;
-    }
-
+	public void SetAtaqueEspecial(bool estado)
+	{
+		podeAtaqueEspecial = estado;
+	}
 }

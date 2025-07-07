@@ -14,6 +14,7 @@ TagManager:
   - Key
   - DamageRespawn
   - DonaMaluca
+  - AtaquePlayer
   layers:
   - Default
   - TransparentFX

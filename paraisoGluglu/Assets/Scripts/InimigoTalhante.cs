@@ -31,8 +31,13 @@ public class InimigoTalhante : MonoBehaviour
     // Controla se levou dano
     private bool levouDano;
 
+    private Animator animator;
+
     void Start()
     {
+
+        animator = GetComponent<Animator>();
+
         // Procura o jogador por tag
         GameObject objJogador = GameObject.FindGameObjectWithTag("Player");
         if (objJogador != null)
@@ -74,6 +79,7 @@ public class InimigoTalhante : MonoBehaviour
 
     void Update()
     {
+        animator.SetBool("Resting", estaParado);
         if (jogador == null) return;
 
         // Só conta o tempo do machado se não estiver parado
@@ -122,6 +128,7 @@ public class InimigoTalhante : MonoBehaviour
     // Método para lançar o machado
     private void AtirarMachado()
     {
+        animator.SetTrigger("Attack");
         // Calcula a direção do machado para o jogador
         Vector3 direcao = (jogador.position - pontoDisparo.position).normalized;
 

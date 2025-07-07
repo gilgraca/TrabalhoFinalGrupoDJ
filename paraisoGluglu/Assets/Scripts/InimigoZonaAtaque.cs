@@ -2,57 +2,57 @@ using UnityEngine;
 
 public class InimigoZonaAtaque : MonoBehaviour
 {
-    // Dano que causa ao tocar
-    [SerializeField] private int dano = 1;
+	[SerializeField] private int dano = 1;
+	[SerializeField] private float forcaPushback = 5f;
 
-    // Força horizontal do empurrão (ajustável no Inspector)
-    [SerializeField] private float forcaPushback = 5f;
+	[Header("Som de ataque")]
+	[SerializeField] private AudioClip somAtaque;
+	private AudioSource audioSource;
 
-    // Esta função é chamada quando o trigger colide com algo
-    private void OnTriggerEnter(Collider other)
-    {
-        // Verifica se colidiu com o jogador
-        if (other.CompareTag("Player"))
-        {
-            // Acede ao script de power-ups e vida do jogador
-            PlayerPowerUp powerUps = other.GetComponent<PlayerPowerUp>();
-            PlayerVida playerVida = other.GetComponent<PlayerVida>();
+	void Start()
+	{
+		audioSource = GetComponent<AudioSource>();
+		if (audioSource == null)
+			audioSource = gameObject.AddComponent<AudioSource>();
 
-            // Verifica se o jogador existe e não está invencível
-            if (powerUps != null && !powerUps.EstaInvencivel() && !powerUps.EstaInvencivelPorDano())
-            {
-                // Aplica dano ao jogador
-                if (playerVida != null)
-                    playerVida.LevarDano(dano);
+		audioSource.playOnAwake = false;
+		audioSource.spatialBlend = 0f; // 0 para 2D, 1 para 3D
+	}
 
-                // Acede ao Rigidbody do jogador para aplicar impulso
-                Rigidbody rb = other.GetComponent<Rigidbody>();
-                if (rb != null)
-                {
-                    // === CALCULAR DIREÇÃO DO PUSHBACK ===
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.CompareTag("Player"))
+		{
+			PlayerPowerUp powerUps = other.GetComponent<PlayerPowerUp>();
+			PlayerVida playerVida = other.GetComponent<PlayerVida>();
 
-                    // Direção horizontal (sem componente vertical)
-                    Vector3 direcao = (other.transform.position - transform.position);
-                    direcao.y = 0f; // ignora Y
-                    direcao = direcao.normalized;
+			if (powerUps != null && !powerUps.EstaInvencivel() && !powerUps.EstaInvencivelPorDano())
+			{
+				// Aplica dano
+				if (playerVida != null)
+					playerVida.LevarDano(dano);
 
-                    // === CRIAR IMPULSO FINAL ===
+				// Aplica impulso
+				Rigidbody rb = other.GetComponent<Rigidbody>();
+				if (rb != null)
+				{
+					Vector3 direcao = (other.transform.position - transform.position);
+					direcao.y = 0f;
+					direcao = direcao.normalized;
 
-                    // Cria o vetor de impulso horizontal + impulso para cima
-                    Vector3 impulsoFinal = direcao * forcaPushback + Vector3.up * 2f;
+					Vector3 impulsoFinal = direcao * forcaPushback + Vector3.up * 2f;
+					rb.AddForce(impulsoFinal, ForceMode.Impulse);
+				}
 
-                    // Aplica a força no Rigidbody
-                    rb.AddForce(impulsoFinal, ForceMode.Impulse);
+				// Toca o som de ataque
+				TocarSom();
+			}
+		}
+	}
 
-                    // Debug para confirmar que aplicou impulso
-                    //Debug.Log("Jogador levou dano e foi empurrado.");
-                }
-            }
-            else
-            {
-                // Debug se estiver invencível
-                //Debug.Log("Jogador tocado mas está invencível.");
-            }
-        }
-    }
+	private void TocarSom()
+	{
+		if (audioSource != null && somAtaque != null)
+			audioSource.PlayOneShot(somAtaque);
+	}
 }

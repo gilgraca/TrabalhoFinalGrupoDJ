@@ -1,67 +1,72 @@
-// Script responsável por dar pontos ao jogador ao apanhar milhos e reproduzir som
-using System.Collections;
 using UnityEngine;
+
 public class ItenMilho : MonoBehaviour
 {
-    // Quantidade de pontos que esta moeda adiciona
-    public int pointToAdd;
+	public int pointToAdd;
+	public Vector3 rotationSpeed = new Vector3(0, 100, 0);
 
-    // Som a ser tocado ao apanhar a moeda
-    //private AudioSource CoinPickupEffect;
+	private bool foiApanhado = false;
 
-    // Velocidade de rotação da moeda (graus por segundo)
-    public Vector3 rotationSpeed = new Vector3(0, 100, 0);
+	[Header("Áudio")]
+	[SerializeField] private AudioClip somColeta;
+	private AudioSource audioSource;
 
-    // Flag para evitar múltiplas ativações do trigger
-    private bool foiApanhado = false;
-    // Se pode ou não ativar novamente
-    private bool podeAtivarToastManual = true;
-    // Tempo de espera entre ativações do toast com tecla I
-    [SerializeField] private float cooldownToastManual = 10f;
-    void Start()
-    {
-        // Referência ao AudioSource ligado à moeda
-        //CoinPickupEffect = GetComponent<AudioSource>();
-    }
+	void Start()
+	{
+		// Cria e configura o AudioSource se não existir
+		audioSource = GetComponent<AudioSource>();
+		if (audioSource == null)
+		{
+			audioSource = gameObject.AddComponent<AudioSource>();
+		}
 
-    void Update()
-    {
-        // Rotate object around its local axes at rotationSpeed degrees/second
-        transform.Rotate(rotationSpeed * Time.deltaTime);
-    }
+		// Configurações do som
+		audioSource.playOnAwake = false;
+		audioSource.spatialBlend = 1f; // 3D sound
+		audioSource.loop = false;
+	}
 
-    void OnTriggerEnter(Collider other)
-    {
-        // Se já foi apanhado, ignora
-        if (foiApanhado)
-            return;
+	void Update()
+	{
+		transform.Rotate(rotationSpeed * Time.deltaTime);
+	}
 
-        // Garante que só o jogador pode apanhar a moeda
-        if (other.GetComponent<PlayerToast>() == null)
-            return;
+	void OnTriggerEnter(Collider other)
+	{
+		if (foiApanhado) return;
+		if (other.GetComponent<PlayerToast>() == null) return;
 
-        // Marca como apanhado
-        foiApanhado = true;
+		foiApanhado = true;
 
-        // Adiciona os pontos ao ScoreManager
-        ScoreManager.AddPoints(pointToAdd);
+		// Pontuação
+		ScoreManager.AddPoints(pointToAdd);
 
-        // Atualiza o total de milhos apanhados
-        GameManager.Instance.milhoTotal += 1;
+		// GameManager
+		if (GameManager.Instance != null)
+		{
+			GameManager.Instance.milhoTotal += 1;
+		}
 
-        // Mostrar Toast Global
-        FindFirstObjectByType<NivelTracker>()?.MostrarToastManual();
+		// Tracker
+		NivelTracker tracker = FindFirstObjectByType<NivelTracker>();
+		if (tracker != null)
+		{
+			tracker.MostrarToastManual();
+			tracker.AdicionarMilho();
+		}
 
-        // Toca o som de apanhar moeda
-        //CoinPickupEffect.Play();
+		// Toca som de coleta
+		float tempoSom = 1f;
+		if (somColeta != null && audioSource != null)
+		{
+			audioSource.PlayOneShot(somColeta);
+			tempoSom = somColeta.length;
+		}
 
-        // Esconde o Mesh do milho (opcional — dá sensação de recolhida antes de desaparecer)
-        GetComponentInChildren<MeshRenderer>().enabled = false;
+		// Esconde o milho visualmente
+		GetComponentInChildren<MeshRenderer>().enabled = false;
 
-        // Avisa o NivelTracker local
-        FindFirstObjectByType<NivelTracker>()?.AdicionarMilho();
-
-        // Destroi o objeto após 1 segundo (dá tempo para o som tocar)
-        Destroy(gameObject, 1.0f);
-    }
+		// Destroi o milho após o som
+		Destroy(gameObject, tempoSom);
+	}
 }
