@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.5622641, g: 0.44875038, b: 0.44875038, a: 1}
   m_FogMode: 2
   m_FogDensity: 0.089
@@ -9420,67 +9420,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!1001 &1421435511
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1390070058326379191, guid: 84ecdcd3b78e05445860426c7705f270, type: 3}
-      propertyPath: m_Name
-      value: ChangeScene (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7497308155153835194, guid: 84ecdcd3b78e05445860426c7705f270, type: 3}
-      propertyPath: proximaCena
-      value: CutscenePlayer6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8201435785486082718, guid: 84ecdcd3b78e05445860426c7705f270, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 309.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 8201435785486082718, guid: 84ecdcd3b78e05445860426c7705f270, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8201435785486082718, guid: 84ecdcd3b78e05445860426c7705f270, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -271.89514
-      objectReference: {fileID: 0}
-    - target: {fileID: 8201435785486082718, guid: 84ecdcd3b78e05445860426c7705f270, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8201435785486082718, guid: 84ecdcd3b78e05445860426c7705f270, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8201435785486082718, guid: 84ecdcd3b78e05445860426c7705f270, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8201435785486082718, guid: 84ecdcd3b78e05445860426c7705f270, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8201435785486082718, guid: 84ecdcd3b78e05445860426c7705f270, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8201435785486082718, guid: 84ecdcd3b78e05445860426c7705f270, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8201435785486082718, guid: 84ecdcd3b78e05445860426c7705f270, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 84ecdcd3b78e05445860426c7705f270, type: 3}
 --- !u!1 &1421774435
 GameObject:
   m_ObjectHideFlags: 0
@@ -10415,8 +10354,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2530914278920834405, guid: b88b71d295ff2ee43a7436016c38e36a, type: 3}
       propertyPath: m_Speed
-      value: 5
+      value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 2530914278920834405, guid: b88b71d295ff2ee43a7436016c38e36a, type: 3}
+      propertyPath: m_Acceleration
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2530914278920834405, guid: b88b71d295ff2ee43a7436016c38e36a, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 320
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251188017107073960, guid: b88b71d295ff2ee43a7436016c38e36a, type: 3}
+      propertyPath: materialVermelhoFlash
+      value: 
+      objectReference: {fileID: -3846018093981099296, guid: 6cc5b17ba5160814f943437b80ca2b19, type: 3}
     - target: {fileID: 4325137071267315505, guid: b88b71d295ff2ee43a7436016c38e36a, type: 3}
       propertyPath: m_Size.y
       value: 3.1819425
@@ -16465,5 +16416,4 @@ SceneRoots:
   - {fileID: 41461110}
   - {fileID: 1534129289}
   - {fileID: 1546274993}
-  - {fileID: 1421435511}
   - {fileID: 1504806731}
