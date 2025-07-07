@@ -79,6 +79,7 @@ public class InimigoTalhante : MonoBehaviour
 
     void Update()
     {
+        animator.SetBool("Resting", estaParado);
         if (jogador == null) return;
 
         // Só conta o tempo do machado se não estiver parado
