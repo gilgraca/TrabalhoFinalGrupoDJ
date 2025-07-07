@@ -54,7 +54,6 @@ public class DestruirCaixa : MonoBehaviour
 			Destroy(tabua, 3f);
 		}
 
-		// Destroi a caixa após o som tocar
-		Destroy(gameObject, (somDestruicao != null) ? somDestruicao.length : 0f);
+		Destroy(gameObject);
 	}
 }
