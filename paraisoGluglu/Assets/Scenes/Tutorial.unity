@@ -496,7 +496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 9999
   animator: {fileID: 293621946}
-  materialVermelhoFlash: {fileID: 0}
+  materialVermelhoFlash: {fileID: 2100000, guid: 1d3cb2c442f7f58409995e19fae81acd, type: 2}
 --- !u!4 &293621949 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8b6b69ca82bf2204eb79ed80978a1a88, type: 3}
