@@ -16,6 +16,9 @@ public class RecompensaMilhos : MonoBehaviour
             //Debug.LogWarning(" Nenhum GameObject de recompensa atribuído!");
             return;
         }
+
+        recompensaUI.SetActive(false); // Inicialmente desativa a UI de recompensa
+        
         // Verifica se o jogador apanhou milhos suficientes
         if (GameManager.Instance.milhoTotal >= milhosNecessarios)
         {
