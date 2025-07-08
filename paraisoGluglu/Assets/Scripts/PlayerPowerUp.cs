@@ -16,21 +16,21 @@ public class PlayerPowerUp : MonoBehaviour
 	[SerializeField] private float tempoDash = 0.2f;
 	[SerializeField] private float cooldownDash = 1f;
 	private bool estaADashar = false;
-	private bool dashDisponivel = true;
+	public bool dashDisponivel = true;
 
 	[Header("Invencibilidade")]
 	[SerializeField] private bool podeInvencibilidade = false;
 	private bool estaInvencivel = false;
 	[SerializeField] private float duracaoInvencivel = 2f;
 	[SerializeField] private float cooldownInvencibilidade = 1f;
-	private bool invencibilidadeDisponivel = true;
+	public bool invencibilidadeDisponivel = true;
 
 	[Header("Invisibilidade")]
 	[SerializeField] private bool podeInvisibilidade = false;
 	private bool estaInvisivel = false;
 	[SerializeField] private float duracaoInvisivel = 5f;
 	[SerializeField] private float cooldownInvisibilidade = 1f;
-	private bool invisibilidadeDisponivel = true;
+	public bool invisibilidadeDisponivel = true;
 
 	[Header("Referências Visuais e Materiais")]
 	[SerializeField] private Renderer meuRenderer;

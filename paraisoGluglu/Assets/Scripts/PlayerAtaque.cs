@@ -69,8 +69,9 @@ public class PlayerAtaque : MonoBehaviour
 		{
 			if (powerUp != null && powerUp.PodeDash() && !powerUp.EstaADashar())
 			{
-				if (RealizarDash())
+				if (powerUp.dashDisponivel)
 				{
+					powerUp.AtivarDash();
 					TocarSom(somShift);
 					tempoProximoUsoShift = Time.time + tempoCooldownTeclas;
 				}
@@ -82,8 +83,9 @@ public class PlayerAtaque : MonoBehaviour
 		{
 			if (powerUp != null && powerUp.PodeInvisibilidade() && !powerUp.EstaInvisivel())
 			{
-				if (AtivarPoderE())
+				if (powerUp.invisibilidadeDisponivel)
 				{
+					powerUp.AtivarInvisibilidade();
 					TocarSom(somTeclaE);
 					tempoProximoUsoE = Time.time + tempoCooldownTeclas;
 				}
@@ -95,8 +97,9 @@ public class PlayerAtaque : MonoBehaviour
 		{
 			if (powerUp != null && powerUp.PodeInvencibilidade() && !powerUp.EstaInvencivel())
 			{
-				if (AtivarPoderQ())
+				if (powerUp.invencibilidadeDisponivel)
 				{
+					powerUp.AtivarInvencibilidade();
 					TocarSom(somTeclaQ);
 					tempoProximoUsoQ = Time.time + tempoCooldownTeclas;
 				}
